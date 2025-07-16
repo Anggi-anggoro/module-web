@@ -40,7 +40,7 @@ const Navbar = () => {
   );
 
   return (
-    <aside className="bg-white p-4 sticky top-0 h-screen overflow-y-auto text-sm z-20 border-r border-gray-200">
+    <aside className="bg-white sticky top-0 h-screen overflow-y-auto text-sm z-20">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-bold text-orange-600">📚 Navigasi Modul</h2>
         <button onClick={toggleSearch} className="text-orange-600" aria-label="Toggle Search">
