@@ -1,0 +1,80 @@
+'use client';
+
+import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
+import SidebarLeft from "@/components/navbar";
+import SidebarRight from "@/components/sidebar";
+import WhatsAppButton from "@/components/whatsapp";
+import { createClient } from "@/lib/supabase/client"; // client-side
+
+export default function ModuleLayout({ children }: { children: React.ReactNode }) {
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (error || !data.user) {
+        router.push("/auth/login");
+      } else {
+        setIsAuthenticated(true);
+      }
+    });
+  }, [router]);
+
+  // Tombol close sidebar (custom event)
+  useEffect(() => {
+    const closeSidebarHandler = () => setShowSidebar(false);
+    window.addEventListener("closeSidebar", closeSidebarHandler);
+    return () => window.removeEventListener("closeSidebar", closeSidebarHandler);
+  }, []);
+
+  if (isAuthenticated === null) {
+    return <div className="p-10">Loading...</div>; // Atau loading spinner
+  }
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <div className="md:hidden p-4 bg-orange-100">
+        <button
+          onClick={() => setShowSidebar(!showSidebar)}
+          className="text-lg font-semibold text-orange-600"
+        >
+          ☰ Navigasi Modul
+        </button>
+      </div>
+
+      <div className="flex-1 flex flex-col md:flex-row relative">
+        <div
+          className={`
+            fixed md:static top-0 left-0 h-full z-40 bg-white p-4 border-r shadow-lg
+            transform transition-transform duration-300 ease-in-out
+            ${showSidebar ? "translate-x-0" : "-translate-x-full"}
+            md:translate-x-0 md:basis-1/5 shrink-0
+          `}
+        >
+          <SidebarLeft />
+        </div>
+
+        {showSidebar && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"
+            onClick={() => setShowSidebar(false)}
+          />
+        )}
+
+        <main className="w-full md:basis-3/5 p-4 overflow-y-auto">
+          {children}
+        </main>
+
+        <div className="hidden md:block md:basis-1/5 p-4 bg-orange-50 border-l shrink-0">
+          <SidebarRight />
+        </div>
+      </div>
+
+      <WhatsAppButton />
+    </div>
+  );
+}
