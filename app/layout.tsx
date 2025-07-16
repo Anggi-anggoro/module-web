@@ -61,10 +61,9 @@ export default function RootLayout({
               className="font-bold hover:underline"
               rel="noreferrer"
             >
-              Supabase
+              Superhuman
             </a>
-          </p>
-          <ThemeSwitcher />
+          </p>          
         </footer>
       </body>
     </html>
