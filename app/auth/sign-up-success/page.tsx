@@ -14,15 +14,14 @@ export default function Page() {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">
-                Thank you for signing up!
+                Terima kasih telah mendaftar!
               </CardTitle>
-              <CardDescription>Check your email to confirm</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                You&apos;ve successfully signed up. Please check your email to
-                confirm your account before signing in.
+               Kamu berhasil mendaftar akun. Silakan masuk untuk mengakses modul pendidikan seksual.
               </p>
+  
             </CardContent>
           </Card>
         </div>
