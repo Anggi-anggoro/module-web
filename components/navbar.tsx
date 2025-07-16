@@ -1,12 +1,14 @@
-'use client';
-import { useState } from 'react';
-import { ChevronDown, ChevronRight, Search } from 'lucide-react';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import { ChevronDown, ChevronRight, Search } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [openChapters, setOpenChapters] = useState<{ [key: string]: boolean }>({});
+  const [searchQuery, setSearchQuery] = useState("");
+  const [openChapters, setOpenChapters] = useState<{ [key: string]: boolean }>(
+    {}
+  );
 
   const toggleSearch = () => setShowSearch((prev) => !prev);
   const toggleChapter = (id: string) => {
@@ -15,35 +17,46 @@ const Navbar = () => {
 
   const chapters = [
     {
-      id: 'bab1',
-      title: 'Bab 1. Anak Dengan Hambatan Penglihatan',
-      page: '/bab1',
+      id: "bab1",
+      title: "Bab 1. Anak Dengan Hambatan Penglihatan",
+      page: "/bab1",
       subChapters: [
-        { id: 'pengertian-anak-dengan-hambatan-penglihatan', title: 'A. Pengertian' },
-        { id: 'klasifikasi-anak-dengan-hambatan-penglihatan', title: 'B. Klasifikasi' },
+        {
+          id: "pengertian-anak-dengan-hambatan-penglihatan",
+          title: "A. Pengertian",
+        },
+        {
+          id: "klasifikasi-anak-dengan-hambatan-penglihatan",
+          title: "B. Klasifikasi",
+        },
       ],
     },
     {
-      id: 'bab2',
-      title: 'Bab 2. Pendidikan Seksual',
-      page: '/bab2',
+      id: "bab2",
+      title: "Bab 2. Pendidikan Seksual",
+      page: "/bab2",
       subChapters: [],
     },
   ];
 
   // Filter berdasarkan pencarian
-  const filteredChapters = chapters.filter((chapter) =>
-    chapter.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    chapter.subChapters.some((sub) =>
-      sub.title.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+  const filteredChapters = chapters.filter(
+    (chapter) =>
+      chapter.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      chapter.subChapters.some((sub) =>
+        sub.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
   );
 
   return (
-    <aside className="bg-white sticky top-0 h-screen overflow-y-auto text-sm z-20">
+    <aside className="bg-white sticky top-0 h-full overflow-y-auto text-sm z-20">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-bold text-orange-600">📚 Navigasi Modul</h2>
-        <button onClick={toggleSearch} className="text-orange-600" aria-label="Toggle Search">
+        <button
+          onClick={toggleSearch}
+          className="text-orange-600"
+          aria-label="Toggle Search"
+        >
           <Search size={20} />
         </button>
       </div>
@@ -59,17 +72,20 @@ const Navbar = () => {
       )}
 
       <ul className="space-y-2">
-        {filteredChapters.map((chapter, idx) => (
+        {filteredChapters.map((chapter) => (
           <li key={chapter.id}>
             <div className="flex items-center justify-between">
               <Link
-                href={`/module/${idx + 1}`}
+                href={`#${chapter.id}`}
                 className="font-medium hover:underline"
               >
                 {chapter.title}
               </Link>
               {chapter.subChapters.length > 0 && (
-                <button onClick={() => toggleChapter(chapter.id)} className="ml-2">
+                <button
+                  onClick={() => toggleChapter(chapter.id)}
+                  className="ml-2"
+                >
                   {openChapters[chapter.id] ? (
                     <ChevronDown size={16} />
                   ) : (
@@ -82,10 +98,10 @@ const Navbar = () => {
             {/* Subchapters */}
             {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
               <ul className="pl-4 mt-1 space-y-1 text-gray-700">
-                {chapter.subChapters.map((sub)=> (
+                {chapter.subChapters.map((sub) => (
                   <li key={sub.id}>
                     <Link
-                      href={`/module/${idx + 1}#${sub.id}`}
+                      href={`#${sub.id}`}
                       className="hover:underline block text-sm"
                     >
                       {sub.title}

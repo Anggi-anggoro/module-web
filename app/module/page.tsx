@@ -1,39 +1,35 @@
-export default function ModulGuruCover() {
+// app/module/page.tsx
+import React from "react";
+import ModulGuruCover from "./cover"; // rename component if needed
+import Bab1 from "./1/page";
+import Bab2 from "./2/page";
+import Bab3 from "./3/page";
+
+export default function ModulGabungan() {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-white font-sans relative">
-      {/* Main Content */}
-      <div className="flex-grow flex items-center justify-center px-4 md:px-8">
-        <div className="text-center max-w-2xl w-full">
-          {/* Logo Title */}
-          <h2 className="text-5xl md:text-9xl font-extrabold text-yellow-500 drop-shadow-md mb-2 break-words">
-            MODIS
-          </h2>
-          <div className="bg-yellow-500 text-white px-4 py-2 rounded-full inline-block font-semibold text-sm md:text-base tracking-wide mb-2">
-            MODUL PENDIDIKAN SEKSUAL
-          </div>
-          <p className="mt-2 text-xs md:text-sm text-gray-700 max-w-md mx-auto leading-relaxed">
-            untuk meningkatkan pengetahuan dan mencegah masalah perilaku seksual remaja disabilitas intelektual
-          </p>
+    <div className="bg-white text-black scroll-smooth">
+      {/* Cover Section */}
+      <section id="cover">
+        <ModulGuruCover />
+      </section>
 
-          {/* Spacer */}
-          <div className="h-16 md:h-36" />
+      {/* Spacer antar cover dan bab */}
+      <div className="h-10 md:h-20" />
 
-          {/* Modul Guru */}
-          <h3 className="text-lg md:text-2xl font-bold mb-4">MODUL GURU</h3>
-          <div className="text-sm md:text-base text-gray-800 space-y-1">
-            <p>Atien Nur Chamidah</p>
-            <p>Elisabeh Siti Herini</p>
-            <p>Sri Hartini</p>
-            <p>Mumpuniarti</p>
-          </div>
-        </div>
-      </div>
+      {/* Bab 1 */}
+      <section id="bab1" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+        <Bab1 />
+      </section>
 
-      {/* Footer */}
-      <div className="flex justify-end items-center px-6 py-2 text-sm text-orange-300">
-        <span className="mr-2">1</span>
-        <span className="text-2xl">⚥</span>
-      </div>
+      {/* Bab 2 */}
+      <section id="bab2" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+        <Bab2 />
+      </section>
+
+      {/* Bab 3 */}
+      <section id="bab3" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+        <Bab3 />
+      </section>
     </div>
   );
 }

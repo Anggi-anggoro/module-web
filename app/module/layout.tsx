@@ -1,13 +1,17 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import SidebarLeft from "@/components/navbar";
 import SidebarRight from "@/components/sidebar";
 import WhatsAppButton from "@/components/whatsapp";
 import { createClient } from "@/lib/supabase/client"; // client-side
 
-export default function ModuleLayout({ children }: { children: React.ReactNode }) {
+export default function ModuleLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const router = useRouter();
@@ -28,7 +32,8 @@ export default function ModuleLayout({ children }: { children: React.ReactNode }
   useEffect(() => {
     const closeSidebarHandler = () => setShowSidebar(false);
     window.addEventListener("closeSidebar", closeSidebarHandler);
-    return () => window.removeEventListener("closeSidebar", closeSidebarHandler);
+    return () =>
+      window.removeEventListener("closeSidebar", closeSidebarHandler);
   }, []);
 
   if (isAuthenticated === null) {
@@ -49,7 +54,7 @@ export default function ModuleLayout({ children }: { children: React.ReactNode }
       <div className="flex-1 flex flex-col md:flex-row relative">
         <div
           className={`
-            fixed md:static top-0 left-0 h-full z-40 bg-white p-4 border-r shadow-lg
+            fixed md:static top-0 left-0 min-h-full z-40 bg-white p-4 border-r shadow-lg
             transform transition-transform duration-300 ease-in-out
             ${showSidebar ? "translate-x-0" : "-translate-x-full"}
             md:translate-x-0 md:basis-1/5 shrink-0
@@ -65,7 +70,7 @@ export default function ModuleLayout({ children }: { children: React.ReactNode }
           />
         )}
 
-        <main className="w-full md:basis-3/5 p-4 overflow-y-auto">
+        <main className="w-full md:basis-3/5 p-4 overflow-y-auto scroll-smooth">
           {children}
         </main>
 
