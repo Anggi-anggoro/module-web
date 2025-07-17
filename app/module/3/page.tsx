@@ -313,13 +313,645 @@ const Bab3 = () => {
                       pakaian dalam yang terlalu ketat, lalu ganti pakaian dalam
                       minimal satu kali dalam sehari.
                     </li>
+                    <li>
+                      Bagi yang sudah menstruasi, ganti pembalut secara rutin
+                      saat menstruasi terjadi (4-6 jam sekali).
+                    </li>
                   </ol>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
+        {/* Metode & Media Tambahan */}
+        <div className="mt-6">
+          <p>
+            <strong>Metode:</strong> Simulasi & Praktik
+          </p>
+          <p>
+            <strong>Media:</strong> Handuk, Tisu, Air Mengalir, dan Alat Peraga
+            / Manekin
+          </p>
+        </div>
+
+        {/* Gambar Alat Peraga */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="text-center">
+            <img
+              src="/images/manekin_perempuan.png"
+              alt="Alat Peraga Perempuan"
+              className="mx-auto w-[200px]"
+            />
+            <p className="mt-2 text-sm">
+              contoh alat peraga organ reproduksi perempuan
+            </p>
+          </div>
+          <div className="text-center">
+            <img
+              src="/images/manekin_laki.png"
+              alt="Alat Peraga Laki-Laki"
+              className="mx-auto w-[200px]"
+            />
+            <p className="mt-2 text-sm">
+              contoh alat peraga organ reproduksi laki-laki
+            </p>
+          </div>
+        </div>
+
+        {/* Contoh Pembelajaran */}
+        <div className="text-justify mt-6">
+          <p>
+            <strong>Contoh Pembelajaran:</strong> Peserta didik sesuai diajarkan
+            oleh guru sesuai jenis kelamin masing-masing. Peserta didik diajak
+            untuk menyentuh organ reproduksi yang ada di manekin atau alat
+            peraga lalu dijelaskan langkah-langkahnya sambil peserta didik
+            melaksanakannya. Guru menuntun dengan melihat langkah-langkah yang
+            telah dilaksanakan oleh peserta didik.
+          </p>
+          <p className="mt-2">
+            Cara membersihkan organ reproduksi diatas bersifat fleksibel,
+            maksudnya tidak hanya diajarkan pada peserta didik tingkat menengah
+            dan lanjutan, pada tingkat dasar juga bisa diajarkan sesuai dengan
+            kesiapan mental dari peserta didik tersebut.
+          </p>
+        </div>
+
+        {/* Penjelasan tentang Pembalut */}
+        <div className="text-justify mt-6">
+          <p>
+            Pembalut berfungsi untuk menyerap dan menahan darah menstruasi agar
+            tidak mengotori pakaian dan menjaga area vagina tetap kering dan
+            higienis. Pembalut juga membantu mencegah iritasi dan infeksi pada
+            area tersebut jika diganti secara rutin. Dalam menggunakan dan
+            mengganti pembalut, anak perempuan harus diajarkan dengan cara yang
+            benar.
+          </p>
+        </div>
+
+        {/* Cara Menggunakan Pembalut */}
+        <h4 className="font-semibold text-base mt-6">
+          Cara Menggunakan Pembalut
+        </h4>
+        <div className="overflow-x-auto mt-2">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <tbody>
+              {[
+                "Menyiapkan pembalut bersih",
+                "Tisu basah tanpa alkohol atau air bersih",
+                "Kantong plastik kecil (untuk pembalut bekas)",
+                "Bersihkan tangan dengan sabun dan air mengalir",
+                "Lepas pembalut bekas",
+                "Buka sisi perekat pembalut bekas dengan hati-hati",
+                "Gulung pembalut dari depan ke belakang (bagian bersih di luar)",
+                "Bersihkan area kewanitaan dari depan ke belakang menggunakan tisu basah atau air bersih dan mengalir",
+                "Keringkan dengan tisu atau handuk bersih dengan cara ditepuk-tepuk",
+                "Pasang pembalut baru (buka pembalut baru dan tempelkan pada celana dalam)",
+                "Posisi sayap dilipat ke bawah celana dalam (jika pembalutnya memiliki sayap)",
+                "Bagian tengah pembalut menutupi lubang vagina dengan sempurna",
+                "Pembalut bekas yang sudah terbungkus plastik, buang ke tempat sampah yang tertutup",
+                "Cuci tangan dengan sabun dan air mengalir agar memastikan tidak bakteri yang tertinggal",
+              ].map((step, index) => (
+                <tr key={index}>
+                  <td className="border px-2 py-1">{step}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Kebersihan Saat Menstruasi */}
+        <h4 className="font-semibold text-base mt-6">
+          Cara menjaga kebersihan saat menstruasi:
+        </h4>
+        <ol className="list-decimal list-inside space-y-1 text-justify mt-2">
+          <li>
+            Pilihlah pembalut yang bebas dari berbagai jenis bahan berbahaya dan
+            nyaman saat dipakai.
+          </li>
+          <li>
+            Ganti pembalut secara berkala, antara 3 hingga 5 kali dalam sehari
+          </li>
+          <li>
+            Bersihkan vagina terlebih dahulu sebelum mengganti pembalut.
+            (Membersihkan vagina sebaiknya dilakukan dengan air mengalir dan
+            sebaiknya hindari penggunaan sabun)
+          </li>
+          <li>
+            Cuci tangan sampai bersih setelah membuang pembalut serta sebelum
+            mengganti pembalut.
+          </li>
+          <li>
+            Rutin mengganti celana dalam (CD) untuk menghindari resiko tidak
+            nyaman di sekitar vagina.
+          </li>
+        </ol>
+        {/* Metode dan Media Tambahan */}
+        <div className="mt-6">
+          <p>
+            <strong>Metode:</strong> Simulasi
+          </p>
+          <p>
+            <strong>Media:</strong> Pembalut
+          </p>
+        </div>
+
+        {/* Contoh Pembelajaran */}
+        <div className="text-justify mt-4">
+          <p>
+            <strong>Contoh Pembelajaran:</strong> Sehari sebelum pembelajaran
+            mengganti pembalut disimulasikan, guru menginstruksikan peserta
+            didik untuk membawa pembalut dari rumah dengan berkoordinasi bersama
+            orang tua untuk menjelaskan materi yang berkaitan dengan fungsi
+            peserta didik membawa pembalut. Guru perempuan menuntut peserta
+            didik perempuan untuk mengikuti langkah-langkah mengganti pembalut.
+            Lalu bagi peserta didik perempuan yang menstruasi diminta untuk
+            memberikan umpan baliknya setelah mempraktikkannya langsung.
+          </p>
+        </div>
+
+        {/* Topik 2.3: Jenjang LANJUTAN */}
+        <h4 className="font-semibold text-base mt-6">
+          Topik 2.3: Jenjang LANJUTAN
+        </h4>
+        <p className="text-justify mt-2">
+          Pada jenjang <strong>LANJUTAN</strong>, bagian organ reproduksi
+          diajarkan kepada peserta didik dengan hambatan penglihatan. Dengan
+          mengajarkan organ reproduksi tersebut, anak diharapkan tahu akan
+          bagian-bagian reproduksi yang dimilikinya.
+        </p>
+
+        {/* Tabel Organ Reproduksi Laki-laki */}
+        <div className="overflow-x-auto mt-4">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border px-2 py-1" colSpan={2}>
+                  Laki-Laki
+                </th>
+              </tr>
+              <tr>
+                <th className="border px-2 py-1 w-1/2">Organ Reproduksi</th>
+                <th className="border px-2 py-1 w-1/2">
+                  Fungsi Organ Reproduksi
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Penis", "Saluran yang menyalurkan sperma kepada vagina"],
+                [
+                  "Skrotum",
+                  "Kantong kulit khusus yang melindungi testis dan epididimis dari cedera fisik dan merupakan pengatur suhu testis",
+                ],
+                ["Testis", "Memproduksi sperma dan hormon testosteron"],
+                ["Epididimis", "Menyimpan dan mematangkan sperma dari testis"],
+                [
+                  "Vas Deferens",
+                  "Mengangkut sperma dari epididimis ke uretra saat ejakulasi",
+                ],
+                [
+                  "Vesikula Seminalis",
+                  "Kelenjar penghasil cairan kaya fruktosa yang membentuk 60% air mani",
+                ],
+                [
+                  "Ductus Ejakulatorius",
+                  "Membawa spermatozoa dari vas deferens menuju ke basis prostat",
+                ],
+                [
+                  "Glandula Prostatica",
+                  "Mengeluarkan cairan basa yang menetralkan sekresi vagina yang asam, dan menjaga sperma tetap berada dalam vagina pada saat penis dikeluarkan",
+                ],
+                [
+                  "Glandula Bulbourethralis",
+                  "Mengeluarkan mucus untuk pelumasan",
+                ],
+              ].map(([organ, fungsi], i) => (
+                <tr key={i}>
+                  <td className="border px-2 py-1 align-top">{organ}</td>
+                  <td className="border px-2 py-1 text-justify">{fungsi}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Tabel Organ Reproduksi Perempuan */}
+        <div className="overflow-x-auto mt-6">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border px-2 py-1" colSpan={2}>
+                  Perempuan
+                </th>
+              </tr>
+              <tr>
+                <th className="border px-2 py-1 w-1/2">Organ Reproduksi</th>
+                <th className="border px-2 py-1 w-1/2">
+                  Fungsi Organ Reproduksi
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                [
+                  "Glandula Vestibularis Mayor",
+                  "Melubrikasi bagian distal vagina",
+                ],
+                [
+                  "Glandula Vestibularis Minor",
+                  "Mengeluarkan lendir untuk melembabkan vestibulum vagina dan labium pudendi",
+                ],
+                [
+                  "Vagina",
+                  "Organ kopulasi, jalan lahir dan menjadi duktus ekskretorius darah menstruasi",
+                ],
+                [
+                  "Tuba Uterine",
+                  "Membawa ovum dari ovarium ke kavum uteri dan mengalirkan spermatozoa dalam arah berlawanan dan tempat terjadinya fertilisasi",
+                ],
+                [
+                  "Uterus",
+                  "Tempat ovum yang telah dibuahi secara normal tertanam dan tempat normal dimana organ selanjutnya tumbuh dan mendapat makanan sampai bayi lahir",
+                ],
+                ["Ovarium", "Organ eksokrin dan endokrin"],
+              ].map(([organ, fungsi], i) => (
+                <tr key={i}>
+                  <td className="border px-2 py-1 align-top">{organ}</td>
+                  <td className="border px-2 py-1 text-justify">{fungsi}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Metode & Media Penutup */}
+        <div className="mt-6">
+          <p>
+            <strong>Metode:</strong> Ceramah, Diskusi dan Tanya Jawab
+          </p>
+          <p>
+            <strong>Media:</strong> Alat Peraga Organ Reproduksi
+          </p>
+        </div>
+        {/* Gambar Ulang Alat Peraga */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="text-center">
+            <img
+              src="/images/manekin_perempuan.png"
+              alt="Alat Peraga Perempuan"
+              className="mx-auto w-[200px]"
+            />
+            <p className="text-sm mt-2">
+              contoh alat peraga organ reproduksi perempuan
+            </p>
+          </div>
+          <div className="text-center">
+            <img
+              src="/images/manekin_laki.png"
+              alt="Alat Peraga Laki-Laki"
+              className="mx-auto w-[200px]"
+            />
+            <p className="text-sm mt-2">
+              contoh alat peraga organ reproduksi laki-laki
+            </p>
+          </div>
+        </div>
+
+        {/* Contoh Pembelajaran */}
+        <div className="text-justify mt-6">
+          <p>
+            <strong>Contoh Pembelajaran:</strong> Guru menjelaskan masing-masing
+            organ reproduksi, lalu membantu peserta didik dengan menyentuh organ
+            reproduksi yang disebutkan kepada alat peraga organ reproduksi yang
+            ada.
+          </p>
+        </div>
+
+        {/* Topik 2.4 */}
+        <h4 className="font-semibold text-base mt-6">
+          Topik 2.4: jenjang LANJUTAN
+        </h4>
+        <p className="text-justify mt-2">
+          Dalam menjaga kesehatan reproduksi, anak juga harus dikenalkan
+          berbagai macam masalah kesehatan yang akan muncul pada reproduksi
+          manusia. Masalah kesehatan ini merupakan konsekuensi terhadap apa yang
+          dilakukan anak: ketika tidak menjaga kesehatan reproduksi dengan baik
+          dan benar. Ada beberapa jenis masalah kesehatan reproduksi pada
+          laki-laki dan perempuan serta dampak saat tidak menjaga kesehatan
+          organ reproduksi, diantaranya:
+        </p>
+
+        {/* Tabel Masalah Reproduksi */}
+        <div className="overflow-x-auto mt-4">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border px-2 py-1 w-1/2">
+                  Masalah Kesehatan Reproduksi Laki-Laki
+                </th>
+                <th className="border px-2 py-1 w-1/2">
+                  Masalah Kesehatan Reproduksi Perempuan
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Masalah Kesuburan:</strong> Masalah ini terjadi karena
+                  jumlah sperma yang tidak memadai. Biasanya disebabkan oleh
+                  gangguan hormon, testis, efek samping obat, atau faktor
+                  genetik.
+                </td>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Gangguan menstruasi:</strong> Tidak terjadinya
+                  menstruasi sampai umur 17 tahun dan/atau menstruasi tidak
+                  terjadi selama 3–6 bulan.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Disfungsi Seksual:</strong> Bentuknya bisa disfungsi
+                  ereksi, ejakulasi dini, dan libido rendah.
+                </td>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Kanker Serviks:</strong> Sel-sel kanker tumbuh di
+                  lapisan epitel serviks.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Kanker Prostat dan Testis:</strong> Umumnya karena
+                  faktor genetika.
+                </td>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Kanker Ovarium:</strong> Gejalanya nyeri perut bawah,
+                  pendarahan abnormal, gangguan pencernaan.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Gangguan Prostat:</strong> Umumnya menyerang pria
+                  lanjut usia.
+                </td>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Endometriosis:</strong> Tumbuhnya jaringan endometrium
+                  di luar uterus, gejalanya nyeri haid, sakit pinggang, dan
+                  nyeri saat menstruasi.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Gangguan Testis:</strong> Testis tidak turun ke
+                  skrotum.
+                </td>
+                <td
+                  className="border px-2 py-1 text-justify align-top"
+                  rowSpan={2}
+                >
+                  <strong>Keputihan:</strong> Kondisi normal yang terbagi 2:
+                  <br />
+                  <em>1. Fisiologis:</em> cairan bening/putih encer, tidak
+                  berbau dan tidak gatal.
+                  <br />
+                  <em>2. Patologis:</em> cairan kuning/hijau, kental, berbau
+                  amis atau busuk, menyebabkan gatal dan perih.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Varikokel:</strong> Pelebaran pembuluh vena di sekitar
+                  testis.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  <strong>Hidrokel:</strong> Penumpukan cairan di sekitar testis
+                  yang berbahaya.
+                </td>
+                <td className="border px-2 py-1"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Metode dan Contoh Pembelajaran */}
+        <div className="mt-6">
+          <p>
+            <strong>Metode:</strong> Ceramah, Diskusi dan Tanya Jawab
+          </p>
+          <p>
+            <strong>Media:</strong> -
+          </p>
+        </div>
+        <div className="text-justify mt-2">
+          <p>
+            <strong>Contoh Pembelajaran:</strong> Peserta didik diberikan
+            penjelasan seputar masalah pada organ reproduksi, lalu guru membuka
+            sesi tanya jawab dengan cara mendiskusikannya bersama-sama di dalam
+            kelas.
+          </p>
+        </div>
+
+        {/* Topik 2.5 */}
+        <h4 className="font-semibold text-base mt-6">
+          Topik 2.5: jenjang LANJUTAN
+        </h4>
+        <p className="text-justify mt-2">
+          Selain masalah kesehatan organ reproduksi yang disebutkan pada topik
+          2.4 sebelumnya. Organ reproduksi juga bisa terserang berbagai penyakit
+          yang berbahaya dikarenakan tidak menjaga kebersihan dan memiliki
+          pergaulan yang tidak sehat. Berikut beberapa penyakit yang dapat
+          menyerang organ reproduksi manusia:
+        </p>
+        {/* Tabel Penyakit Organ Reproduksi */}
+        <div className="mt-6">
+          <div className="overflow-x-auto mt-4">
+            <table className="table-auto w-full text-sm border border-gray-400">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border px-2 py-1 w-1/2">Nama Penyakit</th>
+                  <th className="border px-2 py-1 w-1/2">Gejala</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border px-2 py-1">
+                    Gonorrhea (Kencing Nanah)
+                  </td>
+                  <td className="border px-2 py-1 text-justify">
+                    Disebabkan oleh bakteri Neisseria Gonorrhoeae dan ditularkan
+                    melalui hubungan seksual. Timbul radang organ reproduksi,
+                    nyeri saat buang air kecil, dan keluar cairan seperti nanah
+                    dari penis atau vagina.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border px-2 py-1">Sifilis</td>
+                  <td className="border px-2 py-1 text-justify">
+                    Disebabkan oleh bakteri Treponema Pallidum. Gejala muncul
+                    berupa luka tidak nyeri (primer), ruam kulit (sekunder), dan
+                    bisa merusak organ (tersier).
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border px-2 py-1">Herpes Genital</td>
+                  <td className="border px-2 py-1 text-justify">
+                    Disebabkan oleh virus Herpes Simpleks Tipe 2. Luka melepuh
+                    di area genital, terasa nyeri dan gatal.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border px-2 py-1">HIV/AIDS</td>
+                  <td className="border px-2 py-1 text-justify">
+                    Menyerang sistem kekebalan tubuh. Menular lewat cairan tubuh
+                    seperti darah, ASI, dan cairan kelamin. Sampai saat ini
+                    belum ada obat yang menyembuhkan.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border px-2 py-1">
+                    HPV (Human Papillomavirus)
+                  </td>
+                  <td className="border px-2 py-1 text-justify">
+                    Menyebabkan kutil kelamin. Beberapa jenis virus ini bisa
+                    menyebabkan kanker serviks atau anus.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Metode dan Media */}
+        <div className="mt-4 mb-10">
+          <p>
+            <strong>Metode:</strong> Ceramah, Tanya Jawab, dan Diskusi
+          </p>
+          <p>
+            <strong>Media:</strong> -
+          </p>
+        </div>
       </section>
+
+      <section id="topik3" className="max-w-5xl mx-auto space-y-6 mt-10">
+        <h3 className="font-semibold mt-6 text-lg">
+          Topik 3. (Perilaku Seksual)
+        </h3>
+        <p className="text-justify">
+          Topik yang sesuai untuk jenjang <strong>LANJUTAN</strong> ini
+          merupakan topik yang sangat penting untuk peserta didik remaja.
+          Perilaku seksual remaja merupakan fenomena yang kompleks dan
+          dipengaruhi oleh banyak faktor, seperti perubahan fisik, emosi, teman
+          sebaya, dan media.
+        </p>
+        <p className="text-justify">
+          Peserta didik yang menginjak masa remaja sering kali terdorong untuk
+          mencari informasi tentang hubungan dan seksualitas. Oleh karena itu,
+          penting bagi guru untuk memberikan pemahaman yang tepat agar peserta
+          didik dapat membuat keputusan yang bertanggung jawab dan sehat.
+        </p>
+        <p className="text-justify">
+          Salah satu bentuk hubungan romantis yang umum pada remaja adalah
+          “pacaran”. Dalam masa ini, mereka mulai belajar tentang cinta,
+          komitmen, dan konsekuensi dari tindakan mereka. Orang tua dan guru
+          harus mendampingi proses ini dengan pendekatan yang terbuka dan
+          informatif.
+        </p>
+        <p className="text-justify">
+          Ada berbagai bentuk perilaku seksual yang muncul dalam kehidupan
+          sehari-hari remaja, seperti berfantasi, berpegangan tangan, berciuman,
+          berpelukan, masturbasi, petting, hingga hubungan seksual. Berikut ini
+          adalah beberapa contoh perilaku seksual dan dampaknya:
+        </p>
+
+        {/* Tabel Perilaku Seksual */}
+        <div className="overflow-x-auto mt-4">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border px-2 py-1">Bentuk Perilaku</th>
+                <th className="border px-2 py-1">Definisi</th>
+                <th className="border px-2 py-1">Dampak Negatif</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border px-2 py-1">Berfantasi / Berimajinasi</td>
+                <td className="border px-2 py-1 text-justify">
+                  Penciptaan sebuah imajinasi yang melibatkan aktivitas seksual
+                  dalam pikiran seseorang. Proses ini terjadi secara spontan dan
+                  dapat mempengaruhi keinginan perilaku seksual individu.
+                </td>
+                <td className="border px-2 py-1 text-justify">
+                  <ol className="list-decimal list-inside space-y-1 text-left mt-2">
+                    <li>
+                      Dapat memicu ekspektasi yang tidak realistis terhadap
+                      hubungan
+                    </li>
+                    <li>Menimbulkan kecemasan dan tekanan sosial</li>
+                    <li>Mengganggu fokus pendidikan dan pengembangan diri.</li>
+                  </ol>
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">Berpegangan Tangan</td>
+                <td className="border px-2 py-1 text-justify">
+                  Kontak fisik ringan yang menunjukkan afeksi atau kedekatan
+                  emosional.
+                </td>
+                <td className="border px-2 py-1 text-justify">
+                  Bila tidak dibatasi, bisa berkembang menjadi perilaku seksual
+                  yang lebih jauh.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">Berciuman</td>
+                <td className="border px-2 py-1 text-justify">
+                  Kontak bibir sebagai bentuk afeksi romantis yang dapat
+                  menimbulkan rangsangan seksual.
+                </td>
+                <td className="border px-2 py-1 text-justify">
+                  Dapat memicu keinginan melakukan aktivitas seksual lainnya
+                  jika tidak dikontrol.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">Masturbasi</td>
+                <td className="border px-2 py-1 text-justify">
+                  Aktivitas seksual yang dilakukan sendiri untuk mendapatkan
+                  kepuasan seksual.
+                </td>
+                <td className="border px-2 py-1 text-justify">
+                  Jika berlebihan dapat mengganggu konsentrasi belajar dan
+                  kontrol diri.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">Petting</td>
+                <td className="border px-2 py-1 text-justify">
+                  Sentuhan seksual di luar hubungan seksual penetratif.
+                </td>
+                <td className="border px-2 py-1 text-justify">
+                  Meningkatkan risiko kehamilan meskipun tanpa penetrasi dan
+                  mendorong perilaku seksual lebih jauh.
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">Hubungan Seksual</td>
+                <td className="border px-2 py-1 text-justify">
+                  Aktivitas seksual dengan penetrasi. Biasanya mengandung risiko
+                  tinggi terutama jika dilakukan di luar pernikahan.
+                </td>
+                <td className="border px-2 py-1 text-justify">
+                  Kehamilan tidak diinginkan, penyakit menular seksual, dan
+                  gangguan psikologis.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Footer */}
       <div className="flex justify-end items-center px-6 py-2 text-sm text-orange-300 mt-16">
         <span className="mr-2">3</span>
