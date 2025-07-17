@@ -8,13 +8,25 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+interface SignUpData {
+    nama?: string;
+    phone?: string;
+    sekolah?: string;
+    kota?: string;
+    kecamatan?: string;
+    provinsi?: string;
+    tempat_lahir?: string;
+    tanggal_lahir?: string;
+    jabatan?: string;
+    jenis_kelamin?: string;
+    user_uid?: string;
+    email?: string;
+}
 export function SignUpForm({
-  className,
-  ...props
 }: React.ComponentPropsWithoutRef<"div">) {
   const datauser: SignUpData = {
     nama: "",
-    gelar: "",
+    phone: "",
     sekolah: "",
     kota: "",
     kecamatan: "",
@@ -59,7 +71,7 @@ export function SignUpForm({
     }
 
     try {
-      const { error,data } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signUp({
         email,
         password,
       });
@@ -81,7 +93,7 @@ export function SignUpForm({
     const supabase = createClient();
     
     try {
-      const { data: insertData, error } = await supabase
+      const { error } = await supabase
         .from('userdata')
         .insert(formData);
 
@@ -138,7 +150,7 @@ export function SignUpForm({
 
         {/* 2 columns for additional fields */}
         <div className="grid gap-2">
-          <Label htmlFor="nama">Nama</Label>
+          <Label htmlFor="nama">Nama Beserta Gelar</Label>
           <Input
             id="nama"
             type="text"
@@ -149,11 +161,11 @@ export function SignUpForm({
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="gelar">Gelar</Label>
+          <Label htmlFor="phone">Nomor Telephone</Label>
           <Input
-            id="gelar"
-            type="text"
-            value={formData.gelar}
+            id="phone"
+            type="number"
+            value={formData.phone}
             onChange={handleChange}
           />
         </div>

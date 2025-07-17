@@ -6,6 +6,7 @@ import SidebarLeft from "@/components/navbar";
 import SidebarRight from "@/components/sidebar";
 import WhatsAppButton from "@/components/whatsapp";
 import { createClient } from "@/lib/supabase/client"; // client-side
+import PopupText from "@/components/popup-text";
 
 export default function ModuleLayout({
   children,
@@ -22,8 +23,19 @@ export default function ModuleLayout({
     supabase.auth.getUser().then(({ data, error }) => {
       if (error || !data.user) {
         router.push("/auth/login");
-      } else {
-        setIsAuthenticated(true);
+      } else {        
+        supabase
+          .from("userdata")
+          .select("pretest_score")
+          .eq("email", data.user.email)
+          .single()
+          .then(({ data: userData, error: userError }) => {
+            if (userError || !userData.pretest_score) {
+              setIsAuthenticated(false);
+            } else {
+              setIsAuthenticated(true);
+            }
+          });
       }
     });
   }, [router]);
@@ -37,7 +49,11 @@ export default function ModuleLayout({
   }, []);
 
   if (isAuthenticated === null) {
-    return <div className="p-10">Loading...</div>; // Atau loading spinner
+    return <div className=" min-h-svh p-10">Loading...</div>
+  } else if (!isAuthenticated) {  
+    return <div className="min-h-[60vh]">
+    <PopupText url="/pretest" message="Kerjakan Pre-test terlebih dahulu untuk mengakses modul" buttonText="Kerjakan Sekarang"/>
+    </div>
   }
 
   return (
@@ -54,7 +70,7 @@ export default function ModuleLayout({
       <div className="flex-1 flex flex-col md:flex-row relative">
         <div
           className={`
-            fixed md:static top-0 left-0 min-h-full z-40 bg-white p-4 border-r shadow-lg
+            fixed md:static top-0 left-0 min-h-full z-40 bg-white pt-4 pl-4
             transform transition-transform duration-300 ease-in-out
             ${showSidebar ? "translate-x-0" : "-translate-x-full"}
             md:translate-x-0 md:basis-1/5 shrink-0
