@@ -54,7 +54,7 @@ export default function ModuleLayout({
       <div className="flex-1 flex flex-col md:flex-row relative">
         <div
           className={`
-            fixed md:static top-0 left-0 min-h-full z-40 bg-white p-4 border-r shadow-lg
+            fixed md:static top-0 left-0 min-h-full z-40 bg-white pt-4 pl-4
             transform transition-transform duration-300 ease-in-out
             ${showSidebar ? "translate-x-0" : "-translate-x-full"}
             md:translate-x-0 md:basis-1/5 shrink-0

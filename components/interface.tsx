@@ -12,3 +12,4 @@ interface SignUpData {
     user_uid?: string;
     email?: string;
 }
+
