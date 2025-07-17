@@ -109,6 +109,31 @@ const Bab1 = () => {
             </li>
           </ol>
         </section>
+        <section id="referensi-bab1" className="mt-16 mb-10">
+          <h3 className="text-lg font-bold text-center mb-6">REFERENSI</h3>
+          <div className="space-y-4">
+            <p className="text-justify">
+              Hosni. (2016) <em>Pendidikan Anak Tunanetra</em>. Departemen
+              Pendidikan Dan Kebudayaan Direktorat Jendral Pendidikan Tinggi
+              Proyek Pendidikan Tenaga Guru.
+            </p>
+            <p className="text-justify">
+              Hallahan, D. P., Kauffman, J. M., & Pullen, P., C. (2018).{" "}
+              <em>
+                Exceptional learners: An introduction to special education
+              </em>
+              . Pearson.
+            </p>
+            <p className="text-justify">
+              Kirk, S., Gallagher, J., & Coleman, M., R. (2015).{" "}
+              <em>Educating exceptional children</em>. Cengage learning.
+            </p>
+            <p className="text-justify">
+              Westling, D., L., Fox, L., & Carter, E., W. (2015).{" "}
+              <em>Teaching student with severe disabilities</em>. Pearson.
+            </p>
+          </div>
+        </section>
       </section>
       {/* Footer */}
       <div className="flex justify-end items-center px-6 py-2 text-sm text-orange-300">

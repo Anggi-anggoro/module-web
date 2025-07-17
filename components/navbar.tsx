@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
 import Link from "next/link";
+import { ScrollToId } from "./utils";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -18,57 +19,57 @@ const Navbar = () => {
   const chapters = [
     {
       id: "bab1",
-      title: "Bab 1. Anak Dengan Hambatan Penglihatan",      
+      title: "Bab 1. Anak Dengan Hambatan Penglihatan",
       subChapters: [
         {
           id: "pengertian-anak-dengan-hambatan-penglihatan",
           title: "Pengertian Anak Dengan Hambatan Penglihatan",
         },
         {
-          id: "Klasifikasi-anak-dengan-hambatan-penglihatan",
+          id: "klasifikasi-anak-dengan-hambatan-penglihatan",
           title: "Klasifikasi anak dengan hambatan-penglihatan",
         },
         {
-          id: "Karakteristik Anak Dengan Hambatan Penglihatan",
+          id: "karakteristik Anak Dengan Hambatan Penglihatan",
           title: "Karakteristik Anak Dengan Hambatan Penglihatan",
         },
       ],
     },
     {
       id: "bab2",
-      title: "Bab 2. Pendidikan Seksual",      
+      title: "Bab 2. Pendidikan Seksual",
       subChapters: [],
     },
   ];
 
-const filteredChapters = chapters
-  .map((chapter) => {
-    const chapterMatches = chapter.title.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredChapters = chapters
+    .map((chapter) => {
+      const chapterMatches = chapter.title
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
 
-    // If chapter matches, keep all subchapters
-    if (chapterMatches) {
-      return chapter;
-    }
+      // If chapter matches, keep all subchapters
+      if (chapterMatches) {
+        return chapter;
+      }
 
-    // If not, filter subchapters
-    const filteredSubChapters = chapter.subChapters.filter((sub) =>
-      sub.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+      // If not, filter subchapters
+      const filteredSubChapters = chapter.subChapters.filter((sub) =>
+        sub.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
-    // Only return chapter if it has matching subchapters
-    if (filteredSubChapters.length > 0) {
-      return {
-        ...chapter,
-        subChapters: filteredSubChapters,
-      };
-    }
+      // Only return chapter if it has matching subchapters
+      if (filteredSubChapters.length > 0) {
+        return {
+          ...chapter,
+          subChapters: filteredSubChapters,
+        };
+      }
 
-    // Return null if no matches found
-    return null;
-  })
-  .filter(chapter => chapter !== null); // Remove null entries
-
-
+      // Return null if no matches found
+      return null;
+    })
+    .filter((chapter) => chapter !== null); // Remove null entries
 
   return (
     <aside className="sticky top-3 py-4 px-3 overflow-y-auto text-sm z-20 border-2 border-orange-400 rounded-md bg-orange-100">
@@ -97,12 +98,12 @@ const filteredChapters = chapters
         {filteredChapters.map((chapter) => (
           <li key={chapter.id}>
             <div className="flex items-start justify-between">
-              <Link
-                href={`#${chapter.id}`}
+              <button
+                onClick={() => toggleChapter(chapter.id)}
                 className="font-medium hover:underline"
               >
                 {chapter.title}
-              </Link>
+              </button>
               {chapter.subChapters.length > 0 && (
                 <button
                   onClick={() => toggleChapter(chapter.id)}
@@ -123,6 +124,7 @@ const filteredChapters = chapters
                 {chapter.subChapters.map((sub) => (
                   <li className="list-decimal ml-3" key={sub.id}>
                     <Link
+                      onClick={(e) => ScrollToId(sub.id, e)}
                       href={`#${sub.id}`}
                       className="hover:underline block text-sm"
                     >
