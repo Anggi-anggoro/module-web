@@ -12,9 +12,9 @@ export default function PreTestPage() {
     const [email, setEmail] = useState('');
 
     const router = useRouter();
-    const supabase = createClient();
-
+    
     useEffect(() => {
+        const supabase = createClient();
         supabase.auth.getUser().then(({ data, error }) => {
             if (error || !data.user || !data.user.email) {
                 router.push("/auth/login");
@@ -161,7 +161,8 @@ export default function PreTestPage() {
             }
         });
         setScore(correctCount);
-        setShowResults(true);        
+        setShowResults(true);     
+        const supabase = createClient();   
         const { data, error } = await supabase
             .from('userdata')
             .update({ pretest_score : correctCount*10 })
@@ -194,7 +195,7 @@ export default function PreTestPage() {
     const getScoreMessage = () => {
         const percentage = (score / questions.length) * 100;
         if (percentage >= 80) return 'Luar biasa! Anda memiliki pemahaman yang kuat tentang konsep Pendidikan Seksual.'
-        if (percentage >= 60) 'Kerja bagus! Anda sudah memahami dasar-dasarnya, namun masih ada ruang untuk peningkatan.'
+        if (percentage >= 60) return 'Kerja bagus! Anda sudah memahami dasar-dasarnya, namun masih ada ruang untuk peningkatan.'
         return 'Terus belajar! Tinjau kembali konsepnya dan coba lagi.'
     };
 
