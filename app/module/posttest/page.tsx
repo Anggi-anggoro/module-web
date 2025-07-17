@@ -1,16 +1,27 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckCircle, XCircle, Award, RefreshCw } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import { createClient } from "@/lib/supabase/client"; // client-side
+import { useRouter } from 'next/navigation';
 
 export default function PreTestPage() {
     const [answers, setAnswers] = useState<Record<number, string>>({});
     const [showResults, setShowResults] = useState(false);
-    const [score, setScore] = useState(0);    
+    const [score, setScore] = useState(0);
     const [email, setEmail] = useState('');
-    
-    const supabase = createClient();
+    const router = useRouter();
+
+    useEffect(() => {
+        const supabase = createClient();
+        supabase.auth.getUser().then(({ data, error }) => {
+            if (error || !data.user || !data.user.email) {
+
+            } else {
+
+                setEmail(data.user.email);
+            }
+        });
+    }, [router]);
 
     interface Question {
         id: number;
@@ -147,14 +158,15 @@ export default function PreTestPage() {
             }
         });
         setScore(correctCount);
-        setShowResults(true);        
+        setShowResults(true);
+        const supabase = createClient();
         const { data, error } = await supabase
             .from('userdata')
-            .update({ pretest_score : correctCount*10 })
+            .update({ pretest_score: correctCount * 10 })
             .eq('email', email)
             .select()
 
-        
+
         if (error) {
             console.error('Update error:', error)
             return { success: false, error }
@@ -168,7 +180,7 @@ export default function PreTestPage() {
         setAnswers({});
         setShowResults(false);
         setScore(0);
-    };
+    }
 
     const getScoreColor = () => {
         const percentage = (score / questions.length) * 100;
@@ -180,7 +192,7 @@ export default function PreTestPage() {
     const getScoreMessage = () => {
         const percentage = (score / questions.length) * 100;
         if (percentage >= 80) return 'Luar biasa! Anda memiliki pemahaman yang kuat tentang konsep Pendidikan Seksual.'
-        if (percentage >= 60) 'Kerja bagus! Anda sudah memahami dasar-dasarnya, namun masih ada ruang untuk peningkatan.'
+        if (percentage >= 60) return 'Kerja bagus! Anda sudah memahami dasar-dasarnya, namun masih ada ruang untuk peningkatan.'
         return 'Terus belajar! Tinjau kembali konsepnya dan coba lagi.'
     };
 
