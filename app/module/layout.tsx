@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import SidebarLeft from "@/components/navbar";
 import SidebarRight from "@/components/sidebar";
-import WhatsAppButton from "@/components/whatsapp";
 import { createClient } from "@/lib/supabase/client"; // client-side
 import PopupText from "@/components/popup-text";
 
@@ -93,9 +92,7 @@ export default function ModuleLayout({
         <div className="hidden md:block md:basis-1/5 p-4 bg-orange-50 border-l shrink-0">
           <SidebarRight />
         </div>
-      </div>
-
-      <WhatsAppButton />
+      </div>      
     </div>
   );
 }

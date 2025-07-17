@@ -1,15 +1,40 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
 import Link from "next/link";
 import { ScrollToId } from "./utils";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isPostTest, setIsPostTest] = useState<boolean | null>(false);
   const [openChapters, setOpenChapters] = useState<{ [key: string]: boolean }>(
     {}
   );
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (error || !data.user || !data.user.email) {
+      } else {
+        supabase
+          .from("userdata")
+          .select("posttest_score")
+          .eq("email", data.user.email)
+          .single()
+          .then(({ data: userData, error: userError }) => {
+            if (userError || !userData.posttest_score) {
+              setIsPostTest(false);
+            } else {
+              setIsPostTest(true);
+            }
+          });
+      }
+    });
+  }, [router]);
 
   const toggleSearch = () => setShowSearch((prev) => !prev);
   const toggleChapter = (id: string) => {
@@ -30,7 +55,7 @@ const Navbar = () => {
           title: "Klasifikasi anak dengan hambatan-penglihatan",
         },
         {
-          id: "karakteristik Anak Dengan Hambatan Penglihatan",
+          id: "karakteristik-anak-dengan-hambatan-penglihatan",
           title: "Karakteristik Anak Dengan Hambatan Penglihatan",
         },
       ],
@@ -38,7 +63,64 @@ const Navbar = () => {
     {
       id: "bab2",
       title: "Bab 2. Pendidikan Seksual",
-      subChapters: [],
+      subChapters: [
+        {
+          id: "tujuan-pembelajaran",
+          title: "Tujuan Pembelajaran",
+        },
+        {
+          id: "definisi-pendidikan-seksual",
+          title: "Definisi Pendidikan Seksual",
+        },
+        {
+          id: "sasaran-jenjang-pembelajaran",
+          title: "Sasaran Jenjang Pembelajaran Pendidikan Seksual",
+        },
+        {
+          id: "metode-dan-perencanaan-pembelajaran",
+          title: "Metode dan Perencanaan Pembelajaran Pendidikan Seksual",
+        },
+        {
+          id: "media-pembelajaran",
+          title: "Media Pembelajaran",
+        }
+      ],
+    },
+    {
+      id: "bab3",
+      title: "Bab 3. Materi Pendidikan Seksual",
+      subChapters: [
+        {
+          id: "tujuan-materi-pendidikan-seksual",
+          title: "Tujuan Pembelajaran",
+        },
+        {
+          id: "bagimana-bentuk-tubuhku",
+          title: "Bagaimana Bentuk Tubuhku?",
+        },
+        {
+          id: "ayo-jaga-kesehatan-reproduksi",
+          title: "Ayo Jaga Kesehatan Reproduksi!",
+        },
+        {
+          id: "perilaku-seksual",
+          title: "Perilaku Seksual",
+        },
+        {
+          id: "pergaulanku-pergaulan-sehat",
+          title: "Pergaulanku, Pergaulan Sehat",
+        },
+      ],
+    },
+    {
+      id: "bab4",
+      title: "Bab 4. Evaluasi Pembelajaran",
+      subChapters: [
+        {
+          id: "tujuan-evaluasi-pembelajaran",
+          title: "Tujuan Pembelajaran",
+        },
+      ],
     },
   ];
 
@@ -95,46 +177,48 @@ const Navbar = () => {
       )}
 
       <ul className="space-y-2">
-        {filteredChapters.map((chapter) => (
-          <li key={chapter.id}>
-            <div className="flex items-start justify-between">
-              <button
-                onClick={() => toggleChapter(chapter.id)}
-                className="font-medium hover:underline"
-              >
-                {chapter.title}
-              </button>
-              {chapter.subChapters.length > 0 && (
+        {filteredChapters.map((chapter, index) => (
+          (index <= 2 || isPostTest) && (
+            <li key={chapter.id}>
+              <div className="flex items-start justify-between">
                 <button
                   onClick={() => toggleChapter(chapter.id)}
-                  className="ml-2"
+                  className="font-medium hover:underline text-left"
                 >
-                  {openChapters[chapter.id] ? (
-                    <ChevronDown size={20} />
-                  ) : (
-                    <ChevronRight size={20} />
-                  )}
+                  {chapter.title}
                 </button>
-              )}
-            </div>
+                {chapter.subChapters.length > 0 && (
+                  <button
+                    onClick={() => toggleChapter(chapter.id)}
+                    className="ml-2"
+                  >
+                    {openChapters[chapter.id] ? (
+                      <ChevronDown size={20} />
+                    ) : (
+                      <ChevronRight size={20} />
+                    )}
+                  </button>
+                )}
+              </div>
 
-            {/* Subchapters */}
-            {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
-              <ul className="pl-4 mt-1 space-y-1 text-gray-700">
-                {chapter.subChapters.map((sub) => (
-                  <li className="list-decimal ml-3" key={sub.id}>
-                    <Link
-                      onClick={(e) => ScrollToId(sub.id, e)}
-                      href={`#${sub.id}`}
-                      className="hover:underline block text-sm"
-                    >
-                      {sub.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+              {/* Subchapters */}
+              {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
+                <ul className="pl-4 mt-1 space-y-1 text-gray-700">
+                  {chapter.subChapters.map((sub) => (
+                    <li className="list-disc ml-3" key={sub.id}>
+                      <Link
+                        onClick={(e) => ScrollToId(sub.id, e)}
+                        href={`#${sub.id}`}
+                        className="hover:underline block text-sm"
+                      >
+                        {sub.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          )
         ))}
       </ul>
     </aside>

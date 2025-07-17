@@ -56,9 +56,7 @@ export default function Home() {
                   <li className="mb-2 flex items-start gap-x-2">
                     <svg className="w-6 h-6 flex-shrink-0 fill-green-500 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" /></svg>Menciptakan Lingkungan Belajar yang Aman dan Mendukung</li>
                   <li className="mb-2 flex items-start gap-x-2">
-                    <svg className="w-6 h-6 flex-shrink-0 fill-green-500 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" /></svg>Menyusun Kurikulum Pendidikan Seksual yang Inklusif</li>
-                  <li className="mb-2 flex items-start gap-x-2">
-                    <svg className="w-6 h-6 flex-shrink-0 fill-green-500 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" /></svg>Meningkatkan Kolaborasi dengan Orang Tua dan Masyarakat</li>
+                    <svg className="w-6 h-6 flex-shrink-0 fill-green-500 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" /></svg>Menyusun Kurikulum Pendidikan Seksual yang Inklusif</li>                    
                 </ul>
               </div>
               <Image src={Hero} alt="hero" className="w-3/4 mb-10 mx-auto h-auto object-cover rounded-md" />
@@ -112,7 +110,7 @@ export default function Home() {
               <p id="selengkapnya">
                 Daftarkan akun Anda untuk mendapatkan akses ke modul pendidikan seksual ini. Dengan mendaftar, Anda akan mendapatkan pembaruan terbaru dan akses ke materi tambahan yang akan membantu Anda dalam mengajar pendidikan seksual kepada anak-anak.
               </p>              
-              <Link href="/auth/sign-up" className="bg-white border border-gray-300 text-gray-800 font-semibold py-2 px-4 rounded shadow hover:bg-gray-100 transition duration-300 ml-4">
+              <Link href="/auth/sign-up" className="bg-orange-100 border border-gray-300 text-gray-800 font-semibold py-2 px-4 rounded shadow-lg hover:bg-gray-100 transition duration-300 ml-4">
                 Daftar Sekarang
               </Link>
             </div>
