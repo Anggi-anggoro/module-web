@@ -18,38 +18,60 @@ const Navbar = () => {
   const chapters = [
     {
       id: "bab1",
-      title: "Bab 1. Anak Dengan Hambatan Penglihatan",
-      page: "/bab1",
+      title: "Bab 1. Anak Dengan Hambatan Penglihatan",      
       subChapters: [
         {
           id: "pengertian-anak-dengan-hambatan-penglihatan",
-          title: "A. Pengertian",
+          title: "Pengertian Anak Dengan Hambatan Penglihatan",
         },
         {
-          id: "klasifikasi-anak-dengan-hambatan-penglihatan",
-          title: "B. Klasifikasi",
+          id: "Klasifikasi-anak-dengan-hambatan-penglihatan",
+          title: "Klasifikasi anak dengan hambatan-penglihatan",
+        },
+        {
+          id: "Karakteristik Anak Dengan Hambatan Penglihatan",
+          title: "Karakteristik Anak Dengan Hambatan Penglihatan",
         },
       ],
     },
     {
       id: "bab2",
-      title: "Bab 2. Pendidikan Seksual",
-      page: "/bab2",
+      title: "Bab 2. Pendidikan Seksual",      
       subChapters: [],
     },
   ];
 
-  // Filter berdasarkan pencarian
-  const filteredChapters = chapters.filter(
-    (chapter) =>
-      chapter.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      chapter.subChapters.some((sub) =>
-        sub.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-  );
+const filteredChapters = chapters
+  .map((chapter) => {
+    const chapterMatches = chapter.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+    // If chapter matches, keep all subchapters
+    if (chapterMatches) {
+      return chapter;
+    }
+
+    // If not, filter subchapters
+    const filteredSubChapters = chapter.subChapters.filter((sub) =>
+      sub.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Only return chapter if it has matching subchapters
+    if (filteredSubChapters.length > 0) {
+      return {
+        ...chapter,
+        subChapters: filteredSubChapters,
+      };
+    }
+
+    // Return null if no matches found
+    return null;
+  })
+  .filter(chapter => chapter !== null); // Remove null entries
+
+
 
   return (
-    <aside className="bg-white sticky top-0 h-full overflow-y-auto text-sm z-20">
+    <aside className="sticky top-3 py-4 px-3 overflow-y-auto text-sm z-20 border-2 border-orange-400 rounded-md bg-orange-100">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-bold text-orange-600">📚 Navigasi Modul</h2>
         <button
@@ -74,7 +96,7 @@ const Navbar = () => {
       <ul className="space-y-2">
         {filteredChapters.map((chapter) => (
           <li key={chapter.id}>
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between">
               <Link
                 href={`#${chapter.id}`}
                 className="font-medium hover:underline"
@@ -87,9 +109,9 @@ const Navbar = () => {
                   className="ml-2"
                 >
                   {openChapters[chapter.id] ? (
-                    <ChevronDown size={16} />
+                    <ChevronDown size={20} />
                   ) : (
-                    <ChevronRight size={16} />
+                    <ChevronRight size={20} />
                   )}
                 </button>
               )}
@@ -99,7 +121,7 @@ const Navbar = () => {
             {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
               <ul className="pl-4 mt-1 space-y-1 text-gray-700">
                 {chapter.subChapters.map((sub) => (
-                  <li key={sub.id}>
+                  <li className="list-decimal ml-3" key={sub.id}>
                     <Link
                       href={`#${sub.id}`}
                       className="hover:underline block text-sm"
