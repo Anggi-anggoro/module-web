@@ -10,9 +10,16 @@ export async function AuthButton() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  return user ? (
+  const { data, error } = await supabase
+    .from('userdata') // Replace with your actual table name, e.g., 'profiles'
+    .select('nama')
+    .eq('email', user?.email)
+    .single(); // Use .single() if you expect exactly 1 result
+
+
+  return user && data ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
+      Hey, {data.nama}!
       <LogoutButton />
     </div>
   ) : (
@@ -21,7 +28,7 @@ export async function AuthButton() {
         <Link href="/auth/login">Login</Link>
       </Button>
       <Button asChild size="sm" variant={"default"}>
-        <Link href="/auth/sign-up">Daftar Sekarang</Link>
+        <Link href="/auth/sign-up">Daftar</Link>
       </Button>
     </div>
   );
