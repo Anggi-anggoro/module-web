@@ -10,7 +10,7 @@ export async function AuthButton() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from('userdata') // Replace with your actual table name, e.g., 'profiles'
     .select('nama')
     .eq('email', user?.email)

@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-// import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import Logo from "@/app/assets/logo-modified.png";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import { AuthButton } from "@/components/auth-button";
-// import { DeployButton } from "@/components/deploy-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
-import Image from "next/image";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`

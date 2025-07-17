@@ -8,9 +8,21 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+interface SignUpData {
+    nama?: string;
+    gelar?: string;
+    sekolah?: string;
+    kota?: string;
+    kecamatan?: string;
+    provinsi?: string;
+    tempat_lahir?: string;
+    tanggal_lahir?: string; // ISO 8601 format recommended: YYYY-MM-DD
+    jabatan?: string;
+    jenis_kelamin?: string;
+    user_uid?: string;
+    email?: string;
+}
 export function SignUpForm({
-  className,
-  ...props
 }: React.ComponentPropsWithoutRef<"div">) {
   const datauser: SignUpData = {
     nama: "",
@@ -59,7 +71,7 @@ export function SignUpForm({
     }
 
     try {
-      const { error,data } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signUp({
         email,
         password,
       });
@@ -81,7 +93,7 @@ export function SignUpForm({
     const supabase = createClient();
     
     try {
-      const { data: insertData, error } = await supabase
+      const { error } = await supabase
         .from('userdata')
         .insert(formData);
 
