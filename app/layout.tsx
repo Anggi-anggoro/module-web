@@ -5,6 +5,8 @@ import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
+import Logo from "@/app/assets/logo-modified.png";
+import Image from "next/image";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -35,8 +37,7 @@ export default function RootLayout({
 
             <div className="flex gap-5 items-center font-semibold text-white">
               <Link href={"/"}>
-                  <h1 className="text-4xl font-extrabold">MODIS</h1>
-                  <p className="text-xs">Modul Pendidikan Seksual</p>
+                 <Image src={Logo} alt="Logo" width={100} height={100} className="w-28" />
                 </Link>
               <div className="flex text-lg justify-between gap-x-5 ml-10">
                 <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href={"/module"}>
