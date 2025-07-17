@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import SidebarLeft from "@/components/navbar";
 import SidebarRight from "@/components/sidebar";
-import WhatsAppButton from "@/components/whatsapp";
 import { createClient } from "@/lib/supabase/client"; // client-side
 import PopupText from "@/components/popup-text";
 

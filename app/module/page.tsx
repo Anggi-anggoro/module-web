@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ModulGuruCover from "./cover"; // rename component if needed
 import Bab1 from "./1/page";
 import Bab2 from "./2/page";
@@ -9,29 +9,29 @@ import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 
 export default function ModulGabungan() {
-    const router = useRouter();
-    const [isPostTest, setIsPostTest] = useState<boolean | null>(false);
-  
-    useEffect(() => {
-      const supabase = createClient()
-      supabase.auth.getUser().then(({ data, error }) => {
-        if (error || !data.user || !data.user.email) {
-        } else {
-          supabase
-            .from("userdata")
-            .select("posttest_score")
-            .eq("email", data.user.email)
-            .single()
-            .then(({ data: userData, error: userError }) => {
-              if (userError || !userData.posttest_score) {
-                setIsPostTest(false);
-              } else {
-                setIsPostTest(true);
-              }
-            });
-        }
-      });
-    }, [router]);
+  const router = useRouter();
+  const [isPostTest, setIsPostTest] = useState<boolean | null>(false);
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (error || !data.user || !data.user.email) {
+      } else {
+        supabase
+          .from("userdata")
+          .select("posttest_score")
+          .eq("email", data.user.email)
+          .single()
+          .then(({ data: userData, error: userError }) => {
+            if (userError || !userData.posttest_score) {
+              setIsPostTest(false);
+            } else {
+              setIsPostTest(true);
+            }
+          });
+      }
+    });
+  }, [router]);
   return (
     <div className="bg-white text-black scroll-smooth">
       {/* Cover Section */}
@@ -48,22 +48,27 @@ export default function ModulGabungan() {
       </section>
 
       {/* Bab 2 */}
-      <section id="bab2" className="px-4 md:px-10 py-8 md:py-16 bg-white">
-        <Bab2 />
-      </section>
-      {isPostTest ? 
-            <section id="bab3" className="px-4 md:px-10 py-8 md:py-16 bg-white">
-              <Bab3 />
-            </section>
-      : <section className="px-4 md:px-10 py-8 md:py-16 bg-white">
+      <Suspense fallback={<div>Loading...</div>}>
+        <section id="bab2" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+          <Bab2 />
+        </section>
+      </Suspense>
+      {isPostTest ?
+        <Suspense fallback={<div>Loading...</div>}>
+
+          <section id="bab3" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+            <Bab3 />
+          </section>
+        </Suspense>
+        : <section className="px-4 md:px-10 py-8 md:py-16 bg-white">
           <h1 className="max-w-2xl mx-auto text-center">
             Anda telah menyelesaikan modul ini. Silakan kerjakan post-test untuk mendapatkan akses ke Bab Selanjutnya.
           </h1>
           <Link href={"/post-test"} className="block max-w-md mx-auto mt-6 bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded text-center">
-          Kerjakan Post-test
+            Kerjakan Post-test
           </Link>
-          </section>
-      
+        </section>
+
       }
     </div>
   );
