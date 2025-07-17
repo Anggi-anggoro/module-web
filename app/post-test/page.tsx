@@ -35,113 +35,113 @@ export default function PreTestPage() {
             id: 1,
             question: "Apa yang dimaksud dengan pendidikan seksual?",
             options: {
-                a: "Pembelajaran berhubungan badan yang mencakup semua tentang alat kelamin",
+                a: "Pendekatan komprehensif yang mencakup pembelajaran tentang aspek biologis, emosional, sosial, dan budaya dari seksualitas.",
                 b: "Pembelajaran yang bertujuan memberikan pemahaman aspek biologis, psikologis, dan sosial yang berkaitan dengan seksualitas.",
-                c: "Pembelajaran yang mendorong perilaku seksual berisiko dan menanamkan pemahamannya pada remaja",
+                c: "Pembelajaran yang mencakup informasi tentang kesehatan reproduksi, nilai-nilai moral, dan tanggung jawab dalam hubungan interpersonal.",
                 d: "Semua Benar"
-            },
-            correct: "b"
-        },
-        {
-            id: 2,
-            question: "Apa tujuan utama dari pendidikan seksual?",
-            options: {
-                a: "Untuk mendorong perilaku seksual yang tidak aman",
-                b: "Untuk mengajarkan cara berhubungan seksual",
-                c: "Untuk memberikan informasi yang benar dan mengurangi stigma",
-                d: "Untuk melarang hubungan seksual sebelum menikah"
-            },
-            correct: "c"
-        },
-        {
-            id: 3,
-            question: "Dalam penyebutan alat kelamin laki-laki, manakah yang dapat diterapkan pada anak dengan hambatan penglihatan?",
-            options: {
-                a: "Penis",
-                b: "Burung",
-                c: "Kelamin",
-                d: "Semua Benar"
-            },
-            correct: "a"
-        },
-        {
-            id: 4,
-            question: "Dibawah ini yang bagian tubuh yang tidak boleh dipegang orang lain, kecuali…",
-            options: {
-                a: "Bokong",
-                b: "Mulut",
-                c: "Dada",
-                d: "Kepala"
             },
             correct: "d"
         },
         {
-            id: 5,
-            question: "Ada berapa runtutan membersihkan alat kelamin yang anda ketahui……",
+            id: 2,
+            question: "Ada berapa metode pembelajaran dalam mengajarkan pendidikan seksual?",
             options: {
-                a: "7 (Laki-Laki) & 8 (Perempuan)",
-                b: "8 (Laki-laki) & 7 (Perempuan)",
-                c: "7 (Laki-Laki & Perempuan)",
-                d: "8 (Laki-Laki & Perempuan)"
+                a: "5",
+                b: "4",
+                c: "3",
+                d: "2"
             },
             correct: "a"
         },
         {
-            id: 6,
-            question: "Proses alami yang terjadi pada wanita, berupa keluarnya darah dari vagina secara teratur setiap bulan, disebut…",
+            id: 3,
+            question: "Ada berapa bagian tubuh yang termasuk kedalam istilah \"ADA RAHASIA DIBALIK BAJUMU!\"?",
             options: {
-                a: "Pembalut",
-                b: "Demam",
-                c: "Menstruasi",
-                d: "Vertigo"
+                a: "1",
+                b: "2",
+                c: "3",
+                d: "4"
             },
             correct: "c"
         },
         {
-            id: 7,
-            question: "Penyakit yang disebabkan oleh bakteri treponema pallidum dan ditularkan terutama melalui hubungan seksual adalah penyakit…",
+            id: 4,
+            question: "Dalam modul ini, apa media pembelajaran yang digunakan dalam mengajarkan istilah \"ADA RAHASIA DIBALIK BAJUMU!\"",
             options: {
-                a: "Sifilis",
-                b: "Herpes Genital",
-                c: "HIV/AIDS",
-                d: "Gonore"
+                a: "Buku",
+                b: "Video/Audio Youtube",
+                c: "Gambar",
+                d: "Tidak Ada"
+            },
+            correct: "b"
+        },
+        {
+            id: 5,
+            question: "Dalam membersihkan alat kelamin, kita menggunakan…",
+            options: {
+                a: "Parfum",
+                b: "Deodoran",
+                c: "Air Mengalir",
+                d: "Alokohol"
+            },
+            correct: "c"
+        },
+        {
+            id: 6,
+            question: "Berapa waktu idealnya mengganti pembalut bagi perempuan?",
+            options: {
+                a: "1-2 kali dalam sehari",
+                b: "3-5 kali dalam sehari",
+                c: "4-7 kali dalam sehari",
+                d: "1 kali sehari"
+            },
+            correct: "b"
+        },
+        {
+            id: 7,
+            question: "Penyakit yang disebabkan oleh virus herpes simpleks serotipe 2 dan ditularkan melalui hubungan seksual adalah penyakit….",
+            options: {
+                a: "Herpes Genital",
+                b: "HIV/AIDS",
+                c: "Gonore",
+                d: "Sifilis"
             },
             correct: "a"
         },
         {
             id: 8,
-            question: "Yang termasuk kedalam perilaku seksual, kecuali",
+            question: "Apa kepanjangan dari HIV…..",
             options: {
-                a: "Masturbasi",
-                b: "Berfantasi",
-                c: "Berjalan Bersama",
-                d: "Bepelukan"
+                a: "Human Intimate Virus",
+                b: "Human Intermiten Virus",
+                c: "Human Immunodeficiency Virus",
+                d: "Semua salah"
             },
             correct: "c"
         },
         {
             id: 9,
-            question: "Apakah diskusi tentang hubungan romantis dengan anak dibawah umur 10 tahun boleh dilakukan?",
+            question: "Suatu aktivitas yang mengarah pada pemusatan nafsu birahi melalui rangsangan alat kelamin dan alat vital lainnya, baik dilakukan sendiri atau orang lain hingga mencapai orgasme bagi laki-laki dan ejakulasi bagi wanita dengan berkontraksinya otot-otot secara otomatis terutama otot vagina yang kadar kontraksinya paling besar. Disebut perilaku seksual…..",
             options: {
-                a: "Boleh",
-                b: "Tidak Boleh",
-                c: "Kadang-Kadang",
-                d: "Semua Benar"
+                a: "Berfantasi",
+                b: "Masturbasi",
+                c: "Berciuman",
+                d: "Petting"
             },
             correct: "b"
         },
         {
             id: 10,
-            question: "Berapa usia ideal pubertas bagi anak laki-laki?",
+            question: "Salah satu bukan cara mengajarkan anak terhindar dari pergaulan bebas, yaitu…..",
             options: {
-                a: "8-13 Tahun",
-                b: "9-13 Tahun",
-                c: "8-14 Tahun",
-                d: "9-14 Tahun"
+                a: "Memberikan pendidikan seksual yang sesuai dengan usia dan kesiapan mental anak",
+                b: "Mengajarkan anak-anak nilai moral yang kuat",
+                c: "Mendorong anak berpartisipasi dalam kegiatan yang positif",
+                d: "Membebaskan anak berpacaran kapanpun dan dimanapun tanpa pengawasan orang tua"
             },
             correct: "d"
         }
-    ];
+    ]
 
     const handleAnswerChange = (questionId: number, selectedAnswer: string) => {
         setAnswers({
@@ -162,7 +162,7 @@ export default function PreTestPage() {
         const supabase = createClient();
         const { data, error } = await supabase
             .from('userdata')
-            .update({ pretest_score: correctCount * 10 })
+            .update({ posttest_score: correctCount * 10 })
             .eq('email', email)
             .select()
 

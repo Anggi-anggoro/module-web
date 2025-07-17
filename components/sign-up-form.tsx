@@ -161,7 +161,7 @@ export function SignUpForm({
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="phone">Nomor Telephone</Label>
+          <Label htmlFor="phone">Nomor Telepon</Label>
           <Input
             id="phone"
             type="number"

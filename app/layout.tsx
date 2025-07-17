@@ -32,11 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 bg-[#F99452] rounded-b-lg shadow-md">
+        <nav className="w-full flex justify-center h-16 bg-[#F99452] rounded-b-lg shadow-md ">
           <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm text-white">
 
             <div className="flex gap-5 items-center font-semibold text-white">
-              <Link href={"/"}>
+              <Link className="bg-white px-6 py-1.5 rounded-sm" href={"/"}>
                  <Image src={Logo} alt="Logo" width={100} height={100} className="w-28" />
                 </Link>
               <div className="flex text-lg justify-between gap-x-5 ml-10">
