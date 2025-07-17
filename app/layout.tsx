@@ -7,6 +7,7 @@ import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import Logo from "@/app/assets/logo-modified.png";
 import Image from "next/image";
+import WhatsAppButton from "@/components/whatsapp";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -39,20 +40,24 @@ export default function RootLayout({
               <Link className="bg-white px-6 py-1.5 rounded-sm" href={"/"}>
                  <Image src={Logo} alt="Logo" width={100} height={100} className="w-28" />
                 </Link>
-              <div className="flex text-lg justify-between gap-x-5 ml-10">
+              <div className="hidden md:flex text-lg justify-between gap-x-5 ml-10 ">
                 <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href={"/module"}>
                 Modul
                 </Link>
-                <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href={"/"}>
-                Profil
+                <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href={"/pretest"}>
+                Pre-test
                 </Link>
               </div>
             </div>
-            {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
+            {!hasEnvVars ? <EnvVarWarning /> : 
+            <div>
+            <AuthButton />
+              </div>
+            }
           </div>
         </nav>
-      
-        {children}
+         <WhatsAppButton />
+        {children}     
         <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
           <p>
             Powered by{" "}

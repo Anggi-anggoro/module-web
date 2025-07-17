@@ -15,9 +15,7 @@ export default function PreTestPage() {
         const supabase = createClient();
         supabase.auth.getUser().then(({ data, error }) => {
             if (error || !data.user || !data.user.email) {
-
             } else {
-
                 setEmail(data.user.email);
             }
         });
@@ -51,7 +49,7 @@ export default function PreTestPage() {
                 c: "3",
                 d: "2"
             },
-            correct: "a"
+            correct: "b"
         },
         {
             id: 3,
@@ -62,7 +60,7 @@ export default function PreTestPage() {
                 c: "3",
                 d: "4"
             },
-            correct: "c"
+            correct: "d"
         },
         {
             id: 4,

@@ -93,9 +93,7 @@ export default function ModuleLayout({
         <div className="hidden md:block md:basis-1/5 p-4 bg-orange-50 border-l shrink-0">
           <SidebarRight />
         </div>
-      </div>
-
-      <WhatsAppButton />
+      </div>      
     </div>
   );
 }

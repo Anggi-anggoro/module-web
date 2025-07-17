@@ -14,5 +14,5 @@ export function LogoutButton() {
     router.refresh();
   };
 
-  return <Button onClick={logout}>Logout</Button>;
+  return <button className="bg-orange-500 hover:bg-orange-600 border  border-white rounded-lg px-3 py-1.5 shadow-md" onClick={logout}>Logout</button>;
 }
