@@ -3,18 +3,19 @@
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/6281234567890"
+      href="https://wa.me/?phone=6282387594402&text=Irvan%20Dwi%20Novaldi&lang=id"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-20 right-6 z-50 bg-[#25D366] hover:bg-green-600 
-                 text-white w-14 h-14 rounded-full shadow-lg 
+      className="fixed bottom-10 right-0 float-right mb-3 mr-6 z-50 bg-[#25D366] hover:bg-green-600 
+                 text-white size-12 md:size-16 rounded-full shadow-lg 
                  flex items-center justify-center transition"
       title="Chat via WhatsApp"
     >
       <svg
+      className="max-md:size-6"
         xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
+        width="30"
+        height="30"
         viewBox="0 0 32 32"
         fill="white"
       >
