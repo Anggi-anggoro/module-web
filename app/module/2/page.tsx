@@ -24,7 +24,7 @@ const Bab2 = () => {
 
       <section id="tp1" className="mb-10">
         <h3 className="text-lg font-bold mb-2">
-          TP 1. Defenisi Pendidikan Seksual
+          A. Defenisi Pendidikan Seksual
         </h3>
         <p className="mb-4 text-justify">
           UNESCO menjelaskan pendidikan seksual adalah pendekatan komprehensif
@@ -38,7 +38,7 @@ const Bab2 = () => {
 
       <section id="tp2" className="mb-10">
         <h3 className="text-lg font-bold mb-2">
-          TP 2. Sasaran Jenjang Pembelajaran Pendidikan Seksual
+          B. Sasaran Jenjang Pembelajaran Pendidikan Seksual
         </h3>
         <p className="mb-2 text-justify">
           Dalam mengajarkan pendidikan seksual, perlu diperhatikan sasaran dari
@@ -76,7 +76,7 @@ const Bab2 = () => {
 
       <section id="tp3-4" className="mb-10">
         <h3 className="text-lg font-bold mb-2">
-          TP 3 & 4. Metode dan Perencanaan Pembelajaran Pendidikan Seksual
+          C. Metode dan Perencanaan Pembelajaran Pendidikan Seksual
         </h3>
         <p className="mb-4 text-justify">
           Metode pembelajaran adalah cara untuk menyampaikan materi pembelajaran
@@ -275,7 +275,7 @@ const Bab2 = () => {
         </ol>
       </section>
       <section id="tp5" className="mb-10">
-        <h3 className="text-lg font-bold mb-2">TP 5. Media Pembelajaran</h3>
+        <h3 className="text-lg font-bold mb-2">D. Media Pembelajaran</h3>
         <p className="mb-4 text-justify">
           Media merupakan sesuatu yang berfungsi sebagai perantara/alat untuk
           komunikasi dalam proses belajar mengajar. Media pembelajaran adalah

@@ -1,6 +1,7 @@
 // app/module/page.tsx
 import React from "react";
 import ModulGuruCover from "./cover"; // rename component if needed
+import CoverBab1 from "./1/cover-bab1";
 import Bab1 from "./1/page";
 import Bab2 from "./2/page";
 import Bab3 from "./3/page";
@@ -17,6 +18,11 @@ export default function ModulGabungan() {
       <div className="h-10 md:h-20" />
 
       {/* Bab 1 */}
+      <section id="bab1" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+        <CoverBab1 />
+      </section>
+
+      <div className="h-10 md:h-20" />
       <section id="bab1" className="px-4 md:px-10 py-8 md:py-16 bg-white">
         <Bab1 />
       </section>
