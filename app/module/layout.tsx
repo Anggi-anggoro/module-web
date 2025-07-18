@@ -22,7 +22,7 @@ export default function ModuleLayout({
     supabase.auth.getUser().then(({ data, error }) => {
       if (error || !data.user) {
         router.push("/auth/login");
-      } else {        
+      } else {
         supabase
           .from("userdata")
           .select("pretest_score")
@@ -48,11 +48,17 @@ export default function ModuleLayout({
   }, []);
 
   if (isAuthenticated === null) {
-    return <div className=" min-h-svh p-10">Loading...</div>
-  } else if (!isAuthenticated) {  
-    return <div className="min-h-[60vh]">
-    <PopupText url="/pretest" message="Kerjakan Pre-test terlebih dahulu untuk mengakses modul" buttonText="Kerjakan Sekarang"/>
-    </div>
+    return <div className=" min-h-svh p-10">Loading...</div>;
+  } else if (!isAuthenticated) {
+    return (
+      <div className="min-h-[60vh]">
+        <PopupText
+          url="/pretest"
+          message="Kerjakan Pre-test terlebih dahulu untuk mengakses modul"
+          buttonText="Kerjakan Sekarang"
+        />
+      </div>
+    );
   }
 
   return (
@@ -89,10 +95,10 @@ export default function ModuleLayout({
           {children}
         </main>
 
-        <div className="hidden md:block md:basis-1/5 p-4 bg-orange-50 border-l shrink-0">
+        <div className="max-md:hidden md:basis-1/5 p-4  border-l shrink-0">
           <SidebarRight />
         </div>
-      </div>      
+      </div>
     </div>
   );
 }

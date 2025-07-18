@@ -81,7 +81,7 @@ const Bab1Cover = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
               <span className="font-medium">
-                Penulis: Muhammad Khambali dan Silvia Nurvania
+                Penulis: Irvan Dwi Novaldi dan Atien Nur Chamidah
               </span>
               <span className="font-medium">ISBN 978-602-244-942-6</span>
             </div>
