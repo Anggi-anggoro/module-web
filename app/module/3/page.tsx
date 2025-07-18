@@ -894,61 +894,462 @@ const Bab3 = () => {
                 </td>
               </tr>
               <tr>
-                <td className="border px-2 py-1">Berpegangan Tangan</td>
-                <td className="border px-2 py-1 text-justify">
-                  Kontak fisik ringan yang menunjukkan afeksi atau kedekatan
-                  emosional.
-                </td>
-                <td className="border px-2 py-1 text-justify">
-                  Bila tidak dibatasi, bisa berkembang menjadi perilaku seksual
-                  yang lebih jauh.
-                </td>
-              </tr>
-              <tr>
-                <td className="border px-2 py-1">Berciuman</td>
-                <td className="border px-2 py-1 text-justify">
-                  Kontak bibir sebagai bentuk afeksi romantis yang dapat
-                  menimbulkan rangsangan seksual.
-                </td>
-                <td className="border px-2 py-1 text-justify">
-                  Dapat memicu keinginan melakukan aktivitas seksual lainnya
-                  jika tidak dikontrol.
-                </td>
-              </tr>
-              <tr>
                 <td className="border px-2 py-1">Masturbasi</td>
                 <td className="border px-2 py-1 text-justify">
-                  Aktivitas seksual yang dilakukan sendiri untuk mendapatkan
-                  kepuasan seksual.
+                  Suatu aktivitas yang mengarah pada pemusatan nafsu birahi
+                  melalui rangsangan alat kelamin dan alat vital lainnya, baik
+                  dilakukan sendiri atau orang lain hingga mencapai orgasme bagi
+                  laki-laki dan ejakulasi bagi wanita dengan berkontraksinya
+                  otot-otot secara otomatis terutama otot vagina yang kadar
+                  kontraksinya paling besar.
                 </td>
                 <td className="border px-2 py-1 text-justify">
-                  Jika berlebihan dapat mengganggu konsentrasi belajar dan
-                  kontrol diri.
+                  <ol className="list-decimal list-inside space-y-1 text-left mt-2">
+                    <li>
+                      Dapat menyebabkan kecanduan dan mengganggu konsentrasi
+                      dalam belajar dan aktivitas sehari-hari.
+                    </li>
+                    <li>Sering menimbulkan rasa bersalah dan kecemasan.</li>
+                    <li>
+                      Mempengaruhi minat terhadap hubungan intim yang sehat.
+                    </li>
+                  </ol>
                 </td>
               </tr>
               <tr>
-                <td className="border px-2 py-1">Petting</td>
+                <td className="border px-2 py-1">Petting </td>
                 <td className="border px-2 py-1 text-justify">
-                  Sentuhan seksual di luar hubungan seksual penetratif.
+                  Perilaku saling menggosokan alat kelamin.
                 </td>
                 <td className="border px-2 py-1 text-justify">
-                  Meningkatkan risiko kehamilan meskipun tanpa penetrasi dan
-                  mendorong perilaku seksual lebih jauh.
-                </td>
-              </tr>
-              <tr>
-                <td className="border px-2 py-1">Hubungan Seksual</td>
-                <td className="border px-2 py-1 text-justify">
-                  Aktivitas seksual dengan penetrasi. Biasanya mengandung risiko
-                  tinggi terutama jika dilakukan di luar pernikahan.
-                </td>
-                <td className="border px-2 py-1 text-justify">
-                  Kehamilan tidak diinginkan, penyakit menular seksual, dan
-                  gangguan psikologis.
+                  <ol className="list-decimal list-inside space-y-1 text-left mt-2">
+                    <li>Menyebabkan kecanduan yang berlebihan</li>
+                    <li>
+                      Menjadi awal untuk melakukan hubungan seksual secara
+                      langsung
+                    </li>
+                    <li>Mengganggu motivasi belajar</li>
+                  </ol>
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className="mt-8">
+          <p className="text-justify">
+            Ada beberapa faktor yang mendorong munculnya perilaku seksual pada
+            anak dengan hambatan penglihatan yang notabene nya sulit menerima
+            informasi secara visual. Faktor tersebut terbagi atau dua, yaitu
+            faktor internal dan faktor eksternal. Berikut faktor yang mendorong
+            munculnya perilaku seksual pada anak dengan hambatan penglihatan.
+          </p>
+        </div>
+
+        {/* Tabel Faktor Internal dan Eksternal */}
+        <div className="overflow-x-auto mt-4">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border px-2 py-1 w-1/2">Faktor Internal</th>
+                <th className="border px-2 py-1 w-1/2">Faktor Eksternal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border px-2 py-1 text-justify align-top">
+                  Seorang anak yang menjalani hubungan pacaran, memiliki rasa
+                  nyaman, cinta, serta rasa ingin tahu muncul didalam dirinya.
+                  Tapi, minimnya pengetahuan dan pemahaman mengenai moralitas
+                  dalam menjalani kasih yang dapat menumbuhkan perilaku yang
+                  beresiko.
+                </td>
+                <td className="border px-2 py-1 text-justify align-top">
+                  Kemajuan teknologi yang pesat, sehingga anak dapat mengakses
+                  apapun di dunia ini. Orang tua yang minim perhatian, dan
+                  komunikasi dalam keluarga yang rendah.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        {/* Metode dan Media untuk Faktor */}
+        <div className="mt-4">
+          <p>
+            <strong>Metode:</strong> Ceramah, Tanya Jawab, dan Diskusi
+          </p>
+          <p>
+            <strong>Media:</strong> -
+          </p>
+        </div>
+
+        {/* Contoh Pembelajaran untuk Faktor */}
+        <div className="text-justify mt-4">
+          <p>
+            <strong>Contoh Pembelajaran:</strong> Guru mengajarkan sesuai dengan
+            jenis kelamin masing-masing peserta didik. Guru menjelaskan secara
+            perlahan masing-masing poin materi agar anak dapat mencernanya
+            dengan baik. Guru membuka sesi tanya jawab yang menumbuhkan pola
+            diskusi didalam nya agar anak dengan hambatan penglihatan
+            benar-benar paham dan dapat menjauhi perilaku-perilaku seksual yang
+            telah dipelajari.
+          </p>
+        </div>
+      </section>
+
+      <section id="topik4" className="max-w-5xl mx-auto space-y-6 mt-10">
+        <h3 className="font-semibold mt-6 text-lg">
+          Topik 4. (Pergaulanku, Pergaulan Sehat!)
+        </h3>
+        <p className="text-justify">
+          Topik yang sesuai pada jenjang <strong>MENENGAH</strong>. Dalam
+          menjaga pergaulan, anak dengan hambatan penglihatan sama dengan anak
+          pada umumnya. Biasanya anak memiliki keterkaitan kepada lawan jenis
+          dimulai pada masa pubertas. Pubertas adalah masa peralihan dari
+          anak-anak menuju dewasa, ditandai dengan perubahan fisik, emosional,
+          dan hormonal yang mempersiapkan tubuh untuk kematangan seksual dan
+          reproduksi. Pubertas antara laki-laki dan perempuan memiliki beberapa
+          perbedaan. Berikut perbedaan pubertas antara anak laki-laki dan anak
+          perempuan.
+        </p>
+
+        {/* Tabel Pubertas */}
+        <div className="overflow-x-auto mt-4">
+          <table className="table-auto w-full text-sm border border-gray-400">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border px-2 py-1 w-1/6">Indikator</th>
+                <th className="border px-2 py-1 w-5/12">Laki-laki</th>
+                <th className="border px-2 py-1 w-5/12">Perempuan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">Usia</td>
+                <td className="border px-2 py-1">9 - 14 Tahun</td>
+                <td className="border px-2 py-1">8 - 13 Tahun</td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">Hormon</td>
+                <td className="border px-2 py-1">
+                  Testosteron (dihasilkan testis)
+                </td>
+                <td className="border px-2 py-1">
+                  Estrogen dan Progesteron (dihasilkan ovarium)
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">Fisik</td>
+                <td className="border px-2 py-1">
+                  Rambut di wajah mulai tumbuh seperti kumis dan jenggot
+                </td>
+                <td className="border px-2 py-1">
+                  Tumbukhnya rambut di ketiak dan kemaluan
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1"></td>
+                <td className="border px-2 py-1">
+                  Tumbukhnya rambut di ketiak dan kemaluan
+                </td>
+                <td className="border px-2 py-1"></td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">Suara</td>
+                <td className="border px-2 py-1">
+                  Suara menjadi karean pembesaran laring
+                </td>
+                <td className="border px-2 py-1">
+                  Suara tetap tinggi dan tidak berubah secara signifikan
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">Bentuk Tubuh</td>
+                <td className="border px-2 py-1">
+                  Bahu melebar
+                  <br />
+                  Otot berkembang
+                  <br />
+                  Tinggi badan meningkat
+                </td>
+                <td className="border px-2 py-1">
+                  Pinggang melebak
+                  <br />
+                  Payudara membesar
+                  <br />
+                  Lemak di paha dan bokong bertambah
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">
+                  Organ Reproduksi
+                </td>
+                <td className="border px-2 py-1">Penis dan Testis membesar</td>
+                <td className="border px-2 py-1">
+                  Vagina dan rahim berkembang
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">
+                  Pertumbuhan Tinggi
+                </td>
+                <td className="border px-2 py-1">
+                  Sperma mulai diproduksi
+                  <br />
+                  Dimulai lebih lambat tetapi berlangsung lama
+                </td>
+                <td className="border px-2 py-1">
+                  Mulai menstruasi
+                  <br />
+                  Dimulai lebih cepat tetapi berhenti lebih awal
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">Emosional</td>
+                <td className="border px-2 py-1">
+                  Lebih Agresif
+                  <br />
+                  Energi meningkat
+                  <br />
+                  Lebih beresiko mengambil tindakan impulsif
+                </td>
+                <td className="border px-2 py-1">
+                  Lebih sensitif
+                  <br />
+                  Lebih banyak berpikir soal penampilan
+                </td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1 font-semibold">
+                  Kematangan Reproduksi
+                </td>
+                <td className="border px-2 py-1">
+                  Produksi sperma dimulai, biasanya ditandai oleh mimpi basah
+                </td>
+                <td className="border px-2 py-1">
+                  Menstruasi pertama menandakan awal siklus reproduksi
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-justify mt-6">
+          Ketika anak pubertas, anak akan cenderung mencari jati dirinya
+          sendiri. Pada masa ini, pergaulan anak harus benar-benar diawasi tanpa
+          mengekang anak itu sendiri. Fase pubertas sendiri adalah fase penting
+          dalam kehidupan anak dengan hambatan penglihatan. Dalam pergaulannya
+          sendiri anak dengan hambatan penglihatan sudah mulai merasa mandiri.
+          Menjaga pergaulan bagi anak dengan hambatan penglihatan sangat perlu
+          diperhatikan, pada saat anak mulai memiliki ketertarikan dengan lawan
+          jenis, maka peran guru dan orang tua harus turut andil di dalamnya.
+          Anak dengan hambatan penglihatan perlu belajar tentang batasan dalam
+          pergaulan. Berikut beberapa poin dalam menjaga batasan anak dengan
+          hambatan penglihatan dalam pergaulan:
+        </p>
+        <ol type="a" className="mt-4 space-y-4 list-decimal list-inside">
+          <li>
+            <strong>
+              Pendidikan seksual yang sesuai dengan usia dan kesiapan mental
+              anak
+            </strong>
+            <br />
+            Pada tahap pubertas anak mengalami berbagai perubahan fisik dan
+            emosional yang dapat memengaruhi perilaku mereka. Oleh karena itu,
+            memberikan pemahaman yang jelas mengenai seksualitas, hubungan yang
+            sehat, dan konsekuensi dari tindakan seksual sangatlah krusial.
+            Pendidikan seksual yang komprehensif dapat membantu remaja untuk
+            memahami nilai-nilai dan norma-norma yang berkaitan dengan hubungan
+            interpersonal. Dengan pengetahuan yang cukup, mereka dapat membuat
+            keputusan yang lebih baik dan bertanggung jawab mengenai tubuh dan
+            kesehatan mereka. Selain itu, pendidikan seksual juga dapat
+            mengurangi stigma dan kesalahpahaman yang sering kali mengelilingi
+            topik seksualitas.
+          </li>
+
+          <li>
+            <strong>Ajarkan anak-anak nilai moral yang kuat</strong>
+            <br />
+            Anak-anak perlu diajarkan nilai-nilai moral yang kuat agar terhindar
+            dari pergaulan bebas. Proses ini sebaiknya dimulai sejak usia dini
+            apalagi pada ketika mereka masih dalam tahap perkembangan karakter.
+            Dalam lingkungan keluarga, orang tua memiliki peran penting untuk
+            menanamkan prinsip-prinsip moral seperti kejujuran, tanggung jawab,
+            dan rasa hormat terhadap orang lain. Melalui komunikasi yang
+            terbuka, orang tua dapat menjelaskan konsekuensi dari tindakan yang
+            tidak sesuai norma.
+            <br />
+            Sekolah juga berkontribusi dalam pembentukan karakter anak.
+            Kurikulum yang mengintegrasikan pendidikan moral dapat membantu
+            siswa memahami pentingnya nilai-nilai tersebut. Selain itu, kegiatan
+            ekstrakurikuler yang positif dapat menjadi wadah bagi anak-anak
+            untuk berinteraksi dan belajar bekerja sama dengan baik.
+          </li>
+
+          <li>
+            <strong>
+              Mendorong anak berpartisipasi dalam kegiatan yang positif
+            </strong>
+            <br />
+            Anak-anak harus didorong untuk berpartisipasi dalam kegiatan
+            positif. Pertama, orang tua dan pendidik perlu mengenalkan berbagai
+            aktivitas yang mendukung pengembangan keterampilan sosial dan
+            emosional. Misalnya, mendorong anak untuk bergabung dalam kelompok
+            bermain atau klub olahraga dapat membantu mereka belajar bekerja
+            sama dan berkomunikasi dengan baik. Selanjutnya, partisipasi dalam
+            kegiatan seni juga dapat meningkatkan kreativitas dan ekspresi diri
+            anak.
+            <br />
+            Seiring berjalannya waktu, anak-anak yang terlibat dalam kegiatan
+            positif akan lebih percaya diri dan memiliki rasa tanggung jawab
+            yang tinggi. Keterlibatan ini juga dapat mengurangi risiko perilaku
+            negatif, seperti kenakalan remaja dan pergaulan bebas. Oleh karena
+            itu, penting bagi orang tua, guru, dan masyarakat untuk menciptakan
+            lingkungan yang mendukung dan memberikan kesempatan bagi anak-anak
+            untuk berpartisipasi dalam kegiatan yang bermanfaat.
+          </li>
+
+          <li>
+            <strong>
+              Pergaulan yang baik untuk mencegah perilaku menyimpang
+            </strong>
+            <br />
+            Pergaulan yang baik memiliki peranan penting dalam membentuk
+            karakter dan perilaku individu, terutama di kalangan anak dan
+            remaja. Ketika seseorang berinteraksi dengan lingkungan sosial yang
+            positif, mereka cenderung mendapatkan pengaruh yang konstruktif. Hal
+            ini dimulai dari pembentukan hubungan yang sehat dengan sesama, di
+            mana nilai-nilai baik dan norma sosial dapat saling dipertukarkan.
+            Dalam proses ini, anak belajar untuk menghargai perbedaan,
+            berkomunikasi dengan efektif, dan mengembangkan empati.
+            <br />
+            Seiring berjalannya waktu, pergaulan yang baik ini dapat berfungsi
+            sebagai penghalang terhadap perilaku menyimpang. Ketika anak dengan
+            hambatan penglihatan dikelilingi oleh teman-teman yang mendukung dan
+            memiliki tujuan yang sama, mereka lebih termotivasi untuk
+            menghindari tindakan yang merugikan diri sendiri atau orang lain.
+          </li>
+
+          <li>
+            <strong>
+              Diskusi tentang hubungan romantis dengan anak perlu dilakukan
+              dengan bijak
+            </strong>
+            <br />
+            Diskusi tentang hubungan romantis dengan anak perlu dilakukan dengan
+            bijak. Pertama-tama, penting untuk menciptakan suasana yang aman dan
+            terbuka, sehingga anak merasa nyaman untuk berbagi perasaannya. Pada
+            tahap ini, orang tua dan guru dapat memulai dengan menanyakan
+            pandangan anak tentang cinta dan hubungan, serta mendengarkan dengan
+            seksama tanpa menghakimi.
+          </li>
+        </ol>
+
+        <p className="mt-6">
+          Setelah itu, orang tua dan guru harus memberikan informasi yang tepat
+          tentang hubungan yang sehat, termasuk nilai-nilai seperti saling
+          menghormati dan komunikasi yang baik. Dalam proses ini, orang tua dan
+          guru juga perlu menjelaskan tentang risiko yang mungkin dihadapi dalam
+          hubungan romantis, seperti tekanan dari teman sebaya atau masalah
+          emosional.
+        </p>
+
+        <p className="mt-4">
+          <strong>Metode:</strong> Ceramah, Tanya jawab, dan Simulasi
+          <br />
+          <strong>Media:</strong> -
+        </p>
+        {/* Metode dan Media untuk Topik 4 */}
+        <div className="mt-6">
+          <p>
+            <strong>Metode:</strong> Ceramah, Tanya Jawab, dan Diskusi
+          </p>
+          <p>
+            <strong>Media:</strong> -
+          </p>
+        </div>
+
+        {/* Contoh Pembelajaran untuk Topik 4 */}
+        <div className="text-justify mt-4">
+          <p>
+            <strong>Contoh Pembelajaran:</strong>Peserta didik diajak bercerita
+            bersama lalu mendiskusikan tentang ciri-ciri pubertas yang muncul
+            terhadap dirinya. Simulasi dapat dilakukan dengan cara membuat
+            sebuah drama percakapan antar peserta didik dalam rangka
+            mensimulasikan poin-poin dalam menjaga batasan anak.
+          </p>
+        </div>
+      </section>
+      <section id="referensi-bab3" className="mt-16 mb-10">
+        <h3 className="text-lg font-bold text-center mb-6">REFERENSI</h3>
+        <div className="space-y-4">
+          <p className="text-justify">
+            Al-Karimah, N., F. (2018){" "}
+            <em>
+              Sosialisai makna “masa puber” bagi remaja desa Tegalrejo,
+              Kalurahan Ngesrep, Kecamatan Ngemplak, Kabupaten Boyolali, Jawa
+              Tengah.{" "}
+            </em>
+            . Jurnal Abdi MOESTOPO, 01 (01), 7-13.
+          </p>
+          <p className="text-justify">
+            Azizah, N., Riana, E., N., Megasari, A., L., M., Arhesa, S.,
+            Syafriana, I., N., S., V., Perestroika, G., D., Aswan, M., Y.,
+            Alfrianne, & Ariescha, P., A., Y. (2023).{" "}
+            <em>Fisiologi sistem reproduksi</em>. Yayasan Kita Menulis.
+          </p>
+          <p className="text-justify">
+            Beddu, M., J., Farizi, K., Noor, H., & Marlianis. (2024).{" "}
+            <em>Homoseksual, lesbian, dan masturbasi perspektif islam</em>.
+            Jurnal Addayan, 19 (1), 35-44.
+          </p>
+          <p className="text-justify">
+            Hidayat, D., FINSDV., FAADV., Wedayani, A., A., A., N., Putri, N.,
+            A., & Sari, D., S. (2024).{" "}
+            <em>
+              Edukasi Mengenai Kebersihan Genitalia Pada Remaja Awal di SMPK
+              Kusuma Mataram
+            </em>
+            . Jurnal Pengabdian Magister Pendidikan IPA, 7(1), 358-361.
+          </p>
+          <p className="text-justify">
+            Kausar, H. (2014). <em>Good Touch, Bad Touch, and Secret Touch</em>.
+            Pemerintah Aceh.{" "}
+            <a
+              href="https://acehprov.go.id/berita/kategori/serba-serbi/62-good-touch-bad-touch-and-secret-touch"
+              className="text-blue-600 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://acehprov.go.id/berita/kategori/serba-serbi/62-good-touch-bad-touch-and-secret-touch
+            </a>
+          </p>
+          <p className="text-justify">
+            Rahmi, D. & Rikayoni. (2023).{" "}
+            <em>
+              Edukasi kesehatan terhadap pengetahuan anak usia sekolah melalui
+              video pembelajaran menjaga diri/tubuh tentang bagian tubuh penting
+              yang tidak boleh disentuh oleh orang lain di SDIT Cendekia Andalus
+            </em>
+            . Jurnal Abdimas Saintika, 5 (2), 99-106.
+          </p>
+          <p className="text-justify">
+            Wahyuni, H., Amelia, L., Putri, B., S., Nurhasana, E., Garini, N.,
+            A., DR, S., S., & Sinaga, I., E. (2023).{" "}
+            <em>
+              Mencegah dampak negatif gaya berpacaran yang beresiko dengan
+              layanan penguasaan konten di SMP N 9 Kota Jambi
+            </em>
+            . Journal of Community Service (JCOS), 1 (3), 95-101.
+          </p>
+          <p className="text-justify">
+            Wardiyah, A., Aryanti, L., Marliyana, Oktaliana, Khoirudin, P., &
+            Dea, M., A. (2022).{" "}
+            <em>
+              Penyuluhan kesehatan tentang pentingnya menjaga kesehatan alat
+              reproduksi
+            </em>
+            . Journal Of Public Health Concerns, 2 (1), 41-53.
+          </p>
         </div>
       </section>
 

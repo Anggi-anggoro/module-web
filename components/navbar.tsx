@@ -73,17 +73,17 @@ const Navbar = () => {
           title: "Definisi Pendidikan Seksual",
         },
         {
-          id: "sasaran-jenjang-pembelajaran",
+          id: "sasaran-jenjang-pembelajaran-pendidikan-seksual",
           title: "Sasaran Jenjang Pembelajaran Pendidikan Seksual",
         },
         {
-          id: "metode-dan-perencanaan-pembelajaran",
+          id: "metode-dan-perencanaan-pembelajaran-pendidikan-seksual",
           title: "Metode dan Perencanaan Pembelajaran Pendidikan Seksual",
         },
         {
           id: "media-pembelajaran",
           title: "Media Pembelajaran",
-        }
+        },
       ],
     },
     {
@@ -117,7 +117,7 @@ const Navbar = () => {
       title: "Bab 4. Evaluasi Pembelajaran",
       subChapters: [
         {
-          id: "tujuan-evaluasi-pembelajaran",
+          id: "tpbab4",
           title: "Tujuan Pembelajaran",
         },
       ],
@@ -177,49 +177,50 @@ const Navbar = () => {
       )}
 
       <ul className="space-y-2">
-        {filteredChapters.map((chapter, index) => (
-          (index <= 2 || isPostTest) && (
-            <li key={chapter.id}>
-              <div className="flex items-start justify-between">
-                <button
-                  onClick={() => toggleChapter(chapter.id)}
-                  className="font-medium hover:underline text-left"
-                >
-                  {chapter.title}
-                </button>
-                {chapter.subChapters.length > 0 && (
+        {filteredChapters.map(
+          (chapter, index) =>
+            (index <= 2 || isPostTest) && (
+              <li key={chapter.id}>
+                <div className="flex items-start justify-between">
                   <button
                     onClick={() => toggleChapter(chapter.id)}
-                    className="ml-2"
+                    className="font-medium hover:underline text-left"
                   >
-                    {openChapters[chapter.id] ? (
-                      <ChevronDown size={20} />
-                    ) : (
-                      <ChevronRight size={20} />
-                    )}
+                    {chapter.title}
                   </button>
-                )}
-              </div>
+                  {chapter.subChapters.length > 0 && (
+                    <button
+                      onClick={() => toggleChapter(chapter.id)}
+                      className="ml-2"
+                    >
+                      {openChapters[chapter.id] ? (
+                        <ChevronDown size={20} />
+                      ) : (
+                        <ChevronRight size={20} />
+                      )}
+                    </button>
+                  )}
+                </div>
 
-              {/* Subchapters */}
-              {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
-                <ul className="pl-4 mt-1 space-y-1 text-gray-700">
-                  {chapter.subChapters.map((sub) => (
-                    <li className="list-disc ml-3" key={sub.id}>
-                      <Link
-                        onClick={(e) => ScrollToId(sub.id, e)}
-                        href={`#${sub.id}`}
-                        className="hover:underline block text-sm"
-                      >
-                        {sub.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          )
-        ))}
+                {/* Subchapters */}
+                {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
+                  <ul className="pl-4 mt-1 space-y-1 text-gray-700">
+                    {chapter.subChapters.map((sub) => (
+                      <li className="list-disc ml-3" key={sub.id}>
+                        <Link
+                          onClick={(e) => ScrollToId(sub.id, e)}
+                          href={`#${sub.id}`}
+                          className="hover:underline block text-sm"
+                        >
+                          {sub.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            )
+        )}
       </ul>
     </aside>
   );
