@@ -374,9 +374,9 @@ const ContohSoalEvaluasi = () => {
       </div>
 
       {/* Footer */}
-      <div className="flex justify-center items-center py-8 text-green-600">
+      <div className="flex justify-center items-center py-8 text-yellow-600">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-yello-500 rounded-full flex items-center justify-center">
             <span className="text-white font-bold">📋</span>
           </div>
           <span className="text-lg font-semibold">Lampiran Evaluasi</span>
