@@ -7,93 +7,105 @@ import { EnvVarWarning } from './env-var-warning';
 import { AuthButton } from './auth-button';
 
 interface NavbarProps {
-  Logo: StaticImageData;  
-  hasEnv : boolean | undefined;  
+  logo: StaticImageData;
+  authContent: any;
 }
 
-export default function Navhead({ Logo, hasEnv }: NavbarProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hasEnvVars, setHasEnvVars] = useState(hasEnv);
+export default function Navhead({ logo, authContent }: NavbarProps) {
+ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <nav className="w-full bg-[#F99452] rounded-b-lg shadow-md">
-      {/* Desktop and Mobile Header */}
-      <div className="w-full max-w-5xl mx-auto flex justify-between items-center p-3 px-5 text-sm text-white">
-        
-        <div className="flex gap-5 items-center font-semibold text-white">
-          <Link className="bg-white px-6 py-1.5 rounded-sm" href={"/"}>
-            <Image src={Logo} alt="Logo" width={100} height={100} className="w-28" />
+     <nav className="w-full bg-[#F99452] rounded-b-lg shadow-md">
+      <div className="w-full max-w-5xl mx-auto flex justify-between items-center px-5 text-sm text-white relative">
+
+        <div className="flex items-center font-semibold text-white">
+          <Link className="bg-white px-6 py-1.5 rounded-sm" href="/">
+            <Image src={logo} alt="Logo" className="w-24 h-auto" />
           </Link>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex text-lg justify-between gap-x-5 ml-10">
-            <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href={"/module"}>
+            <a className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/module">
               Modul
-            </Link>
-            <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href={"/pretest"}>
+            </a>
+            <a className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/pretest">
               Pre-test
-            </Link>
+            </a>
           </div>
         </div>
 
         {/* Desktop Auth Button */}
         <div className="hidden md:block">
-          {!hasEnvVars ? <EnvVarWarning /> : 
-            <div>
-              {/* <AuthButton /> */}
-            </div>
-          }
+          {authContent}
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
-            isMenuOpen ? 'rotate-45 translate-y-2' : ''
-          }`}></span>
-          <span className={`block w-6 h-0.5 bg-white transition-opacity duration-300 ${
-            isMenuOpen ? 'opacity-0' : ''
-          }`}></span>
-          <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
-            isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-          }`}></span>
-        </button>
-      </div>
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMobileMenu}
+            className="flex flex-col justify-center items-center w-8 h-8 space-y-1"
+            aria-label="Toggle mobile menu"
+          >
+            <span className="block w-6 h-0.5 bg-white"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+          </button>
+        </div>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${
-        isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-      }`}>
-        <div className="bg-[#ef8d4b] px-5 py-3 space-y-3">
-          <Link 
-            href={"/module"}
-            className="block text-white hover:bg-[#e6834a] p-3 rounded-md text-lg font-semibold"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Modul
-          </Link>
-          <Link 
-            href={"/pretest"}
-            className="block text-white hover:bg-[#e6834a] p-3 rounded-md text-lg font-semibold"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Pre-test
-          </Link>
-          
-          {/* Mobile Auth Section */}
-          <div className="pt-3 border-t border-[#e6834a]">
-            {!hasEnvVars ? <EnvVarWarning /> : 
-              <div>
-                <AuthButton />
-              </div>
-            }
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={closeMobileMenu}
+          />
+        )}
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed top-0 right-0 z-[100] rounded-lg h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen 
+              ? 'translate-x-0' 
+              : 'translate-x-full'
+          }`}
+        >
+          <div className="flex justify-end items-center p-4 border-b-2 shadow-lg mx-2 border-[#e6834a]">            
+            <button 
+              onClick={closeMobileMenu}
+              className="text-white text-2xl hover:bg-[#e6834a] w-8 h-8 rounded flex items-center justify-center"
+              aria-label="Close mobile menu"
+            >
+              <svg className='fill-[#e6834a] size-8' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+            </button>
+          </div>
+
+          <div className="px-5 py-6 space-y-4">
+            <a
+              href="/module"
+              onClick={closeMobileMenu}
+              className="block text-[#e6834a] p-4 rounded-md text-lg font-semibold transition-colors duration-200"
+            >
+              Modul
+            </a>
+            <a
+              href="/pretest"
+              onClick={closeMobileMenu}
+              className="block text-[#e6834a] p-4 rounded-md text-lg font-semibold transition-colors duration-200"
+            >
+              Pre-test
+            </a>
+
+            {/* Mobile Auth Section */}
+            <div className="pt-4 border-t border-[#e6834a]">
+              {authContent}
+            </div>
           </div>
         </div>
       </div>

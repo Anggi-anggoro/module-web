@@ -19,7 +19,7 @@ export async function AuthButton() {
 
   return user && data ? (
     <div className="flex items-center gap-4 max-sm:justify-end">
-      <span className="max-sm:hidden">
+      <span className="max-md:text-orange-600 font-bold">
       Hey, {data.nama}!
       </span>
       <LogoutButton />
