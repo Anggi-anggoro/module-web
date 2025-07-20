@@ -18,8 +18,10 @@ export async function AuthButton() {
 
 
   return user && data ? (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 max-sm:justify-end">
+      <span className="max-sm:hidden">
       Hey, {data.nama}!
+      </span>
       <LogoutButton />
     </div>
   ) : (
