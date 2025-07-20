@@ -14,6 +14,7 @@ import Bab4Cover from "./4/cover-bab4";
 import Bab2Cover from "./2/cover-bab2";
 import ModulAjar from "./Lampiran/page1";
 import ContohSoalEvaluasi from "./Lampiran/page2";
+import Bab3Cover from "./3/cover";
 
 export default function ModulGabungan() {
   const router = useRouter();
@@ -71,6 +72,14 @@ export default function ModulGabungan() {
       <Suspense fallback={<div>Loading...</div>}>
         <section id="bab2" className="px-4 md:px-10 py-8 md:py-16 bg-white">
           <Bab2 />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section
+          id="cover-bab3"
+          className="px-4 md:px-10 py-8 md:py-16 bg-white"
+        >
+          <Bab3Cover />
         </section>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
