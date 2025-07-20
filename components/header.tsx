@@ -1,17 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
-import { EnvVarWarning } from './env-var-warning';
-import { AuthButton } from './auth-button';
 
 interface NavbarProps {
   logo: StaticImageData;
-  authContent: any;
+  authContent: React.ReactNode;
 }
 
-export default function Navhead({ logo, authContent }: NavbarProps) {
+export default function Header({ logo, authContent }: NavbarProps) {
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -23,11 +21,11 @@ export default function Navhead({ logo, authContent }: NavbarProps) {
   };
 
   return (
-     <nav className="w-full bg-[#F99452] rounded-b-lg shadow-md">
+     <nav className="w-full bg-[#F99452] rounded-b-lg shadow-lg">
       <div className="w-full max-w-5xl mx-auto flex justify-between items-center px-5 text-sm text-white relative">
 
         <div className="flex items-center font-semibold text-white">
-          <Link className="bg-white px-6 py-1.5 rounded-sm" href="/">
+          <Link className="bg-white px-6 py-1.5 rounded-b-md" href="/">
             <Image src={logo} alt="Logo" className="w-24 h-auto" />
           </Link>
 

@@ -2,14 +2,11 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { hasEnvVars } from "@/lib/utils";
-import Link from "next/link";
 import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import Logo from "@/app/assets/logo-modified.png";
-import Image from "next/image";
 import WhatsAppButton from "@/components/whatsapp";
-import Header from "@/components/navhead";
-import Navhead from "@/components/navhead";
+import Header from "@/components/header";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -26,11 +23,11 @@ const geistSans = Geist({
   display: "swap",
   subsets: ["latin"],
 });
-  const authContent = !hasEnvVars ? <EnvVarWarning /> : (
-    <div>
-      <AuthButton />
-    </div>
-  );
+const authContent = !hasEnvVars ? <EnvVarWarning /> : (
+  <div>
+    <AuthButton />
+  </div>
+);
 
 export default function RootLayout({
   children,
@@ -41,10 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-         <Navhead 
-        logo={Logo}
-        authContent={authContent}
-      />
+        <Header
+          logo={Logo}
+          authContent={authContent}
+        />
         <WhatsAppButton />
         {children}
         <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
