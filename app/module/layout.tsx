@@ -63,7 +63,7 @@ export default function ModuleLayout({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="md:hidden p-4 bg-orange-100">
+      <div className="md:hidden p-4 bg-orange-100 fixed top-[74px] left-0 w-full z-30">
         <button
           onClick={() => setShowSidebar(!showSidebar)}
           className="text-lg font-semibold text-orange-600"

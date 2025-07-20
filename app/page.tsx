@@ -31,10 +31,10 @@ export default function Home() {
                   MODIS
                 </h1>
                 <h2 className="text-3xl md:text-3xl text-gray-700 font-bold pb-8">
-                  Modul Pendidikan Seksual
-                </h2>
+                  Modul Pendidikan Seksual Anak dengan Hambatan Penglihatan
+                </h2>                
                 <p className="pb-3">
-                  Sebuah modul pendidikan seksual untuk anak yang dirancang untuk membantu mereka memahami konsep dasar pendidikan seksual, kesehatan dan fungsi reproduksi, pergaulan sehat, serta perilaku seksual.
+                  Sebuah modul guru pendidikan seksual untuk anak dengan hambatan penglihatan yang dirancang untuk membantu mereka memahami konsep dasar pendidikan seksual, kesehatan dan fungsi reproduksi, pergaulan sehat, serta perilaku seksual.
                 </p>
                 <Link onClick={(e)=>ScrollToId("selengkapnya",e)} href="#selengkapnya" className="bg-white border border-gray-300 text-gray-800 font-semibold py-2 px-4 rounded shadow hover:bg-gray-100 transition duration-300">
                   Selengkapnya
