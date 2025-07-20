@@ -91,11 +91,11 @@ const Navbar = () => {
       title: "Bab 3. Materi Pendidikan Seksual",
       subChapters: [
         {
-          id: "tujuan-materi-pendidikan-seksual",
+          id: "tujuan-pembelajaran-bab3",
           title: "Tujuan Pembelajaran",
         },
         {
-          id: "bagimana-bentuk-tubuhku",
+          id: "bagaimana-bentuk-tubuhku",
           title: "Bagaimana Bentuk Tubuhku?",
         },
         {

@@ -21,7 +21,7 @@ export default function ModulGuruCover() {
         {/* Main Title Section */}
         <div className="mb-12">
           <h1 className="text-7xl md:text-9xl font-extrabold text-white leading-none mb-6 drop-shadow-2xl">
-            MODIS
+            M⚥DIS
           </h1>
           <div className="bg-white rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
             <p className="text-yellow-600 font-bold text-2xl md:text-3xl mb-4">
