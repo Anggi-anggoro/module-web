@@ -42,10 +42,6 @@ const Bab3Cover = () => {
 
         {/* Content Focus Box with Cards Layout */}
         <div className="bg-gradient-to-br from-white via-orange-50 to-amber-50 bg-opacity-95 rounded-3xl p-8 shadow-2xl max-w-6xl border border-white border-opacity-50">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent text-center mb-8">
-            Memahami Materi Pembelajaran Pendidikan Seksual Komprehensif
-          </h3>
-
           {/* Card-based Topic Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Topic A */}
@@ -123,7 +119,7 @@ const Bab3Cover = () => {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 pb-8">
+      <div className="relative z-10 pb-8 mt-6">
         <div className="mx-8">
           <div className=" rounded-2xl p-6 shadow-2xl">
             <div className="text-center">
