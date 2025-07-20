@@ -217,6 +217,304 @@ const Lampiran = () => {
                 </p>
               </div>
             </section>
+            <section className="mb-8">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
+                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
+                  G
+                </span>
+                Sumber Rujukan
+              </h3>
+              <div className="ml-8">
+                <p className="text-gray-700 leading-relaxed italic">
+                  E-Modul guru pendidikan seksual bagi anak dengan hambatan
+                  penglihatan
+                </p>
+              </div>
+            </section>
+
+            {/* Langkah-langkah Pembelajaran */}
+            <section className="mb-8">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
+                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
+                  H
+                </span>
+                Langkah-langkah Pembelajaran
+              </h3>
+              <div className="ml-8">
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-gray-400 text-sm">
+                    <thead>
+                      <tr className="bg-yellow-50">
+                        <th className="border border-gray-400 px-4 py-3 text-left font-semibold text-yellow-800">
+                          Kegiatan
+                        </th>
+                        <th className="border border-gray-400 px-4 py-3 text-left font-semibold text-yellow-800">
+                          Deskripsi Kegiatan
+                        </th>
+                        <th className="border border-gray-400 px-4 py-3 text-left font-semibold text-yellow-800">
+                          Alokasi Waktu
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-gray-400 px-4 py-3 align-top font-medium text-gray-800">
+                          Pendahuluan
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top">
+                          <div className="space-y-3 text-gray-700 leading-relaxed">
+                            <div>
+                              <span className="font-medium">1.</span> Peserta
+                              didik menyiapkan diri dan memberikan salam kepada
+                              guru lalu berdoa.
+                            </div>
+                            <div>
+                              <span className="font-medium">2.</span> Guru
+                              menjawab salam peserta didik dan menyapa peserta
+                              didik.
+                            </div>
+                            <div>
+                              <span className="font-medium">3.</span> Guru
+                              mengabsen peserta didik.
+                            </div>
+                            <div>
+                              <span className="font-medium">4.</span> Guru
+                              menjelaskan tujuan pembelajaran hari ini tentang
+                              anggota tubuh.
+                            </div>
+                            <div>
+                              <span className="font-medium">5.</span> Guru
+                              memberikan ice breaking melalui kegiatan gerakan
+                              &quot;Kepala, Pundak, Lutut, kaki&quot;
+                            </div>
+                          </div>
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top text-center font-medium">
+                          5 Menit
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-400 px-4 py-3 align-top font-medium text-gray-800">
+                          Inti
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top">
+                          <div className="space-y-3 text-gray-700 leading-relaxed">
+                            <div>
+                              <span className="font-medium">1.</span> Guru
+                              mengajak peserta didik untuk meraba dan
+                              menunjukkan bagian-bagian anggota tubuh dengan
+                              petunjuk guru.
+                            </div>
+                            <div>
+                              <span className="font-medium">2.</span> Guru
+                              menjelaskan ada beberapa anggota tubuh yang harus
+                            </div>
+                            <div className="ml-6">
+                              menyebutkannya dengan menggunakan bahasa biologis.
+                              Cth: &quot;burung&quot; menjadi &quot;Penis&quot;,
+                              dll.
+                            </div>
+                            <div>
+                              <span className="font-medium">3.</span> Guru
+                              kembali menanyakan kepada peserta didik untuk
+                              menunjuk anggota tubuh yang disebutoleh guru.
+                            </div>
+                            <div>
+                              <span className="font-medium">4.</span> Guru
+                              menjelaskan tentang istilah &quot;ADA RAHASIA
+                              DIBALIK BAJUMU&quot;
+                            </div>
+                            <div>
+                              <span className="font-medium">5.</span> Guru
+                              menghidupkan lagu &quot;sentuhan boleh & tidak
+                              boleh&quot; lalu mengajak peserta didik untuk
+                              mempraktikkan gerakannya sesuai dengan lagu yang
+                              didengar oleh peserta didik.
+                            </div>
+                            <div>
+                              <span className="font-medium">6.</span> Guru
+                              meminta peserta didik untuk mengulang kembali
+                              tentang istilah &quot;ADA RAHASIA DIBALIK
+                              BAJUMU&quot;
+                            </div>
+                          </div>
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top text-center font-medium">
+                          20 Menit
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section className="mb-8">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
+                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
+                  G
+                </span>
+                Sumber Rujukan
+              </h3>
+              <div className="ml-8">
+                <p className="text-gray-700 leading-relaxed italic">
+                  E-Modul guru pendidikan seksual bagi anak dengan hambatan
+                  penglihatan
+                </p>
+              </div>
+            </section>
+
+            {/* Langkah-langkah Pembelajaran */}
+            <section className="mb-8">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
+                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
+                  H
+                </span>
+                Langkah-langkah Pembelajaran
+              </h3>
+              <div className="ml-8">
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-gray-400 text-sm">
+                    <thead>
+                      <tr className="bg-yellow-50">
+                        <th className="border border-gray-400 px-4 py-3 text-left font-semibold text-yellow-800">
+                          Kegiatan
+                        </th>
+                        <th className="border border-gray-400 px-4 py-3 text-left font-semibold text-yellow-800">
+                          Deskripsi Kegiatan
+                        </th>
+                        <th className="border border-gray-400 px-4 py-3 text-left font-semibold text-yellow-800">
+                          Alokasi Waktu
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-gray-400 px-4 py-3 align-top font-medium text-gray-800">
+                          Pendahuluan
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top">
+                          <div className="space-y-3 text-gray-700 leading-relaxed">
+                            <div>
+                              <span className="font-medium">1.</span> Peserta
+                              didik menyiapkan diri dan memberikan salam kepada
+                              guru lalu berdoa.
+                            </div>
+                            <div>
+                              <span className="font-medium">2.</span> Guru
+                              menjawab salam peserta didik dan menyapa peserta
+                              didik.
+                            </div>
+                            <div>
+                              <span className="font-medium">3.</span> Guru
+                              mengabsen peserta didik.
+                            </div>
+                            <div>
+                              <span className="font-medium">4.</span> Guru
+                              menjelaskan tujuan pembelajaran hari ini tentang
+                              anggota tubuh.
+                            </div>
+                            <div>
+                              <span className="font-medium">5.</span> Guru
+                              memberikan ice breaking melalui kegiatan gerakan
+                              &quot;Kepala, Pundak, Lutut, kaki&quot;
+                            </div>
+                          </div>
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top text-center font-medium">
+                          5 Menit
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-400 px-4 py-3 align-top font-medium text-gray-800">
+                          Inti
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top">
+                          <div className="space-y-3 text-gray-700 leading-relaxed">
+                            <div>
+                              <span className="font-medium">1.</span> Guru
+                              mengajak peserta didik untuk meraba dan
+                              menunjukkan bagian-bagian anggota tubuh dengan
+                              petunjuk guru.
+                            </div>
+                            <div>
+                              <span className="font-medium">2.</span> Guru
+                              menjelaskan ada beberapa anggota tubuh yang harus
+                            </div>
+                            <div className="ml-6">
+                              menyebutkannya dengan menggunakan bahasa biologis.
+                              Cth: &quot;burung&quot; menjadi &quot;Penis&quot;,
+                              dll.
+                            </div>
+                            <div>
+                              <span className="font-medium">3.</span> Guru
+                              kembali menanyakan kepada peserta didik untuk
+                              menunjuk anggota tubuh yang disebutoleh guru.
+                            </div>
+                            <div>
+                              <span className="font-medium">4.</span> Guru
+                              menjelaskan tentang istilah &quot;ADA RAHASIA
+                              DIBALIK BAJUMU&quot;
+                            </div>
+                            <div>
+                              <span className="font-medium">5.</span> Guru
+                              menghidupkan lagu &quot;sentuhan boleh &amp; tidak
+                              boleh&quot; lalu mengajak peserta didik untuk
+                              mempraktikkan gerakannya sesuai dengan lagu yang
+                              didengar oleh peserta didik.
+                            </div>
+                            <div>
+                              <span className="font-medium">6.</span> Guru
+                              meminta peserta didik untuk mengulang kembali
+                              tentang istilah &quot;ADA RAHASIA DIBALIK
+                              BAJUMU&quot;
+                            </div>
+                          </div>
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top text-center font-medium">
+                          20 Menit
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-400 px-4 py-3 align-top font-medium text-gray-800">
+                          Penutup
+                        </td>
+                        <td className="border border-gray-400 px-4 py-3 align-top">
+                          <div className="space-y-3 text-gray-700 leading-relaxed">
+                            <div>
+                              <span className="font-medium">1.</span> Peserta
+                              didik diminta untuk berbagi pengalaman mereka
+                              tentang materi yang telah dipelajari
+                            </div>
+                            <div>
+                              <span className="font-medium">2.</span>
+                              Memberikan kesempatan kepada peserta didik untuk
+                              bertanya pada materi yang belum dipahami
+                            </div>
+                            <div>
+                              <span className="font-medium">3.</span> Kelas
+                              ditutup dengan salam dan doa
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section className="mb-8">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
+                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
+                  I
+                </span>
+                Evaluasi Pembelajaran
+              </h3>
+              <div className="ml-8">
+                <p className="text-gray-700 leading-relaxed italic">
+                  Soal Evaluasi/Tes
+                </p>
+              </div>
+            </section>
           </main>
         </div>
       </div>
