@@ -95,6 +95,12 @@ const Bab1Cover = () => {
             </div>
           </div>
         </div>
+        {/* Year */}
+        <div className="mt-2 sm:mt-4 text-center relative z-10 pb-6 sm:pb-8 lg:pb-10 flex-shrink-0">
+          <span className="inline-flex items-center px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-transparent text-amber-800 text-xs sm:text-sm font-medium mt-3 md:mx-6">
+            2025
+          </span>
+        </div>
       </div>
 
       {/* Decorative Elements - Positioned to avoid content overlap */}
