@@ -122,6 +122,24 @@ const Navbar = () => {
         },
       ],
     },
+    {
+      id: "lampiran",
+      title: "Lampiran",
+      subChapters: [
+        {
+          id: "lampiran",
+          title: "Perencanaan Pembelajaran Pendidikan Seksual",
+        },
+        {
+          id: "modulajar",                    
+          title: "Contoh modul ajar / RPP terintegrasi dengan pendidikan seksual",
+        },
+        {
+          id: "contohsoalevaluasi",                    
+          title: "Contoh soal evaluasi",
+        },
+      ],
+    },
   ];
 
   const filteredChapters = chapters
@@ -154,7 +172,7 @@ const Navbar = () => {
     .filter((chapter) => chapter !== null); // Remove null entries
 
   return (
-    <aside className="sticky top-3 py-4 px-3 overflow-y-auto text-sm z-20 border-2 border-orange-400 rounded-md bg-orange-100">
+    <aside className="sticky top-3 py-4 px-3 overflow-y-auto text-sm z-20 border-2 border-orange-400 rounded-md bg-orange-100 max-sm:mr-5 max-sm:max-w-80">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-bold text-orange-600">📚 Navigasi Modul</h2>
         <button

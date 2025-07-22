@@ -95,9 +95,9 @@ const Bab2 = () => {
                   merupakan sebuah diskusi yang realistis, jujur, dan terbuka
                   bukan merupakan dikte moral belaka. Dalam pendidikan seksual
                   diberikan pengetahuan yang faktual, menempatkan seks pada
-                  perspektif yang tepat, berhubungan dengan <em>self-esteem</em>{" "}
-                  (rasa penghargaan terhadap diri), penanaman rasa percaya diri
-                  dan difokuskan pada peningkatan kemampuan dalam mengambil
+                  perspektif yang tepat, berhubungan dengan self-esteem (rasa
+                  penghargaan terhadap diri), penanaman rasa percaya diri dan
+                  difokuskan pada peningkatan kemampuan dalam mengambil
                   keputusan.
                 </p>
               </section>
@@ -112,11 +112,15 @@ const Bab2 = () => {
                 </h3>
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
                   Dalam mengajarkan pendidikan seksual, perlu diperhatikan
-                  sasaran dari jenjang para peserta didik/anak dengan hambatan
-                  penglihatan:
+                  sasaran dari jenjang para murid / anak dengan hambatan
+                  penglihatan. Masing-masing materi nantinya disesuaikan dengan
+                  usia para murid. Dimulai dari jenjang dasar, menengah, hingga
+                  lanjutan. Berikut sebaran jenjang dalam mengajarkan pendidikan
+                  seksual untuk anak dengan hambatan penglihatan.
                 </p>
 
                 <div className="space-y-6">
+                  {/* Jenjang Dasar */}
                   <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
                     <h4 className="font-bold text-yellow-800 mb-2">
                       Jenjang Dasar (6–9 Tahun):
@@ -137,6 +141,7 @@ const Bab2 = () => {
                     </ul>
                   </div>
 
+                  {/* Jenjang Menengah */}
                   <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
                     <h4 className="font-bold text-yellow-800 mb-2">
                       Jenjang Menengah (10–12 Tahun):
@@ -147,6 +152,7 @@ const Bab2 = () => {
                     </ul>
                   </div>
 
+                  {/* Jenjang Lanjutan */}
                   <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
                     <h4 className="font-bold text-yellow-800 mb-2">
                       Jenjang Lanjutan (13–19 Tahun):
@@ -173,9 +179,8 @@ const Bab2 = () => {
                   ini, penggunaan metode pada pelaksanaan pembelajaran yang
                   berisi materi-materi sensitif, sekolah khususnya guru
                   diberikan keluasaan dengan mengacu pada guru laki-laki
-                  mengajar topik sensitif kepada peserta didik laki-laki dan
-                  guru perempuan mengajar topik sensitif kepada peserta didik
-                  perempuan.
+                  mengajar topik sensitif kepada murid laki-laki dan guru
+                  perempuan mengajar topik sensitif kepada murid perempuan.
                 </p>
 
                 <div className="space-y-6">
@@ -202,9 +207,9 @@ const Bab2 = () => {
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
                       Metode diskusi merupakan suatu cara penyajian bahan
-                      pelajaran dimana guru memberi kesempatan kepada peserta
-                      didik untuk mengadangan perbincangan seputar pembelajaran
-                      yang sedang dibahasa guna mengumpulkan pendapat, membuat
+                      pelajaran dimana guru memberi kesempatan kepada murid
+                      untuk mengadangan perbincangan seputar pembelajaran yang
+                      sedang dibahasa guna mengumpulkan pendapat, membuat
                       kesimpulan atau penyusunan berbagai alternatif pemecahan
                       atas suatu masalah. Biasanya dalam berdiskusi bersama anak
                       dengan hambatan penglihatan, tanya jawab akan muncul dari
@@ -235,21 +240,45 @@ const Bab2 = () => {
                       4. Metode Praktik
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Ketika peserta didik sudah dapat mensimulasikan suatu
-                      pembelajaran di dalam kelas, tahap selanjutnya dalam
-                      pembelajaran adalah praktik. Metode praktik ini merupakan
-                      metode yang menjadi suatu pencapaian dalam metode simulasi
-                      atau menjadi bahan unjuk kerja ketika peserta didik sudah
-                      menerapkan simulasi di dalam kelas. Metode praktik adalah
-                      suatu metode dengan memberikan materi pembelajaran menjadi
-                      jelas dan mudah sekaligus dapat mempraktikkan materi yang
+                      Ketika murid sudah dapat mensimulasikan suatu pembelajaran
+                      di dalam kelas, tahap selanjutnya dalam pembelajaran
+                      adalah praktik. Metode praktik ini merupakan metode yang
+                      menjadi suatu pencapaian dalam metode simulasi atau
+                      menjadi bahan unjuk kerja ketika murid sudah menerapkan
+                      simulasi di dalam kelas. Metode praktik adalah suatu
+                      metode dengan memberikan materi pembelajaran menjadi jelas
+                      dan mudah sekaligus dapat mempraktikkan materi yang
                       dimaksud dan suatu saat dikehidupan.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                    <h4 className="font-bold text-yellow-800 mb-2">
+                      5. Pelaksanaan Pembelajaran
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      Perencanaan pembelajaran yang telah dibuat lalu
+                      dilaksanakan dalam pembelajaran pendidikan seksual. Jadwal
+                      dan waktu pembelajaran pendidikan seksual dibebaskan
+                      kepada masing-masing guru dengan menyesuaikan
+                      karakteristik sekolahnya. Idealnya pendidikan seksual
+                      diajarkan minimal satu kali dalam seminggu dengan waktu 30
+                      menit. Pendidikan seksual dapat masuk pada jadwal
+                      ekstrakurikuler ataupun jam tambahan di dalam
+                      pembelajaran. Integrasi dengan materi intrakurikuler yang
+                      sejalan dengan pendidikan seksual juga dapat dilaksanakan
+                      oleh guru di dalam kelas. Pelaksanaan pembelajaran juga
+                      harus dilaksanakan di rumah dengan cara komunikasi antara
+                      guru dan orang tua, karena murid lebih banyak menunjukan
+                      perilaku seksual nya di lingkungan keluarga dan
+                      masyarakat. Guru juga ikut memantau pelaksanaan
+                      pembelajaran yang diajarkan di rumah dengan cara terus
+                      mengawasi anak melalui orang tuanya.
                     </p>
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-500">
                     <h4 className="font-bold text-yellow-800 mb-2">
-                      5. Integrasi Pendidikan Seksual Dalam Perencanaan
+                      6. Integrasi Pendidikan Seksual Dalam Perencanaan
                       Pembelajaran
                     </h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
@@ -271,12 +300,12 @@ const Bab2 = () => {
                       pelajaran intrakurikuler. Berikut contoh elemen dan
                       capaian pembelajaran masing-masing fase sesuai dengan
                       keputusan Kepala Badan Standar, Kurikulum, dan Asesmen
-                      Pendidikan Kementerian Pendidikan, Kebudayaan, Riset, dan
-                      Teknologi No. 032/H.KR/2024 tentang Capaian Pembelajaran
-                      Pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar,
-                      dan Jenjang Pendidikan Menengah pada Kurikulum Merdeka
-                      bagian Capaian Pembelajaran pada TKLB/SDLB/SMPLB/SMALB
-                      yang dapat teringtegrasi dengan pendidikan seksual.
+                      Pendidikan Kementerian Pendidikan Dasar dan Menengah No.
+                      046/H/KR/2025 tentang Capaian Pembelajaran Pada Pendidikan
+                      Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang
+                      Pendidikan Menengah bagian Capaian Pembelajaran pada
+                      TKLB/SDLB/SMPLB/SMALB yang dapat teringtegrasi dengan
+                      pendidikan seksual.
                     </p>
 
                     {/* Tabel */}
@@ -300,7 +329,7 @@ const Bab2 = () => {
                               Capaian Pembelajaran
                             </th>
                             <th className="border border-gray-400 px-3 py-2 text-yellow-800">
-                              Integrasi Pendidikan Seksual
+                              Pendidikan Seksual
                             </th>
                           </tr>
                         </thead>
@@ -310,21 +339,21 @@ const Bab2 = () => {
                               1
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pendidikan Pancasila
+                              Program Khusus Orientasi, Mobilitas, Sosial dan
+                              Komunikasi
                             </td>
                             <td className="border border-gray-400 px-3 py-2 text-center">
                               A
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Bhinneka Tunggal Ika
+                              1.1 Orientasi dan Mobilitas
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Mengenal identitas diri, jenis kelamin, hobi,
-                              serta agama dan kepercayaan di lingkungan sekolah
-                              dan rumah.
+                              Memahami bagian tubuhnya dan melakukan aktivitas
+                              dengan menggerakkan bagian-bagian tubuhnya.
                             </td>
                             <td className="border border-gray-400 px-3 py-2 bg-yellow-50">
-                              Anggota tubuh dan jenis kelamin
+                              Anggota tubuh.
                             </td>
                           </tr>
                           <tr>
@@ -332,18 +361,18 @@ const Bab2 = () => {
                               2
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Ilmu Pengetahuan Sosial (IPAS)
+                              Program Khusus Orientasi, Mobilitas, Sosial dan
+                              Komunikasi
                             </td>
                             <td className="border border-gray-400 px-3 py-2 text-center">
                               B
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pemahaman IPAS
+                              2.2 Keterampilan Sosial
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Peserta didik mampu menjelaskan identitas diri dan
-                              anggota keluarga, mengetahui bagian tubuh makhluk
-                              hidup
+                              Memahami perbedaan tanda-tanda fisik bayi hingga
+                              dewasa, laki dan perempuan.
                             </td>
                             <td className="border border-gray-400 px-3 py-2 bg-yellow-50">
                               Anggota Tubuh Manusia
@@ -354,21 +383,22 @@ const Bab2 = () => {
                               3
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pendidikan Pancasila
+                              Program Khusus Orientasi, Mobilitas, Sosial dan
+                              Komunikasi
                             </td>
                             <td className="border border-gray-400 px-3 py-2 text-center">
                               C
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pancasila
+                              3.2 Keterampilan Sosial
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Mempraktikan dan membiasakan berperilaku sesuai
-                              dengan nilai-nilai pancasila di sekolah dan di
-                              rumah.
+                              Melaksanakan perawatan kesehatan reproduksi,
+                              menggunakan dan melepas pembalut, memakai,
+                              mencuci, dan membuang pembalut
                             </td>
                             <td className="border border-gray-400 px-3 py-2 bg-yellow-50">
-                              Perilaku seksual
+                              Kesehatan Reproduksi
                             </td>
                           </tr>
                           <tr>
@@ -382,12 +412,12 @@ const Bab2 = () => {
                               D
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pemahaman Ilmu Pengetahuan Alam
+                              1.1 Pemahaman Konsep
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Peserta didik mampu memahami pertumbuhan dan
-                              perkembangan manusia, mengidentifikasi ciri fisik
-                              laki-laki dan perempuan pada masa pubertas.
+                              Murid mengenali pertumbuhan dan perkembangan
+                              manusia dan menjelaskan ciri fisik laki-laki dan
+                              perempuan pada masa pubertas.
                             </td>
                             <td className="border border-gray-400 px-3 py-2 bg-yellow-50">
                               Pubertas
@@ -404,11 +434,11 @@ const Bab2 = () => {
                               E
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pemahaman Ilmu Pengetahuan Alam
+                              2.1 Pemahaman Konsep
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Peserta didik dapat mengetahui rangka dan organ
-                              tubuh manusia.
+                              Murid mampu menjelaskan rangka dan organ tubuh
+                              manusia.
                             </td>
                             <td className="border border-gray-400 px-3 py-2 bg-yellow-50">
                               Organ Reproduksi
@@ -419,17 +449,19 @@ const Bab2 = () => {
                               6
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Pendidikan Agama Islam dan Budi Pekerti
+                              Program Khsusus Orientasi, Mobilitas, Komunikasi
+                              dan Sosial.
                             </td>
                             <td className="border border-gray-400 px-3 py-2 text-center">
                               F
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Akhlak
+                              6.2 Keterampilan Sosial
                             </td>
                             <td className="border border-gray-400 px-3 py-2">
-                              Memahami perilaku menjaga diri dari penyakit
-                              sosial sesuai dengan ketentuan agama
+                              Menanamkan kesadaran akan etika pergaulan yang
+                              berlaku di masyarakat yang berhubungan dengan
+                              kesehatan reproduksi
                             </td>
                             <td className="border border-gray-400 px-3 py-2 bg-yellow-50">
                               Perilaku Seksual
@@ -438,31 +470,6 @@ const Bab2 = () => {
                         </tbody>
                       </table>
                     </div>
-                  </div>
-
-                  <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-500">
-                    <h4 className="font-bold text-yellow-800 mb-2">
-                      6. Pelaksanaan Pembelajaran
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed">
-                      Perencanaan pembelajaran yang telah dibuat lalu
-                      dilaksanakan dalam pembelajaran pendidikan seksual. Jadwal
-                      dan waktu pembelajaran pendidikan seksual dibebaskan
-                      kepada masing-masing guru dengan menyesuaikan
-                      karakteristik sekolahnya. Idealnya pendidikan seksual
-                      diajarkan minimal satu kali dalam seminggu dengan waktu 30
-                      menit. Pendidikan seksual dapat masuk pada jadwal
-                      ekstrakurikuler ataupun jam tambahan di dalam
-                      pembelajaran. Integrasi dengan materi intrakurikuler yang
-                      sejalan dengan pendidikan seksual juga dapat dilaksanakan
-                      oleh guru di dalam kelas. Pelaksanaan pembelajaran juga
-                      harus dilaksanakan di rumah dengan cara komunikasi antara
-                      guru dan orang tua, karena peserta didik lebih banyak
-                      menunjukan perilaku seksual nya di lingkungan keluarga dan
-                      masyarakat. Guru juga ikut memantau pelaksanaan
-                      pembelajaran yang diajarkan di rumah dengan cara terus
-                      mengawasi anak melalui orang tuanya.
-                    </p>
                   </div>
                 </div>
               </section>

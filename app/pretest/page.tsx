@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { CheckCircle, XCircle, Award, RefreshCw } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { createClient } from "@/lib/supabase/client"; // client-side
+import Link from 'next/link';
 
 export default function PreTestPage() {
     const [answers, setAnswers] = useState<Record<number, string>>({});
@@ -253,19 +254,6 @@ export default function PreTestPage() {
                         </div>
                     ) : (
                         <div className="space-y-8">
-                            <div className="text-center bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl p-8 text-white">
-                                <Award className="w-16 h-16 mx-auto mb-4" />
-                                <h2 className="text-3xl font-bold mb-2">Hasil Tes</h2>
-                                <p className={`text-4xl font-bold mb-2 ${getScoreColor()}`}>
-                                    {score}/{questions.length}
-                                </p>
-                                <p className="text-xl">
-                                    Skor anda {((score / questions.length) * 100).toFixed(0)}
-                                </p>
-                                <p className="text-lg mt-4 bg-white/20 rounded-lg p-4">
-                                    {getScoreMessage()}
-                                </p>
-                            </div>
 
                             <div className="space-y-6">
                                 <h3 className="text-2xl font-bold text-gray-800 text-center">Tinjau jawaban anda</h3>
@@ -306,14 +294,33 @@ export default function PreTestPage() {
                                         </div>
                                     );
                                 })}
+                                                            <div className="text-center bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl p-8 text-white">
+                                <Award className="w-16 h-16 mx-auto mb-4" />
+                                <h2 className="text-3xl font-bold mb-2">Hasil Tes</h2>
+                                <p className={`text-4xl font-bold mb-2 ${getScoreColor()}`}>
+                                    {score}/{questions.length}
+                                </p>
+                                <p className="text-xl">
+                                    Skor anda {((score / questions.length) * 100).toFixed(0)}
+                                </p>
+                                <p className="text-lg mt-4 bg-white/20 rounded-lg p-4">
+                                    {getScoreMessage()}
+                                </p>
                             </div>
-
+                            </div>
                             <div className="text-center pt-6">
+                                <Link                        
+                                    href={'/module'}
+                                    className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl space-x-2 mx-auto"
+                                >
+                             
+                                    <span>Lanjut ke Modul</span>
+                                </Link>
                                 <button
                                     onClick={resetTest}
-                                    className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto"
-                                >
-                                    <RefreshCw className="w-5 h-5" />
+                                    className="hover:underline flex mx-auto mt-6 items-center gap-2"
+                                >                         
+                                 <RefreshCw className="w-5 h-5" />           
                                     <span>Ulangi tes</span>
                                 </button>
                             </div>
