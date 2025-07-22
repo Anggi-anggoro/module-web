@@ -40,16 +40,15 @@ const Bab1 = () => {
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
                   Anak dengan hambatan penglihatan adalah individu yang
                   mengalami gangguan penglihatan yang signifikan, baik sejak
-                  lahir maupun akibat kondisi tertentu, yang memengaruhi
+                  lahir maupun akibat kondisi tertentu, yang mempengaruhi
                   kemampuan mereka untuk berpartisipasi dalam aktivitas
-                  pendidikan dan sosial tanpa dukungan khusus{" "}
-                  <em>(Westling et al., 2015)</em>. Anak dengan hambatan
-                  penglihatan adalah individu yang mengalami gangguan
+                  pendidikan dan sosial tanpa dukungan khusus. Anak dengan
+                  hambatan penglihatan adalah individu yang mengalami gangguan
                   penglihatan secara signifikan, baik sebagian maupun total,
                   sehingga memengaruhi kemampuan mereka untuk belajar dan
                   berinteraksi dengan lingkungan tanpa bantuan khusus. Mereka
                   memerlukan adaptasi dalam metode pembelajaran dan alat bantu
-                  untuk mengakses informasi visual <em>(Kirk et al., 2015)</em>.
+                  untuk mengakses informasi visual.
                 </p>
               </section>
 
@@ -61,22 +60,22 @@ const Bab1 = () => {
                   B. Klasifikasi Anak Dengan Hambatan Penglihatan
                 </h3>
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
-                  Dengan hambatan penglihatan yang diklasifikasikan dari
-                  kemampuan matanya menurut Hosni (2016:26), yaitu:
+                  Dengan hambatan penglihatan yang dikasifikasikan dari
+                  kemampuan matanya, yaitu:
                 </p>
                 <ol className="list-decimal list-inside space-y-3 pl-4">
                   <li className="text-gray-700 leading-relaxed">
                     Kelompok yang mempunyai acuity 20/70 feet (6/21 meter)
                     artinya ia bisa melihat jarak 20 feet sedangkan anak normal
-                    dari jarak 70 feet ini tergolong kurang melihat atau{" "}
-                    <em>low vision</em>.
+                    dari jarak 70 feet ini tergolong kurang melihat atau low
+                    vision.
                   </li>
                   <li className="text-gray-700 leading-relaxed">
                     Kelompok yang hanya dapat membaca huruf E paling besar pada
                     kartu Snellen dari jarak 20 feet, sedang orang normal dapat
-                    membacanya dari jarak 200 feet (20/200 feet atau 6/60
-                    meter), dan ini secara hukum sudah tergolong buta atau{" "}
-                    <em>legally blind</em>.
+                    membacanya dari jarak 200 feet (20/200 feet atau 6/60 meter,
+                    dan ini secara hukum sudah tergolong buta atau legally
+                    blind).
                   </li>
                   <li className="text-gray-700 leading-relaxed">
                     Kelompok yang sangat sedikit penglihatannya sehingga ia
@@ -90,19 +89,16 @@ const Bab1 = () => {
                     Kelompok yang melihat tangan digerakan.
                   </li>
                   <li className="text-gray-700 leading-relaxed">
-                    Kelompok yang hanya mempunyai <em>light projection</em>{" "}
-                    (dapat melihat terang serta gelap dan dapat menunjuk sumber
-                    cahaya).
+                    Kelompok yang hanya mempunyai light projection (dapat
+                    melihat terang serta gelap dan dapat menunjuk sumber cahaya)
                   </li>
                   <li className="text-gray-700 leading-relaxed">
-                    Kelompok yang hanya mempunyai persepsi cahaya (
-                    <em>light perception</em>) yaitu hanya bisa melihat terang
-                    dan gelap.
+                    Kelompok yang hanya mempunyai persepsi cahaya (light
+                    perception) yaitu hanya bisa melihat terang dan gelap.
                   </li>
                   <li className="text-gray-700 leading-relaxed">
-                    Kelompok yang tidak mempunyai persepsi cahaya (
-                    <em>no light perception</em>) disebut dengan buta total (
-                    <em>totally blind</em>).
+                    Kelompok yang tidak mempunyai persepsi cahaya (no light
+                    perception) disebut dengan buta total (totally blind).
                   </li>
                 </ol>
               </section>
@@ -115,10 +111,10 @@ const Bab1 = () => {
                   C. Karakteristik Anak Dengan Hambatan Penglihatan
                 </h3>
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
-                  (Hallahan et al., 2018) mengatakan anak dengan hambatan
-                  penglihatan memiliki karakteristik yang bervariasi tergantung
-                  pada tingkat gangguan penglihatan dan usia saat gangguan
-                  tersebut terjadi. Beberapa karakteristik umum meliputi:
+                  Anak dengan hambatan penglihatan memiliki karakteristik yang
+                  bervariasi tergantung pada tingkat gangguan penglihatan dan
+                  usia saat gangguan tersebut terjadi. Beberapa karakteristik
+                  umum meliputi:
                 </p>
                 <ol className="list-decimal list-inside space-y-3 pl-4">
                   <li className="text-gray-700 leading-relaxed">

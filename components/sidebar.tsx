@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ipan from "@/app/assets/Ipan.jpg";
 // Note: You'll need to add the image for Dr. Atien
-// import atien from "@/app/assets/Atien.jpg";
+import atien from "@/app/assets/dosen.jpg";
 
 const Sidebar = () => (
   <div className="sticky top-3 h-[calc(100vh-2rem)] py-4 px-3 overflow-y-auto text-sm z-20 border-2 border-orange-400 rounded-md bg-orange-100 scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-orange-100">
@@ -78,18 +78,14 @@ const Sidebar = () => (
         <div className="flex justify-center mb-4">
           <div className="w-28 h-36 bg-gray-300 rounded-lg overflow-hidden flex items-center justify-center">
             {/* Placeholder for Dr. Atien's photo - replace with actual image */}
-            <div className="w-full h-full bg-gradient-to-b from-gray-200 to-gray-300 flex items-center justify-center">
-              <span className="text-gray-500 text-2xl">👩‍⚕️</span>
-            </div>
-            {/* Uncomment when image is available:
+            {/* Uncomment when image is available:*/}
             <Image
               src={atien}
               alt="Dr. dr. Atien Nur Chamidah, M.Dis.St."
-              width={700}
+              width={800}
               height={900}
               className="object-cover w-full h-full"
             />
-            */}
           </div>
         </div>
 
