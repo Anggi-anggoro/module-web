@@ -4,6 +4,8 @@ import Image from "next/image";
 import boy from "@/app/assets/BOY3.png";
 import girl from "@/app/assets/GIRL.png";
 import both from "@/app/assets/both2.png";
+import vagina from "@/app/assets/vagina.jpg";
+import penis from "@/app/assets/penis.jpg";
 
 const Bab3 = () => {
   return (
@@ -61,9 +63,9 @@ const Bab3 = () => {
                   Topik 1. Bagaimana Bentuk Tubuhku?
                 </h3>
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
-                  Pada topik ini peserta didik dengan hambatan penglihatan
-                  diajarkan mengenal bentuk tubuhnya baik laki-laki ataupun
-                  perempuan. Topik ini dapat diajarkan pada anak jenjang{" "}
+                  Pada topik ini murid dengan hambatan penglihatan diajarkan
+                  mengenal bentuk tubuhnya baik laki-laki ataupun perempuan.
+                  Topik ini dapat diajarkan pada anak jenjang{" "}
                   <strong>DASAR</strong>. Ditopik ini anak diajarkan
                   bagian-bagian tubuh mereka dan perbedaan antara bagian tubuh
                   laki-laki dan perempuan.
@@ -228,9 +230,9 @@ const Bab3 = () => {
                   <p className="text-gray-700 leading-relaxed">
                     Anak diajak untuk menyebutkan organ tubuh yang diketahuinya,
                     lalu guru membuka sesi tanya jawab dengan para peserta
-                    didik. Pada sesi akhir peserta didik diajak untuk
-                    menyebutkan dan menyentuh organ tubuh yang dimaksud melalui
-                    manekin ataupun pengalaman langsung dengan tubuhnya.
+                    didik. Pada sesi akhir murid diajak untuk menyebutkan dan
+                    menyentuh organ tubuh yang dimaksud melalui manekin ataupun
+                    pengalaman langsung dengan tubuhnya.
                   </p>
                 </div>
 
@@ -241,9 +243,9 @@ const Bab3 = () => {
                   <p className="text-gray-700 leading-relaxed">
                     Materi selanjutnya pada topik ini adalah “ADA RAHASIA
                     DIBALIK BAJUMU!” istilah ini dapat diberikan kepada para
-                    peserta didik tingkat dasar dalam mengajarkan bagian tubuh
-                    mana saja yang tidak boleh disentuh oleh orang lain. Area
-                    rahasia tersebut yaitu:
+                    murid tingkat dasar dalam mengajarkan bagian tubuh mana saja
+                    yang tidak boleh disentuh oleh orang lain. Area rahasia
+                    tersebut yaitu:
                   </p>
                 </div>
 
@@ -323,8 +325,17 @@ const Bab3 = () => {
                           Media:
                         </h4>
                         <p className="text-gray-700">
-                          Nyanyian dari <em>YouTube</em> berjudul
-                          &ldquo;Sentuhan Boleh&rdquo;
+                          Nyanyian dari <em>YouTube</em> berjudul &ldquo;kujaga
+                          diriku&rdquo; (
+                          <a
+                            href="https://www.youtube.com/watch?v=878HzqGwWp8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 underline"
+                          >
+                            https://www.youtube.com/watch?v=878HzgGwWp8
+                          </a>
+                          )
                         </p>
                       </div>
                     </div>
@@ -339,8 +350,8 @@ const Bab3 = () => {
                       RAHASIA DIBALIK BAJUMU”, dalam istilah ini anak diajarkan
                       untuk merahasiakan bagian tubuh yang sensitif sehingga
                       bagian tersebut tidak boleh disentuh oleh orang lain.
-                      Selanjutnya guru mengajak para peserta didik untuk
-                      bernyanyi tentang lagu “sentuhan boleh”.
+                      Selanjutnya guru mengajak para murid untuk bernyanyi
+                      tentang lagu “kujaga diriku”.
                     </p>
                   </div>
                 </div>
@@ -352,27 +363,26 @@ const Bab3 = () => {
                   Topik 2. Ayo Jaga Kesehatan Reproduksi!
                 </h3>
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
-                  Pada topik ini, peserta didik dengan hambatan penglihatan
-                  harus diajarkan bagaimana cara menjaga kesehatan reproduksi
-                  nya. Kesehatan reproduksi ini dimulai dengan cara membersihkan
-                  dan menjaga organ reproduksi dengan baik. Kita harus menjaga
-                  kesehatan reproduksi tersebut, peserta didik juga harus
-                  diajarkan bagian-bagian reproduksi setiap jenis kelamin.
-                  Meskipun memberikan alat reproduksi ini hal yang biasa, akan
-                  tetapi peserta didik tetap harus diajarkan tata cara
-                  membersihkannya dengan baik.
+                  Pada topik ini, murid dengan hambatan penglihatan harus
+                  diajarkan bagaimana cara menjaga kesehatan repoduksi nya.
+                  Kesehatan reproduksi ini dimulai dengan cara membersihkan dan
+                  menjaga organ reproduksi dengan baik. Selain menjaga kesehatan
+                  reproduksi tersebut, murid juga harus diajarkan bagian-bagian
+                  reproduksi setiap jenis kelamin. Meskipun membersihkan alat
+                  reproduksi ini hal yang biasa, akan tetapi murid tetap harus
+                  diajarkan tata cara membersihkannya dengan baik.
                 </p>
 
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
                   Pada penjelasannya nanti anak dengan hambatan penglihatan
-                  diajarkan mulai dari ureta sampai dengan penis pada laki-laki
+                  diajarkan mulai dari uretra sampai dengan penis pada laki-laki
                   dan mulai dari ovarium sampai dengan vagina. Selain dari
                   bagian-bagian tersebut, fungsi dari setiap bagiannya juga
                   tidak luput dari pengajaran terhadap anak dengan hambatan
                   penglihatan. Pada materi ini guru diberikan kebebasan untuk
                   memberikannya kepada jenjang yang sesuai dengan kesiapan
-                  mental peserta didik baik menengah ataupun lanjutan. Materi
-                  ini didasarkan masing-masing jenis kelamin, guru laki-laki
+                  mental murid baik menengah ataupun lanjutan. Materi ini
+                  disesuaikan masing-masing jenis kelamin, guru laki-laki
                   mengajarkan kepada anak laki-laki dan guru perempuan
                   mengajarkan kepada anak perempuan.
                 </p>
@@ -468,6 +478,11 @@ const Bab3 = () => {
                                 ganti pakaian dalam minimal satu kali dalam
                                 sehari.
                               </li>
+                              <li>
+                                Bagi yang sudah menstruasi, ganti pembalut
+                                secara rutin saat menstruasi terjadi (4-6 jam
+                                sekali).
+                              </li>
                             </ol>
                           </td>
                         </tr>
@@ -492,20 +507,39 @@ const Bab3 = () => {
                   </div>
 
                   {/* Gambar alat peraga */}
-                  <div className="grid md:grid-cols-2 gap-4 mb-4">
-                    <div className="bg-white p-4 rounded-lg border-2 border-yellow-200 text-center">
-                      <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center mb-2">
-                        <span className="text-gray-500">
-                          contoh alat peraga organ reproduksi perempuan
-                        </span>
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    {/* Alat Peraga 1 */}
+                    <div className="bg-white p-6 rounded-lg border-2 border-yellow-200 shadow-sm">
+                      <div className="bg-gray-50 rounded-lg overflow-hidden">
+                        <Image
+                          src={vagina}
+                          alt="Alat Peraga Anatomi Perempuan"
+                          width={600}
+                          height={800}
+                          className="w-full h-auto object-contain"
+                          priority
+                        />
                       </div>
+                      <h3 className="text-center mt-4 font-medium text-gray-700">
+                        Anatomi Perempuan
+                      </h3>
                     </div>
-                    <div className="bg-white p-4 rounded-lg border-2 border-yellow-200 text-center">
-                      <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center mb-2">
-                        <span className="text-gray-500">
-                          contoh alat peraga organ reproduksi laki-laki
-                        </span>
+
+                    {/* Alat Peraga 2 */}
+                    <div className="bg-white p-6 rounded-lg border-2 border-yellow-200 shadow-sm">
+                      <div className="bg-gray-50 rounded-lg overflow-hidden">
+                        <Image
+                          src={penis}
+                          alt="Alat Peraga Anatomi Laki-Laki"
+                          width={600}
+                          height={800}
+                          className="w-full h-auto object-contain"
+                          priority
+                        />
                       </div>
+                      <h3 className="text-center mt-4 font-medium text-gray-700">
+                        Anatomi Laki-Laki
+                      </h3>
                     </div>
                   </div>
 
@@ -515,19 +549,19 @@ const Bab3 = () => {
                       Contoh Pembelajaran:
                     </h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Peserta didik sesuai diajarkan oleh guru sesuai jenis
-                      kelamin masing-masing. Peserta didik diajak untuk
-                      menyentuh organ reproduksi yang ada di manekin dan alat
-                      lain sesuai daftar langkah-langkahnya sampai peserta didik
-                      melakukannya. Guru memulai dengan melihat langkah-langkah
-                      yang telah dilaksanakan oleh peserta didik.
+                      Murid sesuai diajarkan oleh guru sesuai jenis kelamin
+                      masing-masing. Murid diajak untuk menyentuh organ
+                      reproduksi yang ada di manekin atau alat peraga lalu
+                      dijelaskan langkah-langkahnya sambil murid
+                      melaksanakannya. Guru menuntut dengan melihat
+                      langkah-langkah yang telah dilaksanakan oleh murid.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
-                      Cara memberikan organ reproduksi diatas bersifat
-                      fleksibel, maksudnya tidak hanya diajarkan di peserta
-                      didik tingkat menengah dan lanjutan, pada tingkat dasar
-                      juga bisa diajarkan sesuai dengan kesiapan mental dari
-                      peserta didik tersebut.
+                      Cara membersihkan organ reproduksi diatas bersifat
+                      fleksibel, maksudnya tidak hanya diajarkan pada murid
+                      tingkat menengah dan lanjutan, pada tingkat dasar juga
+                      bisa diajarkan sesuai dengan kesiapan mental dari murid
+                      tersebut.
                     </p>
                   </div>
                 </div>
@@ -700,14 +734,14 @@ const Bab3 = () => {
                     </h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
                       Sehari sebelum pembelajaran mengganti pembalut
-                      disimulasikan, guru menginstruksikan peserta didik untuk
-                      membawa pembalut dan rumah dengan berkoordinasi bersama
-                      orang tua untuk menjelaskan materi yang berkaitan dengan
-                      fungsi peserta didik membawa pembalut. Guru perempuan
-                      menuntut peserta didik perempuan untuk mengikuti
-                      langkah-langkah mengganti pembalut. Lalu bagi peserta
-                      didik perempuan yang menstruasi diminta untuk memberikan
-                      umpan baliknya setelah mempraktikkannya langsung.
+                      disimulasikan, guru menginstruksikan murid untuk membawa
+                      pembalut dan rumah dengan berkoordinasi bersama orang tua
+                      untuk menjelaskan materi yang berkaitan dengan fungsi
+                      murid membawa pembalut. Guru perempuan menuntut peserta
+                      didik perempuan untuk mengikuti langkah-langkah mengganti
+                      pembalut. Lalu bagi murid perempuan yang menstruasi
+                      diminta untuk memberikan umpan baliknya setelah
+                      mempraktikkannya langsung.
                     </p>
                   </div>
                 </div>
@@ -715,9 +749,9 @@ const Bab3 = () => {
                 <div className="bg-amber-100 p-4 rounded-lg border-l-4 border-amber-500 mb-6">
                   <h4 className="font-bold text-amber-900 mb-4">
                     Topik 2.3: Pada jenjang LANJUTAN, bagian organ reproduksi
-                    diajarkan kepada peserta didik dengan hambatan penglihatan.
-                    Dengan mengajarkan organ reproduksi tersebut, anak diajarkan
-                    tahu akan bagian-bagian reproduksi yang dimilikinya.
+                    diajarkan kepada murid dengan hambatan penglihatan. Dengan
+                    mengajarkan organ reproduksi tersebut, anak diajarkan tahu
+                    akan bagian-bagian reproduksi yang dimilikinya.
                   </h4>
 
                   {/* Tabel Organ Reproduksi */}
@@ -910,36 +944,49 @@ const Bab3 = () => {
                   {/* Gambar Alat Peraga */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg border border-gray-300">
-                        <div className="bg-pink-200 h-40 rounded-lg flex items-center justify-center mb-3 relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-pink-300 to-red-300"></div>
-                          <div className="relative z-10 bg-white bg-opacity-80 rounded-full p-4">
-                            <span className="text-gray-700 text-xs font-medium">
-                              Model 3D
-                              <br />
-                              Organ Reproduksi
-                            </span>
+                      <div className="bg-white p-6 rounded-lg border-2 border-pink-200 shadow-lg">
+                        <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-lg mb-4 min-h-[300px] flex items-center justify-center">
+                          <div className="max-w-full max-h-full">
+                            <Image
+                              src={vagina}
+                              alt="Alat Peraga Organ Reproduksi Perempuan"
+                              width={280}
+                              height={320}
+                              className="object-contain rounded-lg shadow-md"
+                              priority
+                            />
                           </div>
                         </div>
+                        <h3 className="text-lg font-semibold text-pink-700 mb-2">
+                          Organ Reproduksi Perempuan
+                        </h3>
                         <p className="text-sm text-gray-600">
-                          contoh alat peraga organ reproduksi perempuan
+                          Alat peraga untuk pembelajaran anatomi organ
+                          reproduksi perempuan
                         </p>
                       </div>
                     </div>
+
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg border border-gray-300">
-                        <div className="bg-blue-200 h-40 rounded-lg flex items-center justify-center mb-3 relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-purple-300"></div>
-                          <div className="relative z-10 bg-white bg-opacity-80 rounded-full p-4">
-                            <span className="text-gray-700 text-xs font-medium">
-                              Model 3D
-                              <br />
-                              Organ Reproduksi
-                            </span>
+                      <div className="bg-white p-6 rounded-lg border-2 border-blue-200 shadow-lg">
+                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg mb-4 min-h-[300px] flex items-center justify-center">
+                          <div className="max-w-full max-h-full">
+                            <Image
+                              src={penis}
+                              alt="Alat Peraga Organ Reproduksi Laki-laki"
+                              width={280}
+                              height={320}
+                              className="object-contain rounded-lg shadow-md"
+                              priority
+                            />
                           </div>
                         </div>
+                        <h3 className="text-lg font-semibold text-blue-700 mb-2">
+                          Organ Reproduksi Laki-laki
+                        </h3>
                         <p className="text-sm text-gray-600">
-                          contoh alat peraga organ reproduksi laki-laki
+                          Alat peraga untuk pembelajaran anatomi organ
+                          reproduksi laki-laki
                         </p>
                       </div>
                     </div>
@@ -952,9 +999,8 @@ const Bab3 = () => {
                     </h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
                       Guru menjelaskan masing-masing organ reproduksi, lalu
-                      membantu peserta didik dengan menyentuh organ reproduksi
-                      yang disebutkan kepada alat peraga organ reproduksi yang
-                      ada.
+                      membantu murid dengan menyentuh organ reproduksi yang
+                      disebutkan kepada alat peraga organ reproduksi yang ada.
                     </p>
                   </div>
                 </div>
@@ -962,14 +1008,14 @@ const Bab3 = () => {
                 <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500 mb-6">
                   <h4 className="font-bold text-orange-800 mb-4">
                     Topik 2.4: jenjang LANJUTAN. Dalam menjaga kesehatan
-                    reproduksi, anak juga harus dikenalkan berbagai masalah
-                    kesehatan yang akan muncul jika tidak menjaga kesehatan
-                    reproduksi manusia. Masalah kesehatan ini merupakan
-                    konsekuensi terhadap apa yang dilakukan anak ketika tidak
-                    menjaga kesehatan reproduksi dengan baik dan benar. Ada
-                    beberapa jenis masalah kesehatan reproduksi pada laki-laki
-                    dan perempuan serta dampak saat tidak menjaga kesehatan
-                    organ reproduksi, diantaranya:
+                    reproduksi, anak juga harus dikenalkan berbagai macam
+                    masalah kesehatan yang akan muncul pada reproduksi manusia.
+                    Masalah kesehatan ini merupakan konsekuensi terhadap apa
+                    yang dilakukan anak ketika tidak menjaga kesehatan
+                    reproduksi dengan baik dan benar. Ada beberapa jenis masalah
+                    kesehatan reproduksi pada laki-laki dan perempuan serta
+                    dampak saat tidak menjaga kesehatan organ reproduksi,
+                    diantaranya:
                   </h4>
 
                   {/* Tabel Masalah Kesehatan Reproduksi */}
@@ -1103,9 +1149,9 @@ const Bab3 = () => {
                       Contoh Pembelajaran:
                     </h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Peserta didik diberikan penjelasan seputar masalah pada
-                      organ reproduksi, lalu guru membuka sesi tanya jawab
-                      dengan cara mendiskusikannya bersama-sama di dalam kelas.
+                      Murid diberikan penjelasan seputar masalah pada organ
+                      reproduksi, lalu guru membuka sesi tanya jawab dengan cara
+                      mendiskusikannya bersama-sama di dalam kelas.
                     </p>
                   </div>
                 </div>
@@ -1222,9 +1268,9 @@ const Bab3 = () => {
                       Contoh Pembelajaran:
                     </h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Peserta didik diberikan penjelasan seputar masalah pada
-                      organ reproduksi, lalu guru membuka sesi tanya jawab
-                      dengan cara mendiskusikannya bersama-sama di dalam kelas.
+                      Murid diberikan penjelasan seputar masalah pada organ
+                      reproduksi, lalu guru membuka sesi tanya jawab dengan cara
+                      mendiskusikannya bersama-sama di dalam kelas.
                     </p>
                   </div>
                 </div>
@@ -1240,11 +1286,11 @@ const Bab3 = () => {
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
                   Topik yang sesuai untuk jenjang <strong>LANJUTAN</strong> ini
                   merupakan topik yang sekarang sangat marak terjadi dikehidupan
-                  peserta didik yang menginjak masa remaja. Sama dengan topik
+                  murid yang menginjak masa remaja. Sama dengan topik
                   sebelumnya, dalam mengajarkan topik ini sebaiknya diajarkan
-                  oleh guru yang sesuai dengan jenis kelamin masing-masing
-                  peserta didik. Perilaku seksual remaja merupakan fenomena yang
-                  kompleks dan dipengaruhi oleh berbagai faktor. Remaja mulai
+                  oleh guru yang seusai dengan jenis kelamin masing-masing
+                  murid. Perilaku seksual remaja merupakan fenomena yang
+                  kompleks dan dipengaruhi oleh berbagai faktor. remaja mulai
                   mengalami perubahan fisik dan emosional yang signifikan, yang
                   sering kali memicu rasa ingin tahu mengenai seksualitas.
                   Ketika memasuki masa pubertas, mereka cenderung mencari
@@ -1253,35 +1299,30 @@ const Bab3 = () => {
                 </p>
 
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
-                  Interaksi sosial menjadi sangat penting. Peserta didik yang
-                  sudah menginjak masa remaja sering kali terpengaruh oleh
-                  norma-norma kelompok dan budaya di sekitar mereka. Pengaruh
-                  teman sebaya dapat mendorong perilaku seksual yang lebih
-                  berani, termasuk hubungan intim dan eksplorasi seksual. Namun,
-                  di sisi lain, pendidikan seksual yang memadai juga dapat
-                  membantu mereka membuat keputusan yang lebih baik dan
-                  bertanggung jawab.
+                  Interaksi sosial menjadi sangat penting. Murid yang sudah
+                  menginjak masa remaja sering kali terpengaruh oleh norma-norma
+                  kelompok dan budaya di sekitar mereka. Pengaruh teman sebaya
+                  dapat mendorong perilaku seksual yang lebih berani, termasuk
+                  hubungan intim dan eksplorasi seksual. Namun, di sisi lain,
+                  pendidikan seksual yang memadai juga dapat membantu mereka
+                  membuat keputusan yang lebih baik dan bertanggung jawab.
                 </p>
 
                 <p className="mb-4 text-justify text-gray-700 leading-relaxed">
                   Seiring berjalannya waktu, pengalaman pertama dalam hubungan
-                  romantis yang disebut &quot;pacaran&quot; sering kali menjadi
-                  titik balik bagi remaja. Mereka belajar tentang emosi,
-                  komitmen, dan konsekuensi dari tindakan mereka. Penting bagi
-                  orang tua dan pendidik untuk memberikan dukungan dan informasi
-                  yang tepat agar remaja dapat memahami dan menghadapi tantangan
-                  berpacaran yang menimbulkan perilaku seksual. Dengan
-                  pendekatan yang tepat, remaja dapat mengembangkan sikap yang
-                  sehat terhadap seksualitas dan hubungan interpersonal.
-                </p>
-
-                <p className="mb-4 text-justify text-gray-700 leading-relaxed">
-                  Beberapa contoh perilaku seksual yang timbul pada kehidupan
-                  peserta didik yang menginjak masa remaja, diantaranya
-                  berpegangan tangan, berciuman, berpelukan,
-                  berfantasi/berimajinasi, masturbasi,
-                  <em> petting</em>, bersenggama sebelum menikah. Beberapa
-                  perilaku tersebut akan dijelaskan pada tabel di bawah ini.
+                  romantis yang disebut “pacaran” sering kali menjadi titik
+                  balik bagi remaja. Mereka belajar tentang emosi, komitmen, dan
+                  konsekuensi dari tindakan mereka. Penting bagi orang tua dan
+                  pendidik untuk memberikan dukungan dan informasi yang tepat
+                  agar remaja dapat memahami dan menghadapi tantangan berpacaran
+                  yang menimbulkan perilaku seksual. Dengan pendekatan yang
+                  tepat, remaja dapat mengembangkan sikap yang sehat terhadap
+                  seksualitas dan hubungan interpersonal. Ada beberapa contoh
+                  perilaku seksual yang timbul pada kehidupan murid yang
+                  menginjak masa remaja, diantaranya berpegangan tangan,
+                  bericuman, berpelukan, berfantasi/berimajinasi, masturbasi,
+                  petting, bersenggama sebelum menikah. Beberapa perilaku
+                  tersebut akan dijelaskan pada tabel dibawah ini.
                 </p>
 
                 {/* Tabel Bentuk Perilaku Seksual */}
@@ -1313,10 +1354,13 @@ const Bab3 = () => {
                         </td>
                         <td className="border border-gray-400 px-4 py-2 text-gray-700 align-top">
                           <ol className="list-decimal pl-4">
-                            <li>Tidak realistis terhadap hubungan</li>
+                            <li>
+                              Dapat memicu ekspektasi yang tidak realistis
+                              terhadap hubungan
+                            </li>
                             <li>Menimbulkan kecemasan dan tekanan sosial</li>
                             <li>
-                              Mengganggu fokus pendidikan dan pengembangan diri
+                              Mengganggu fokus pendidikan dan pengembangan diri.
                             </li>
                           </ol>
                         </td>
@@ -1327,24 +1371,26 @@ const Bab3 = () => {
                         </td>
                         <td className="border border-gray-400 px-4 py-2 text-gray-700 align-top">
                           Suatu aktivitas yang mengarah pada pemusatan nafsu
-                          birahi melalui rangsangan alat kelamin, baik dilakukan
-                          sendiri atau orang lain hingga mencapai orgasme bagi
-                          laki-laki dan ejakulasi bagi wanita dengan
-                          berkontraksinya otot-otot secara otomatis terutama
-                          otot vagina yang kadar kontraksinya paling besar.
+                          birahi melalui rangsangan alat kelamin dan alat vital
+                          lainnya, baik dilakukan sendiri atau orang lain hingga
+                          mencapai orgasme bagi laki-laki dan ejakulasi bagi
+                          wanita dengan berkontraksinya otot-otot secara
+                          otomatis terutama otot vagina yang kadar kontraksinya
+                          paling besar.
                         </td>
                         <td className="border border-gray-400 px-4 py-2 text-gray-700 align-top">
                           <ol className="list-decimal pl-4">
                             <li>
                               Dapat menyebabkan kecanduan dan mengganggu
-                              konsentrasi belajar dan aktivitas harian
+                              konsentrasi dalam belajar dan aktivitas
+                              sehari-hari.
                             </li>
                             <li>
-                              Sering menimbulkan rasa bersalah dan kecemasan
+                              Sering menimbulkan rasa bersalah dan kecemasan.
                             </li>
                             <li>
                               Mempengaruhi minat terhadap hubungan intim yang
-                              sehat
+                              sehat.
                             </li>
                           </ol>
                         </td>
@@ -1373,7 +1419,7 @@ const Bab3 = () => {
                 {/* Faktor Internal dan Eksternal */}
                 <p className="mb-4 text-gray-700 leading-relaxed">
                   Ada beberapa faktor yang mendorong munculnya perilaku seksual
-                  pada anak dengan hambatan penglihatan yang notabene sulit
+                  pada anak dengan hambatan penglihatan yang notabene nya sulit
                   menerima informasi secara visual. Faktor tersebut terbagi atas
                   dua, yaitu faktor internal dan faktor eksternal. Berikut
                   faktor yang mendorong munculnya perilaku seksual pada anak
@@ -1431,13 +1477,13 @@ const Bab3 = () => {
                     Contoh Pembelajaran:
                   </h4>
                   <p className="text-gray-700 leading-relaxed">
-                    Guru mengajarkan sesuai dengan jenis kelamin masing-masing
-                    peserta didik. Guru menjelaskan secara perlahan
-                    masing-masing poin materi agar anak dapat mencernanya dengan
-                    baik. Guru membuka sesi tanya jawab yang menimbulkan pola
-                    diskusi di dalamnya agar anak dengan hambatan penglihatan
-                    benar-benar paham dan dapat menjauhi perilaku-perilaku
-                    seksual yang telah dipelajari.
+                    Guru mengajarkan sesuai dengan jenis kelamin masing-msaing
+                    murid. Guru menjelaskan secara perlahan masing masing poin
+                    materi agar anak dapat mencernanya dengan baik. Guru membuka
+                    sesi tanaya jawab yang menimbulkan pola diskusi didalam nya
+                    agar anak dengan hambatan penglihatan benar-benar paham dan
+                    dapat menjauhi perilaku-perilaku seksual yang telah
+                    dipelajari.
                   </p>
                 </div>
               </section>
@@ -1454,7 +1500,8 @@ const Bab3 = () => {
                   masa peralihan dari anak-anak menuju dewasa, ditandai dengan
                   perubahan fisik, emosional, dan hormonal yang mempersiapkan
                   tubuh untuk kematangan seksual dan reproduksi. Pubertas antara
-                  laki-laki dan perempuan memiliki beberapa perbedaan.
+                  laki-laki dan perempuan memiliki beberapa perbedaan. Berikut
+                  perbedaan pubertas antara anak laki-laki dan anak perempuan.
                 </p>
 
                 {/* Tabel Perbedaan Pubertas */}
@@ -1604,58 +1651,120 @@ const Bab3 = () => {
                   <ol className="list-decimal list-inside space-y-4 text-gray-700 leading-relaxed">
                     <li>
                       <span className="font-bold text-yellow-700">
-                        Pendidikan seksual sesuai usia & kesiapan mental
+                        Pendidikan seksual yang sesuai dengan usia dan kesiapan
+                        mental anak
                       </span>
                       <br />
-                      Memberikan pemahaman tentang seksualitas, hubungan sehat,
-                      dan konsekuensi tindakan seksual. Pendidikan yang benar
-                      membantu remaja membuat keputusan yang bertanggung jawab.
+                      Pada tahap pubertas anak mengalami berbagai perubahan
+                      fisik dan emosional yang dapat mempengaruhi perilaku
+                      mereka. Oleh karena itu, memberikan pemahaman yang jelas
+                      mengenai seksualitas, hubungan yang sehat, dan konsekuensi
+                      dari tindakan seksual sangatlah krusial. Pendidikan
+                      seksual yang komprehensif dapat membantu remaja untuk
+                      memahami nilai-nilai dan norma-norma yang berkaitan dengan
+                      hubungan interpersonal. Dengan pengetahuan yang cukup,
+                      mereka dapat membuat keputusan yang lebih baik dan
+                      bertanggung jawab mengenai tubuh dan kesehatan mereka.
+                      Selain itu, pendidikan seksual juga dapat mengurangi
+                      stigma dan kesalahpahaman yang sering kali mengelilingi
+                      topik seksualitas.
                     </li>
                     <li>
                       <span className="font-bold text-yellow-700">
-                        Ajarkan nilai moral yang kuat
+                        Ajarkan anak-anak nilai moral yang kuat
                       </span>
                       <br />
-                      Penanaman prinsip kejujuran, tanggung jawab, dan rasa
-                      hormat sejak dini mencegah pergaulan bebas. Sekolah &
-                      keluarga berperan penting.
+                      Anak-anak perlu diajarkan nilai-nilai moral yang kuat agar
+                      terhindar dari pergaulan bebas. Proses ini sebaiknya
+                      dimulai sejak usia dini apalagi pad, ketika mereka masih
+                      dalam tahap perkembangan karakter. Dalam lingkungan
+                      keluarga, orang tua memiliki peran penting untuk
+                      menanamkan prinsip-prinsip moral seperti kejujuran,
+                      tanggung jawab, dan rasa hormat terhadap orang lain.
+                      Melalui komunikasi yang terbuka, orang tua dapat
+                      menjelaskan konsekuensi dari tindakan yang tidak sesuai
+                      norma.
+                      <br />
+                      Sekolah juga berkontribusi dalam pembentukan karakter
+                      anak. Kurikulum yang mengintegrasikan pendidikan moral
+                      dapat membantu siswa memahami pentingnya nilai-nilai
+                      tersebut. Selain itu, kegiatan ekstrakurikuler yang
+                      positif dapat menjadi wadah bagi anak-anak untuk
+                      berinteraksi dan belajar bekerja sama dengan baik.
                     </li>
                     <li>
                       <span className="font-bold text-yellow-700">
-                        Dorong anak ikut kegiatan positif
+                        Mendorong anak berpartisipasi dalam kegiatan yang
+                        positif
                       </span>
                       <br />
-                      Bergabung dengan klub olahraga, seni, atau kelompok
-                      bermain membantu membangun keterampilan sosial dan
-                      mengurangi risiko perilaku negatif.
+                      Anak-anak harus didorong untuk berpartisipasi dalam
+                      kegiatan positif. Pertama, orang tua dan pendidik perlu
+                      mengenalkan berbagai aktivitas yang mendukung pengembangan
+                      keterampilan sosial dan emosional. Misalnya, mendorong
+                      anak untuk bergabung dalam kelompok bermain atau klub
+                      olahraga dapat membantu mereka belajar bekerja sama dan
+                      berkomunikasi dengan baik. Selanjutnya, partisipasi dalam
+                      kegiatan seni juga dapat meningkatkan kreativitas dan
+                      ekspresi diri anak.
+                      <br />
+                      Seiring berjalannya waktu, anak-anak yang terlibat dalam
+                      kegiatan positif akan lebih percaya diri dan memiliki rasa
+                      tanggung jawab yang tinggi. Keterlibatan ini juga dapat
+                      mengurangi risiko perilaku negatif, seperti kenakalan
+                      remaja dan pergaulan bebas. Oleh karena itu, penting bagi
+                      orang tua, guru, dan masyarakat untuk menciptakan
+                      lingkungan yang mendukung dan memberikan kesempatan bagi
+                      anak-anak untuk berpartisipasi dalam kegiatan yang
+                      bermanfaat.
                     </li>
                     <li>
                       <span className="font-bold text-yellow-700">
-                        Pergaulan sehat mencegah perilaku menyimpang
+                        Pergaulan yang baik untuk mencegah perilaku menyimpang
                       </span>
                       <br />
-                      Lingkungan teman yang mendukung memotivasi anak untuk
-                      menghindari perilaku berisiko.
+                      Pergaulan yang baik memiliki peranan penting dalam
+                      membentuk karakter dan perilaku individu, terutama di
+                      kalangan anak dan remaja. Ketika seseorang berinteraksi
+                      dengan lingkungan sosial yang positif, mereka cenderung
+                      mendapatkan pengaruh yang konstruktif. Hal ini dimulai
+                      dari pembentukan hubungan yang sehat dengan teman sebaya,
+                      di mana nilai-nilai baik dan norma sosial dapat saling
+                      dipertukarkan. Dalam proses ini, anak belajar untuk
+                      menghargai perbedaan, berkomunikasi dengan efektif, dan
+                      mengembangkan empati. Seiring berjalannya waktu, pergaulan
+                      yang baik ini dapat berfungsi sebagai penghalang terhadap
+                      perilaku menyimpang. Ketika anak dengan hambatan
+                      penglihatan dikelilingi oleh teman-teman yang mendukung
+                      dan memiliki tujuan yang sama, mereka lebih termotivasi
+                      untuk menghindari tindakan yang merugikan diri sendiri
+                      atau orang lain.
                     </li>
                     <li>
                       <span className="font-bold text-yellow-700">
-                        Diskusi bijak tentang hubungan romantis
+                        Diskusi tentang hubungan romantis dengan anak perlu
+                        dilakukan dengan bijak
                       </span>
                       <br />
-                      Orang tua & guru perlu menciptakan suasana terbuka agar
-                      anak nyaman berbagi perasaan serta memahami hubungan yang
-                      sehat.
+                      Diskusi tentang hubungan romantis dengan anak perlu
+                      dilakukan dengan bijak. Pertama-tama, penting untuk
+                      menciptakan suasana yang aman dan terbuka, sehingga anak
+                      merasa nyaman untuk berbagi perasaannya. Pada tahap ini,
+                      orang tua dan guru dapat memulai dengan menanyakan
+                      pandangan anak tentang cinta dan hubungan, serta
+                      mendengarkan dengan seksama tanpa menghakimi.
                     </li>
                   </ol>
                 </div>
 
                 {/* Penutup */}
                 <p className="mb-6 text-justify text-gray-700 leading-relaxed">
-                  Orang tua dan guru harus memberikan informasi yang tepat
-                  tentang hubungan yang sehat, termasuk nilai-nilai seperti
-                  saling menghormati dan komunikasi yang baik. Mereka juga perlu
-                  menjelaskan risiko yang mungkin dihadapi dalam hubungan
-                  romantis, seperti tekanan teman sebaya atau masalah emosional.
+                  Setelah itu, orang tua dan guru harus memberikan informasi
+                  yang tepat tentang hubungan yang sehat, termasuk nilai-nilai
+                  seperti saling menghormati dan komunikasi yang baik. Dalam
+                  proses ini, orang tua dan guru juga perlu menjelaskan tentang
+                  risiko yang mungkin dihadapi dalam hubungan romantis, seperti
+                  tekanan dari teman sebaya atau masalah emosional.
                 </p>
 
                 {/* Metode & Media */}
@@ -1679,11 +1788,11 @@ const Bab3 = () => {
                     Contoh Pembelajaran:
                   </h4>
                   <p className="text-gray-700 leading-relaxed text-justify">
-                    Peserta didik diajak bercerita bersama lalu mendiskusikan
-                    tentang ciri-ciri pubertas yang muncul terhadap dirinya.
-                    Simulasi dapat dilakukan dengan cara membuat sebuah drama
-                    percakapan antar peserta didik dalam rangka mensimulasikan
-                    poin-poin dalam menjaga batasan anak.
+                    Murid diajak bercerita bersama lalu mendiskusikan tentang
+                    ciri-ciri pubertas yang muncul terhadap dirinya. Simulasi
+                    dapat dilakukan dengan cara membuat sebuah drama percakapan
+                    antar murid dalam rangka mensimulasikan poin-poin dalam
+                    menjaga batasan anak.
                   </p>
                 </div>
               </section>
