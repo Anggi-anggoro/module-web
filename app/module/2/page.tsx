@@ -571,7 +571,7 @@ const Bab2 = () => {
                     Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.
                     (2024).{" "}
                     <em>
-                      Nomor 032/H/KR/2024. Tentang Capaian Pembelajaran Pada
+                      Nomor 046/H/KR/2025. Tentang Capaian Pembelajaran Pada
                       Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan
                       Jenjang Pendidikan Menengah Pada Kurikulum Merdeka
                     </em>

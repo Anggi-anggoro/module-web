@@ -104,8 +104,8 @@ const ModulAjar = () => {
                 Capaian Pembelajaran:
               </p>
               <p className="text-gray-700 mb-4">
-                Peserta didik mampu mengidentifikasi ciri fisik laki-laki dan
-                perempuan pada masa pubertas.
+                Murid mampu mengidentifikasi ciri fisik laki-laki dan perempuan
+                pada masa pubertas.
               </p>
 
               <p className="font-semibold text-yellow-800 mb-3">
@@ -135,11 +135,11 @@ const ModulAjar = () => {
               <span className="w-6 h-6 bg-orange-500 rounded-full mr-3 flex items-center justify-center">
                 <span className="text-white text-sm">👥</span>
               </span>
-              PROFIL PELAJAR PANCASILA
+              DIMENSI PROFIL LULUSAN
             </h3>
             <div className="bg-orange-50 rounded-lg p-6">
               <p className="text-gray-700">
-                Bernalar Kritis, Bergotong royong, dan Mandiri.
+                Penalaran Kritis, Bergotong royong, dan Mandiri.
               </p>
             </div>
           </div>
@@ -517,95 +517,111 @@ const ModulAjar = () => {
               </div>
               <div className="mt-6 p-8 bg-yellow-50">
                 <p className="font-semibold text-yellow-800 mb-4">
-                  C. Lembar pengamatan keterampilan Profil Pancasila
+                  C. Lembar pengamatan ketercapaian Dimensi Profil Lulusan
                 </p>
 
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse border border-gray-300 text-sm">
                     <thead>
                       <tr className="bg-yellow-200">
-                        <th className="border border-gray-300 p-2 text-center font-semibold text-yellow-800">
+                        <th className="border border-gray-300 p-2 text-center font-semibold text-yellow-800 w-1/2">
                           KARAKTER
                         </th>
-                        <th className="border border-gray-300 p-2 text-center font-semibold text-yellow-800">
+                        <th className="border border-gray-300 p-2 text-center font-semibold text-yellow-800 w-1/4">
                           Terlihat
                         </th>
-                        <th className="border border-gray-300 p-2 text-center font-semibold text-yellow-800">
+                        <th className="border border-gray-300 p-2 text-center font-semibold text-yellow-800 w-1/4">
                           Belum Terlihat
                         </th>
                       </tr>
                     </thead>
                     <tbody>
+                      {/* Kemandirian */}
                       <tr>
-                        <td className="border border-gray-300 p-2 font-semibold bg-yellow-100 text-yellow-900">
-                          Mandiri
+                        <td className="border border-gray-300 p-2 text-xs">
+                          <b>Kemandirian</b> - Murid <u>dapat menerima</u>{" "}
+                          pendapat
+                          <u> (jawaban/sanggahan)</u> dari teman
                         </td>
-                        <td className="border border-gray-300 p-2">
-                          <div className="space-y-1">
-                            <p>
-                              Peserta didik dapat menerima pendapat (jawaban{" "}
-                              <span className="underline">sangahan</span>) dari
-                              teman.
-                            </p>
-                            <p>
-                              Peserta didik mampu menjawab dengan lugas dan
-                              sistematis.
-                            </p>
-                            <p>
-                              Peserta didik dapat mengekspresikan mengkuti
-                              teman.
-                            </p>
-                          </div>
-                        </td>
+                        <td className="border border-gray-300 p-2"></td>
                         <td className="border border-gray-300 p-2"></td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-semibold bg-yellow-100 text-yellow-900">
-                          Berpikir kritis
+                        <td className="border border-gray-300 p-2 text-xs">
+                          Murid <u>mampu menjawab</u> dengan <u>lugas</u> dan{" "}
+                          <u>sistematis</u>
                         </td>
-                        <td className="border border-gray-300 p-2">
-                          <div className="space-y-1">
-                            <p>
-                              Peserta didik aktif dalam mencari informasi lebih
-                              baik bertalwa kepada guru mauapun teman.
-                            </p>
-                            <p>
-                              Peserta didik dapat mengaplikasikan materi dengan
-                              kehidupan sehari-hari.
-                            </p>
-                            <p>
-                              Peserta didik dapat menyimpulkan kegiatan yang
-                              dilakukan.
-                            </p>
-                          </div>
-                        </td>
+                        <td className="border border-gray-300 p-2"></td>
                         <td className="border border-gray-300 p-2"></td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-semibold bg-yellow-100 text-yellow-900">
-                          Bergotong royong
+                        <td className="border border-gray-300 p-2 text-xs">
+                          Murid <u>dapat mengapresiasi</u> masukan teman
                         </td>
-                        <td className="border border-gray-300 p-2">
-                          <div className="space-y-1">
-                            <p>
-                              Peserta didik menerima peran yang diberikan
-                              kelompok.
-                            </p>
-                            <p>
-                              Peserta didik membahui informasi dan menyampaikan
-                              kepada teman lain.
-                            </p>
-                            <p>
-                              Peserta didik melakukan aktivitas kelompok sesuai
-                              dengan kesepakatan bersama.
-                            </p>
-                          </div>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                      </tr>
+
+                      {/* Penalaran Kritis */}
+                      <tr>
+                        <td className="border border-gray-300 p-2 text-xs">
+                          <b>Penalaran Kritis</b> - Murid <u>aktif</u> dalam
+                          mencari informasi,
+                          <u> lebih baik bertanya</u> kepada guru <u>maupun</u>{" "}
+                          teman
                         </td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 p-2 text-xs">
+                          Murid <u>dapat mengaplikasikan</u> materi{" "}
+                          <u>dengan kehidupan sehari-hari</u>
+                        </td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 p-2 text-xs">
+                          Murid <u>dapat menyimpulkan</u> kegiatan yang
+                          dilakukan
+                        </td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                      </tr>
+
+                      {/* Kolaborasi */}
+                      <tr>
+                        <td className="border border-gray-300 p-2 text-xs">
+                          <b>Kolaborasi</b> - Murid <u>menerima peran</u> yang
+                          diberikan kelompok
+                        </td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 p-2 text-xs">
+                          Murid <u>memahami informasi</u> dan{" "}
+                          <u>menyampaikan kepada teman lain</u>
+                        </td>
+                        <td className="border border-gray-300 p-2"></td>
+                        <td className="border border-gray-300 p-2"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 p-2 text-xs">
+                          Murid{" "}
+                          <u>
+                            melakukan aktivitas kelompok sesuai dengan
+                            kesepakatan bersama
+                          </u>
+                        </td>
+                        <td className="border border-gray-300 p-2"></td>
                         <td className="border border-gray-300 p-2"></td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+
                 <div className="mt-12 text-center">
                   <div className="flex justify-between items-end">
                     <div>

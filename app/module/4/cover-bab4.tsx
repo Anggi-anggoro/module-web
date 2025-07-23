@@ -67,12 +67,12 @@ const Bab4Cover = () => {
         <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 max-w-4xl w-full">
           <div className="text-center">
             <h4 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-3 sm:mb-4 leading-tight">
-              Buku Panduan Guru Pendidikan Khusus bagi Peserta Didik Disabilitas
-              Netra
+              Modul Guru Pendidikan Khusus bagi Peserta Didik Dengan Hambatan
+              Penglihatan
             </h4>
-            <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+            {/* <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 leading-relaxed">
               Disertai Hambatan Intelektual untuk SDLB, SMPLB, dan SMALB
-            </p>
+            </p> */}
 
             {/* Authors Section */}
             <div className="border-t border-gray-200 pt-4">

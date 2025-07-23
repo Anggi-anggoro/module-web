@@ -63,19 +63,19 @@ const Bab1Cover = () => {
             {/* Main Title */}
             <div className="space-y-2">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 leading-tight">
-                Buku Panduan Guru Pendidikan Khusus
+                Modul Guru Pendidikan Seksual
               </h2>
               <p className="text-base sm:text-lg font-semibold text-orange-600">
-                Peserta Didik Disabilitas Netra
+                Peserta Didik Dengan Hambatan Penglihatan
               </p>
             </div>
 
-            {/* Subtitle */}
+            {/* Subtitle
             <div className="border-t border-gray-200 pt-4">
               <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Disertai Hambatan Intelektual untuk SDLB, SMPLB, dan SMALB
               </p>
-            </div>
+            </div> */}
 
             {/* Authors */}
             <div className="border-t border-gray-200 pt-4">
