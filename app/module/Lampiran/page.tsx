@@ -202,21 +202,6 @@ const Lampiran = () => {
                 </p>
               </div>
             </section>
-
-            <section className="mb-8">
-              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
-                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
-                  G
-                </span>
-                Sumber Rujukan
-              </h3>
-              <div className="ml-8">
-                <p className="text-gray-700 leading-relaxed italic">
-                  E-Modul guru pendidikan seksual bagi anak dengan hambatan
-                  penglihatan
-                </p>
-              </div>
-            </section>
             <section className="mb-8">
               <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
                 <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
@@ -346,20 +331,6 @@ const Lampiran = () => {
                     </tbody>
                   </table>
                 </div>
-              </div>
-            </section>
-            <section className="mb-8">
-              <h3 className="text-xl font-bold mb-4 text-yellow-700 flex items-center">
-                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mr-3">
-                  G
-                </span>
-                Sumber Rujukan
-              </h3>
-              <div className="ml-8">
-                <p className="text-gray-700 leading-relaxed italic">
-                  E-Modul guru pendidikan seksual bagi anak dengan hambatan
-                  penglihatan
-                </p>
               </div>
             </section>
 

@@ -28,8 +28,8 @@ export default function ModulGuruCover() {
               MODUL PENDIDIKAN SEKSUAL
             </p>
             <p className="text-gray-700 text-sm sm:text-base md:text-lg font-medium leading-relaxed">
-              untuk meningkatkan pengetahuan dan mencegah masalah perilaku
-              seksual remaja disabilitas intelektual
+              untuk meningkatkan pengetahuan guru dalam mengajarkan pendidikan
+              seksual dengan hambatan penglihatan
             </p>
           </div>
         </div>

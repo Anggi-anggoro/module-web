@@ -144,18 +144,18 @@ const Bab3Cover = () => {
               <div className="inline-flex items-center justify-center mb-2 md:mb-3">
                 <div className="w-1 h-6 md:h-8 bg-gradient-to-b from-white to-amber-200 rounded-full mr-2 md:mr-3"></div>
                 <h4 className="text-sm md:text-base lg:text-xl font-bold bg-gradient-to-r from-white via-yellow-100 to-amber-100 bg-clip-text text-transparent">
-                  Buku Panduan Guru Pendidikan Khusus
+                  Modul Guru Pendidikan Khusus
                 </h4>
                 <div className="w-1 h-6 md:h-8 bg-gradient-to-b from-white to-amber-200 rounded-full ml-2 md:ml-3"></div>
               </div>
 
               <div className="bg-gradient-to-r from-white/20 via-white/10 to-white/20 rounded-lg p-2 md:p-4 mb-2 md:mb-3">
                 <p className="text-white text-xs md:text-sm font-medium leading-relaxed">
-                  bagi Peserta Didik Disabilitas Netra
+                  bagi Peserta Didik Dengan Hambatan Penglihatan
                 </p>
-                <p className="text-amber-100 text-xs md:text-sm font-light">
+                {/* <p className="text-amber-100 text-xs md:text-sm font-light">
                   Disertai Hambatan Intelektual untuk SDLB, SMPLB, dan SMALB
-                </p>
+                </p> */}
               </div>
 
               <div className="flex flex-col items-center space-y-2 md:space-y-3 text-xs md:text-sm text-white/90">
