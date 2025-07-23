@@ -89,17 +89,17 @@ const Bab2Cover = () => {
             <div className="text-center space-y-4">
               <div className="border-b border-gray-200 pb-4">
                 <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 leading-tight">
-                  Buku Panduan Guru Pendidikan Khusus
+                  Modul Guru Pendidikan Khusus
                 </h4>
                 <h5 className="text-base sm:text-lg lg:text-xl font-semibold text-orange-600 mt-2">
-                  Peserta Didik Disabilitas Netra
+                  Peserta Didik Dengan Hambatan Penglihatan
                 </h5>
               </div>
 
               <div className="space-y-3">
-                <p className="text-gray-600 text-sm sm:text-base font-medium">
+                {/* <p className="text-gray-600 text-sm sm:text-base font-medium">
                   Disertai Hambatan Intelektual untuk SDLB, SMPLB, dan SMALB
-                </p>
+                </p> */}
                 <div className="flex flex-col items-center space-y-2">
                   <p className="text-gray-700 text-sm sm:text-base font-semibold">
                     Penulis:

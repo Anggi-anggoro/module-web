@@ -87,21 +87,21 @@ export default function ModulGabungan() {
           <Bab3 />
         </section>
       </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section
+          id="cover-bab4"
+          className="px-4 md:px-10 py-8 md:py-16 bg-white"
+        >
+          <Bab4Cover />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section id="bab4" className="px-4 md:px-10 py-8 md:py-16 bg-white">
+          <Bab4 />
+        </section>
+      </Suspense>
       {isPostTest ? (
         <>
-          <Suspense fallback={<div>Loading...</div>}>
-            <section
-              id="cover-bab4"
-              className="px-4 md:px-10 py-8 md:py-16 bg-white"
-            >
-              <Bab4Cover />
-            </section>
-          </Suspense>
-          <Suspense fallback={<div>Loading...</div>}>
-            <section id="bab4" className="px-4 md:px-10 py-8 md:py-16 bg-white">
-              <Bab4 />
-            </section>
-          </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
             <section
               id="lampiran"
