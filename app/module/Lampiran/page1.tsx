@@ -116,14 +116,14 @@ const ModulAjar = () => {
                 Tujuan Pembelajaran:
               </p>
               <ol className="list-decimal list-inside space-y-2 text-gray-700 pl-4">
-                <li>Peserta didik mampu mengetahui definisi dari pubertas</li>
+                <li>Murid mampu mengetahui definisi dari pubertas</li>
                 <li>
-                  Peserta didik mampu mengidentifikasi ciri fisik laki-laki pada
-                  masa pubertas
+                  Murid mampu mengidentifikasi ciri fisik laki-laki pada masa
+                  pubertas
                 </li>
                 <li>
-                  Peserta didik mampu mengidentifikasi ciri fisik perempuan pada
-                  masa pubertas
+                  Murid mampu mengidentifikasi ciri fisik perempuan pada masa
+                  pubertas
                 </li>
               </ol>
             </div>
@@ -165,11 +165,11 @@ const ModulAjar = () => {
                 <span className="w-6 h-6 bg-orange-500 rounded-full mr-3 flex items-center justify-center">
                   <span className="text-white text-sm">🎯</span>
                 </span>
-                TARGET PESERTA DIDIK
+                TARGET MURID
               </h3>
               <div className="bg-orange-50 rounded-lg p-6">
                 <p className="text-gray-700 text-center font-medium">
-                  Peserta Didik Tunanetra
+                  Murid Tunanetra
                 </p>
               </div>
             </div>
@@ -225,7 +225,7 @@ const ModulAjar = () => {
                   <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2"></span>
                   <div>
                     <span className="font-semibold text-gray-800">
-                      Pengaturan Peserta didik:
+                      Pengaturan Murid:
                     </span>
                     <span className="text-gray-700"> Mandiri</span>
                   </div>
@@ -265,7 +265,7 @@ const ModulAjar = () => {
                       Media, Alat dan Bahan yang diperlukan:
                     </p>
                     <ul className="list-disc list-inside pl-4 space-y-1 text-gray-700">
-                      <li>Media: Diri Peserta Didik</li>
+                      <li>Media: Diri Murid</li>
                       <li>Alat tulis: Reglet, Pen, Kertas Braille</li>
                     </ul>
                   </div>
@@ -308,21 +308,21 @@ const ModulAjar = () => {
                   <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
                   <span>
                     Kelas dimulai dengan salam, menanyakan kabar dan memeriksa
-                    kehadiran peserta didik
+                    kehadiran murid
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
                   <span>
-                    Peserta didik dingatkan untuk selalu mengutamakan sikap
-                    disiplin setiap absen dan pengiriman tugas
+                    murid dingatkan untuk selalu mengutamakan sikap disiplin
+                    setiap absen dan pengiriman tugas
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
                   <span>
-                    Guru memberi motivasi kepada peserta didik agar semangat
-                    dalam mengikuti pembelajaran yang akan dilaksanakan
+                    Guru memberi motivasi kepada murid agar semangat dalam
+                    mengikuti pembelajaran yang akan dilaksanakan
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -352,7 +352,7 @@ const ModulAjar = () => {
                 <li className="flex items-start space-x-3">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
                   <span>
-                    Peserta didik diminta untuk memutuskan tulisan braille yang
+                    murid diminta untuk memutuskan tulisan braille yang
                     menggunakan perbedaan fisik yang mereka rasakan sesuai jenis
                     kelamin masing-masing
                   </span>
@@ -370,23 +370,23 @@ const ModulAjar = () => {
                   <li className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
                     <span>
-                      Guru mengajak peserta didik untuk menyimpulkan definisi
-                      pubertas sebagai masa peralihan dari anak-anak menuju
-                      dewasa dengan ditandai dengan perubahan fisik dan
-                      kematangan organ reproduksi
+                      Guru mengajak murid untuk menyimpulkan definisi pubertas
+                      sebagai masa peralihan dari anak-anak menuju dewasa dengan
+                      ditandai dengan perubahan fisik dan kematangan organ
+                      reproduksi
                     </span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
                     <span>
-                      Peserta didik dibagi dua kelompok sesuai dengan jenis
+                      Murid didik dibagi dua kelompok sesuai dengan jenis
                       kelaminnya masing-masing
                     </span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
                     <span>
-                      Peserta didik diberikan waktu untuk berdiskusi menganalisa
+                      Murid diberikan waktu untuk berdiskusi menganalisa
                       perubahan yang terjadi selama pubertas
                     </span>
                   </li>
@@ -455,7 +455,7 @@ const ModulAjar = () => {
                 </p>
                 <p className="text-sm text-gray-600 mb-4">
                   Observasi untuk kerja selama proses pembelajaran melalui
-                  lembar kegiatan peserta didik
+                  lembar kegiatan murid
                 </p>
 
                 <div className="overflow-x-auto">
@@ -511,8 +511,7 @@ const ModulAjar = () => {
                   <span className="ml-28">20</span>
                 </p>
                 <p className="text-sm text-gray-700 mb-6">
-                  Nilai ≥ 70 menunjukkan peserta didik mencapai tujuan
-                  pembelajaran
+                  Nilai ≥ 70 menunjukkan murid mencapai tujuan pembelajaran
                 </p>
               </div>
               <div className="mt-6 p-8 bg-yellow-50">

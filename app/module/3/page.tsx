@@ -723,7 +723,18 @@ const Bab3 = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-yellow-800 mb-2">Media:</h4>
-                      <p className="text-gray-700">Pembalut</p>
+                      <p className="text-gray-700">
+                        Pembalut (
+                        <a
+                          href="https://www.youtube.com/watch?v=ks1zy4O8gJs"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 underline"
+                        >
+                          https://www.youtube.com/watch?v=ks1zy4O8gJs
+                        </a>
+                        )
+                      </p>
                     </div>
                   </div>
 
