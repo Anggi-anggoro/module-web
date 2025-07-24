@@ -16,7 +16,7 @@ export default function ModulGuruCover() {
             Universitas Negeri Yogyakarta
           </p>
           <p className="text-white/80 text-xs">
-            Fakultas Ilmu Pendidikan Seksual
+            Fakultas Ilmu Pendidikan Psikologi
           </p>
           <p className="text-white/80 text-xs">
             Program Studi Pendidikan Luar Biasa
