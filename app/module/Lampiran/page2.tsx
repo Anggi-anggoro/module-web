@@ -47,16 +47,14 @@ const ContohSoalEvaluasi = () => {
                   <div className="flex-shrink-0 w-6 h-6 bg-green-200 rounded-full flex items-center justify-center mt-0.5 mr-3">
                     <span className="text-green-700 font-bold text-sm">1</span>
                   </div>
-                  <p>
-                    Soal diberikan dengan cara mendiktekan kepada peserta didik.
-                  </p>
+                  <p>Soal diberikan dengan cara mendiktekan kepada murid.</p>
                 </div>
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-6 h-6 bg-green-200 rounded-full flex items-center justify-center mt-0.5 mr-3">
                     <span className="text-green-700 font-bold text-sm">2</span>
                   </div>
-                  <p>Peserta didik menulis soal menggunakan tulisan braille.</p>
+                  <p>Murid menulis soal menggunakan tulisan braille.</p>
                 </div>
 
                 <div className="flex items-start">
@@ -64,9 +62,9 @@ const ContohSoalEvaluasi = () => {
                     <span className="text-green-700 font-bold text-sm">3</span>
                   </div>
                   <p>
-                    Bentuk soal diberikan kepada peserta didik dengan hambatan
-                    penglihatan berupa <em>essay</em> agar memudah peserta didik
-                    untuk menjawabnya.
+                    Bentuk soal diberikan kepada murid dengan hambatan
+                    penglihatan berupa <em>essay</em> agar memudah murid untuk
+                    menjawabnya.
                   </p>
                 </div>
 
@@ -82,9 +80,8 @@ const ContohSoalEvaluasi = () => {
                     <span className="text-green-700 font-bold text-sm">5</span>
                   </div>
                   <p>
-                    Setelah peserta didik mengumpulkan jawabannya, guru mengajak
-                    kembali peserta didik berdiskusi berdasarkan hasil jawaban
-                    dari peserta didik.
+                    Setelah murid mengumpulkan jawabannya, guru mengajak kembali
+                    murid berdiskusi berdasarkan hasil jawaban dari murid.
                   </p>
                 </div>
               </div>
@@ -215,7 +212,7 @@ const ContohSoalEvaluasi = () => {
                   </div>
                   <div className="flex">
                     <span className="font-semibold text-gray-700 w-40">
-                      Nama Peserta Didik
+                      Nama Muid
                     </span>
                     <span className="text-gray-600">:</span>
                   </div>
@@ -239,7 +236,7 @@ const ContohSoalEvaluasi = () => {
                   </h4>
                   <p className="text-gray-600 mb-4">
                     Berikan tanda centang (✓) pada kolom sesuai pencapaian
-                    peserta didik.
+                    murid.
                   </p>
 
                   <div className="overflow-x-auto">

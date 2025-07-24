@@ -15,7 +15,12 @@ export default function ModulGuruCover() {
           <p className="text-white/90 text-xs sm:text-sm font-medium mb-1">
             Universitas Negeri Yogyakarta
           </p>
-          <p className="text-white/80 text-xs">Fakultas Ilmu Pendidikan</p>
+          <p className="text-white/80 text-xs">
+            Fakultas Ilmu Pendidikan Seksual
+          </p>
+          <p className="text-white/80 text-xs">
+            Program Studi Pendidikan Luar Biasa
+          </p>
         </div>
 
         {/* Title */}
@@ -29,7 +34,7 @@ export default function ModulGuruCover() {
             </p>
             <p className="text-gray-700 text-sm sm:text-base md:text-lg font-medium leading-relaxed">
               untuk meningkatkan pengetahuan guru dalam mengajarkan pendidikan
-              seksual dengan hambatan penglihatan
+              seksual anak dengan hambatan penglihatan
             </p>
           </div>
         </div>
