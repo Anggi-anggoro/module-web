@@ -15,11 +15,11 @@ export default function Header({ logo, authContent }: NavbarProps) {
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
  const [isAdmin, setIsAdmin] = useState<boolean | null>(false);
  
-const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     const supabase = createClient();
-    supabase.auth.getUser().then(({ data, error }) => {
+    supabase.auth.getUser().then(({ data }) => {
       if (data.user && data.user.email === 'admin@modis.com') {              
         setIsAdmin(true)
       }

@@ -1,6 +1,17 @@
-import React from 'react';
+import { createClient } from '@/lib/supabase/client';
+import { redirect } from "next/navigation";
 
-const BackofficePage: React.FC = () => {
+const BackofficePage: React.FC = async () => {    
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return redirect("/");
+  }
+
     return (
         <main style={{ padding: '2rem' }}>
             <h1>Backoffice Dashboard</h1>
