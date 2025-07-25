@@ -1,20 +1,20 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import ModulGuruCover from "./cover"; // rename component if needed
-import CoverBab1 from "./1/cover-bab1";
-import Bab1 from "./1/page";
-import Bab2 from "./2/page";
-import Bab3 from "./3/page";
-import Bab4 from "./4/page";
+import CoverBab1 from "../../components/module-page/1/cover-bab1";
+import Bab1 from "../../components/module-page/1/page";
+import Bab2 from "../../components/module-page/2/page";
+import Bab3 from "../../components/module-page/3/page";
+import Bab4 from "../../components/module-page/4/page";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
-import Lampiran from "./Lampiran/page";
-import Bab4Cover from "./4/cover-bab4";
-import Bab2Cover from "./2/cover-bab2";
-import ModulAjar from "./Lampiran/page1";
-import ContohSoalEvaluasi from "./Lampiran/page2";
-import Bab3Cover from "./3/cover";
+import Lampiran from "../../components/module-page/Lampiran/page";
+import Bab4Cover from "../../components/module-page/4/cover-bab4";
+import Bab2Cover from "../../components/module-page/2/cover-bab2";
+import ModulAjar from "../../components/module-page/Lampiran/page1";
+import ContohSoalEvaluasi from "../../components/module-page/Lampiran/page2";
+import Bab3Cover from "../../components/module-page/3/cover";
 
 export default function ModulGabungan() {
   const router = useRouter();
