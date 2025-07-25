@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
+import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase/client';
 
 interface NavbarProps {
   logo: StaticImageData;
@@ -11,6 +13,18 @@ interface NavbarProps {
 
 export default function Header({ logo, authContent }: NavbarProps) {
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+ const [isAdmin, setIsAdmin] = useState<boolean | null>(false);
+ 
+const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (data.user && data.user.email === 'admin@modis.com') {              
+        setIsAdmin(true)
+      }
+    });
+  }, [router]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -31,12 +45,17 @@ export default function Header({ logo, authContent }: NavbarProps) {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex text-lg justify-between gap-x-5 ml-10">
-            <a className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/module">
+            <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/module">
               Modul
-            </a>
-            <a className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/pretest">
+            </Link>
+            <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/pretest">
               Pre-test
-            </a>
+            </Link>
+            {isAdmin && 
+            <Link className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/backoffice">
+              Backoffice
+            </Link>
+            }
           </div>
         </div>
 
