@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { createClient } from "@/lib/supabase/client";
-import { redirect, useRouter } from 'next/navigation';
 import React from 'react';
 
 
@@ -199,7 +198,7 @@ const UserDataTable: React.FC = () => {
         </div>
         {searchTerm && (
           <p className="mt-2 text-sm text-gray-600">
-            Ditemukan {filteredData.length} data untuk "{searchTerm}"
+            Ditemukan {filteredData.length} data untuk &quot;{searchTerm}&quot;
           </p>
         )}
       </div>
@@ -234,7 +233,7 @@ const UserDataTable: React.FC = () => {
                           <svg className="w-12 h-12 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                           </svg>
-                          Tidak ada data untuk "{searchTerm}"
+                          Tidak ada data untuk &quot;{searchTerm}&quot;
                           <button
                             onClick={() => setSearchTerm('')}
                             className="mt-2 text-blue-600 hover:text-blue-800 text-sm underline"
