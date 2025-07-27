@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/client"; // client-side
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function PreTestPage() {
+export default function PostTestPage() {
     const [answers, setAnswers] = useState<Record<number, string>>({});
     const [showResults, setShowResults] = useState(false);
     const [score, setScore] = useState(0);
