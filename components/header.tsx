@@ -7,11 +7,11 @@ import Image, { StaticImageData } from 'next/image';
 interface NavbarProps {
   logo: StaticImageData;
   authContent: React.ReactNode;
+  headerLinks: React.ReactNode;
 }
 
-export default function Header({ logo, authContent }: NavbarProps) {
+export default function Header({ logo, authContent, headerLinks }: NavbarProps) {
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -28,16 +28,7 @@ export default function Header({ logo, authContent }: NavbarProps) {
           <Link className="bg-white px-6 py-1.5 rounded-b-md" href="/">
             <Image src={logo} alt="Logo" className="w-24 h-auto" />
           </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex text-lg justify-between gap-x-5 ml-10">
-            <a className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/module">
-              Modul
-            </a>
-            <a className="hover:bg-[#ef8d4b] p-3.5 rounded-md" href="/pretest">
-              Pre-test
-            </a>
-          </div>
+        {headerLinks}
         </div>
 
         {/* Desktop Auth Button */}
