@@ -55,8 +55,13 @@ export async function updateSession(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = "/auth/login";
     return NextResponse.redirect(url);
-  }
 
+  } else if (request.nextUrl.pathname.includes("/backoffice") && user?.email != 'admin@modis.com') {
+    const url = request.nextUrl.clone();
+    url.pathname = "/404";
+    return NextResponse.rewrite(url);
+
+  }
   // IMPORTANT: You *must* return the supabaseResponse object as it is.
   // If you're creating a new response object with NextResponse.next() make sure to:
   // 1. Pass the request in it, like so:
