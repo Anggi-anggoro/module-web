@@ -7,6 +7,7 @@ import Bulp from "@/app/assets/bulb.png";
 import OpenedBook from "@/app/assets/opened-book.png";
 import Notes from "@/app/assets/notes.png";
 import Target from "@/app/assets/target.png";
+import UNYLogo from "@/app/assets/logo-uny.png";
 import { ScrollToId } from "@/components/utils";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -31,14 +32,44 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center w-full">
       <div className="w-full">
         <main className="">
-          {/* Hero Section with Yellow Gradient */}
+          {/* Hero Section with Yellow Gradient and UNY Logo */}
           <section className="px-6 py-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 relative overflow-hidden min-h-screen flex justify-center items-center">
             {/* Decorative elements */}
             <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute bottom-20 right-20 w-24 h-24 bg-amber-300 rounded-full opacity-30 animate-bounce"></div>
             <div className="absolute top-1/2 left-5 w-16 h-16 bg-yellow-200 rounded-full opacity-25"></div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-7xl relative z-10">
+            {/* UNY Logo positioned at top */}
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
+              <div className=" rounded-2xl p-4 shadow-xl border border-white/20">
+                <div className="flex items-center gap-3">
+                  {/* Placeholder for UNY Logo - replace with actual logo */}
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-md">
+                    {/* Uncomment and use your actual UNY logo */}
+                    <Image
+                      src={UNYLogo}
+                      alt="Logo UNY"
+                      width={64}
+                      height={64}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="text-gray-800">
+                    <p className="font-bold text-lg">
+                      Universitas Negeri Yogyakarta
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      Fakultas Ilmu Pendidikan Psikologi
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      Program Studi Pendidikan Luar Biasa
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-7xl relative z-10 mt-20">
               <div className="lg:w-1/2 flex justify-center items-center">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-white/20 rounded-2xl blur-xl"></div>
@@ -111,8 +142,7 @@ export default function Home() {
                       "Meningkatkan Pemahaman Guru",
                       "Menyediakan Informasi yang Akurat",
                       "Meningkatkan Keterampilan Praktis Guru",
-                      "Menciptakan Lingkungan Belajar yang Aman dan Mendukung",
-                      "Menyusun Kurikulum Pendidikan Seksual yang Inklusif",
+                      "Menciptakan Lingkungan Belajar yang Mendukung perkembangan anak dengan hambatan penglihatan ",
                     ].map((item, index) => (
                       <li
                         key={index}
