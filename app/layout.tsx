@@ -4,7 +4,7 @@ import "./globals.css";
 import { hasEnvVars } from "@/lib/utils";
 import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
-import Logo from "@/app/assets/logo-modified.png";
+import Logo from "@/app/assets/xxxx.png";
 import WhatsAppButton from "@/components/whatsapp";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -42,7 +42,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <Header logo={Logo} authContent={authContent} headerLinks={<HeaderLinks/>}/>
+        <Header
+          logo={Logo}
+          authContent={authContent}
+          headerLinks={<HeaderLinks />}
+        />
         <WhatsAppButton />
         {children}
         <Footer />
