@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import SidebarLeft from "@/components/navbar";
 import SidebarRight from "@/components/sidebar";
 import { createClient } from "@/lib/supabase/client"; // client-side
@@ -21,7 +21,7 @@ export default function ModuleLayout({
 
     supabase.auth.getUser().then(({ data, error }) => {
       if (error || !data.user) {
-        router.push("/auth/login");
+        return redirect("/auth/login");
       } else {
         supabase
           .from("userdata")

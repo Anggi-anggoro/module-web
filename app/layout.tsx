@@ -8,6 +8,7 @@ import Logo from "@/app/assets/logo-modified.png";
 import WhatsAppButton from "@/components/whatsapp";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { HeaderLinks } from "@/components/header-links";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -41,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <Header logo={Logo} authContent={authContent} />
+        <Header logo={Logo} authContent={authContent} headerLinks={<HeaderLinks/>}/>
         <WhatsAppButton />
         {children}
         <Footer />
