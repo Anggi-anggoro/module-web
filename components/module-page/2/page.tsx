@@ -530,6 +530,53 @@ const Bab2 = () => {
                   </div>
                 </div>
               </section>
+              <section id="rangkuman-bab2" className="mb-10">
+                <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                  RANGKUMAN
+                </h3>
+                <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                  <p className="text-justify text-gray-700 leading-relaxed">
+                    pendidikan seksual adalah pendekatan komprehensif yang
+                    mencakup pembelajaran tentang aspek biologis, emosional,
+                    sosial, dan budaya dari seksualitas. Dalam mengajarkan
+                    pendidikan seksual guru dapat membagi murid menjadi 3
+                    jenjang, yaitu dasar, menengah, dan lanjutan. Metode-metode
+                    yang dapat dilaksanakan mulai dari metode ceramah hingga
+                    metode praktik. Dalam pelaksanaannya, pendidikan seksual
+                    dapat terintegrasi melalui matapelajaran intrakurikuler
+                    ataupun dengan jadwal khusus. Mengajarkan pendidikan seksual
+                    kepada anak dengan hambatan penglihatan, dapat menggunakan
+                    beberapa media untuk memudahkan pembelajaran, mulai dari
+                    media audio, alat peraga, hingga benda konkret yang didapat
+                    dalam kehidupan sehari-hari.
+                  </p>
+                </div>
+              </section>
+
+              <section id="latihan-mandiri-bab2" className="mb-10">
+                <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                  LATIHAN MANDIRI
+                </h3>
+                <div className="space-y-4 text-gray-700 text-justify leading-relaxed">
+                  <ol className="list-decimal list-inside space-y-4 text-gray-700">
+                    <li className="leading-relaxed">
+                      Apa yang dimaksud dengan pendidikan seksual?
+                    </li>
+                    <li className="leading-relaxed">
+                      Suatu cara untuk mencapai tujuan pembelajaran yang telah
+                      ditetapkan dengan cara latihan keterampilan menuntut
+                      praktik yang dilaksanakan dalam kehidupan nyata dan sesuai
+                      dengan aslinya disebut dengan metode ...
+                    </li>
+                    <li className="leading-relaxed">
+                      Sebutkan beberapa media pembelajaran yang dapat mendukung
+                      pembelajaran pendidikan seksual anak dengan hambatan
+                      penglihatan!
+                    </li>
+                  </ol>
+                </div>
+              </section>
+
               <section id="referensi-bab2" className="mt-16 mb-10">
                 <h3 className="text-xl font-bold mb-6 text-yellow-700 border-b-2 border-yellow-500 pb-2">
                   REFERENSI
