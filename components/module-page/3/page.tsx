@@ -111,7 +111,7 @@ const Bab3 = () => {
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="border border-gray-400 px-4 py-6">
+                          <td className="border border-gray-400 border-b-0 border-r-0 px-4 py-6">
                             <div className="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-200">
                               <Image
                                 src={boy}
@@ -122,7 +122,7 @@ const Bab3 = () => {
                               />
                             </div>
                           </td>
-                          <td className="border border-gray-400 px-4 py-6">
+                          <td className="border border-gray-400 border-b-0 border-l-0 px-4 py-6">
                             <div className="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-200">
                               <p className="text-gray-600 italic">
                                 Ilustrasi Tubuh Perempuan
@@ -135,6 +135,15 @@ const Bab3 = () => {
                                 className="mx-auto w-[300px] md:w-[360px] lg:w-[800px] h-auto"
                               />
                             </div>
+                          </td>
+                        </tr>
+                        <tr className="bg-gray-50 font-semibold">
+                          <td
+                            className="border border-gray-400 border-t-0 px-4 py-2 text-yellow-800 col-span-2"
+                            colSpan={2}
+                          >
+                            Gambar 1. Ilustrasi bagian tubuh laki-laki dan
+                            perempuan
                           </td>
                         </tr>
                         <tr className="bg-yellow-100 font-semibold">
@@ -277,6 +286,9 @@ const Bab3 = () => {
                           height={800}
                           className="mx-auto w-[300px] md:w-[360px] lg:w-[800px] h-auto"
                         />
+                        <p className="text-gray-700 text-sm text-center mt-4 font-medium">
+                          Gambar 2. Ilustrasi area tubuh rahasia
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -541,6 +553,13 @@ const Bab3 = () => {
                         Anatomi Laki-Laki
                       </h3>
                     </div>
+                  </div>
+                  {/* Caption untuk kedua gambar */}
+                  <div className="text-center mb-6">
+                    <p className="text-gray-700 text-sm font-medium">
+                      Gambar 3. Contoh alat peraga anatomi organ reproduksi
+                      laki-laki dan perempuan
+                    </p>
                   </div>
 
                   {/* Contoh Pembelajaran */}
@@ -991,6 +1010,13 @@ const Bab3 = () => {
                       </div>
                     </div>
                   </div>
+                  {/* Caption untuk kedua gambar */}
+                  <div className="text-center mb-6">
+                    <p className="text-gray-700 text-sm font-medium">
+                      Gambar 4. Contoh alat peraga anatomi organ reproduksi
+                      laki-laki dan perempuan
+                    </p>
+                  </div>
 
                   {/* Contoh Pembelajaran */}
                   <div className="bg-amber-50 border border-amber-500 p-4 rounded-lg">
@@ -1047,18 +1073,7 @@ const Bab3 = () => {
                             bulan)
                           </td>
                         </tr>
-                        <tr>
-                          <td className="border border-gray-400 px-4 py-2 text-gray-700 align-top">
-                            <strong>Disfungsi Seksual:</strong> Gangguan ini
-                            biasanya berbentuk disfungsi ereksi, ejakulasi dini,
-                            dan libido rendah
-                          </td>
-                          <td className="border border-gray-400 px-4 py-2 text-gray-700 align-top">
-                            <strong>Kanker serviks:</strong> keadaan dimana
-                            sel-sel abnormal tumbuh disekitar lapisan epitel
-                            serviks.
-                          </td>
-                        </tr>
+
                         <tr>
                           <td className="border border-gray-400 px-4 py-2 text-gray-700 align-top">
                             <strong>Disfungsi Seksual:</strong> Gangguan ini
@@ -1160,11 +1175,11 @@ const Bab3 = () => {
                   <h4 className="font-bold text-orange-700 mb-4">
                     Topik 2.5: jenjang LANJUTAN. Selain masalah kesehatan organ
                     reproduksi yang disebutkan pada topik 2.4 sebelumnya. Organ
-                    reproduksi juga bisa terserang beberapa penyakit yang
-                    berbahaya dikarenakan tidak menjaga kebersihan organ
-                    reproduksi dan memiliki pergaulan yang kurang sehat dalam
-                    kehidupan. Berikut beberapa penyakit yang dapat menyerang
-                    organ reproduksi manusia:
+                    reproduksi juga bisa terserang beberapa Penyakit Menular
+                    Seksual (PMS) yang berbahaya dikarenakan tidak menjaga
+                    kebersihan organ reproduksi dan memiliki pergaulan yang
+                    kurang sehat dalam kehidupan. Berikut beberapa PMS yang
+                    dapat menyerang organ reproduksi manusia:
                   </h4>
 
                   {/* Tabel Penyakit Reproduksi */}
@@ -1174,6 +1189,9 @@ const Bab3 = () => {
                         <tr className="bg-yellow-50 font-semibold">
                           <th className="border border-gray-400 px-4 py-3 text-orange-800 w-1/3">
                             Nama Penyakit
+                          </th>
+                          <th className="border border-gray-400 px-4 py-3 text-orange-800 w-1/3">
+                            Penyebab
                           </th>
                           <th className="border border-gray-400 px-4 py-3 text-orange-800 w-2/3">
                             Gejala
@@ -1194,6 +1212,13 @@ const Bab3 = () => {
                             pada ujung saluran kencing, rasa terbakar saat buang
                             air kecil sehingga sulit membuang air kecil.
                           </td>
+                          <td className="border border-gray-400 px-4 py-2">
+                            Timbulnya radang organ reproduksi, dan dapat
+                            menimbulkan radang pada saluran kemih, mata,
+                            persendian, dan selaput otak, bernanah pada ujung
+                            saluran kencing, rasa terbakar saat buang air kecil
+                            sehingga sulit membuang air kecil.
+                          </td>
                         </tr>
                         <tr>
                           <td className="border border-gray-400 px-4 py-2">
@@ -1206,6 +1231,11 @@ const Bab3 = () => {
                             kulit dan pembengkakan kelenjar getah bening
                             (Sekunder), Kerusakan Organ (Tersier)
                           </td>
+                          <td className="border border-gray-400 px-4 py-2">
+                            Luka tidak nyeri pada area reproduksi (primer), ruam
+                            kulit dan pembengkakan kelenjar getah bening
+                            (Sekunder), Kerusakan Organ (Tersier).
+                          </td>
                         </tr>
                         <tr>
                           <td className="border border-gray-400 px-4 py-2">
@@ -1215,6 +1245,10 @@ const Bab3 = () => {
                             Disebabkan oleh virus herpes simpleks serotipe 2 dan
                             ditularkan melalui hubungan seksual. Luka melepuh di
                             area reproduksi, serta terasa gatal dan nyeri
+                          </td>
+                          <td className="border border-gray-400 px-4 py-2">
+                            Luka melepuh di area reproduksi, serta terasa gatal
+                            dan nyeri
                           </td>
                         </tr>
                         <tr>
@@ -1230,6 +1264,17 @@ const Bab3 = () => {
                             Penyakit ini menular melalui cairan kelamin, air
                             susu, dan darah.
                           </td>
+                          <td className="border border-gray-400 px-4 py-2">
+                            Penurunan berat badan drastis tanpa penyebab yang
+                            jelas. Berkeringat banyak di malam hari. Bercak
+                            putih di lidah, mulut, organ kelamin, atau anus
+                            (infeksi jamur Candidiasis). Bintik-bintik keunguan
+                            pada kulit yang tidak hilang (Kaposi&apos;s
+                            sarcoma). Demam berkepanjangan (lebih dari 10 hari)
+                            atau berulang. Diare kronis (berlangsung lebih dari
+                            sebulan). Infeksi jamur berulang di mulut,
+                            tenggorokan, atau vagina.
+                          </td>
                         </tr>
                         <tr>
                           <td className="border border-gray-400 px-4 py-2">
@@ -1241,10 +1286,36 @@ const Bab3 = () => {
                             Kutil kelamin, beberapa jenis menyebabkan kanker
                             serviks / anus.
                           </td>
+                          <td className="border border-gray-400 px-4 py-2">
+                            Memunculkan seperti kutil pada kelamin.
+                          </td>
                         </tr>
                         {/* Baris lainnya... */}
                       </tbody>
                     </table>
+                  </div>
+                  {/* Mencegah PMS */}
+                  <div className="bg-yellow-50 border border-orange-300 p-4 rounded-lg mb-4">
+                    <h4 className="font-bold text-orange-700 mb-2">
+                      Berikut cara mencegah Penyakit Menular Seksual (PMS):
+                    </h4>
+                    <ul className="text-gray-700 leading-relaxed space-y-2 list-disc list-inside">
+                      <li>Selalu menjaga kebersihan organ reproduksi</li>
+                      <li>Jangan menggunakan jarum suntik bekas</li>
+                      <li>
+                        Setia pada satu pasangan (tidak berganti-ganti pasangan)
+                      </li>
+                      <li>Tidak melakukan hubungan seks sebelum menikah</li>
+                      <li>
+                        Mencegah PMS menggunakan kondom ketika melakukan
+                        hubungan seksual
+                      </li>
+                      <li>Tidak menggunakan narkoba</li>
+                      <li>
+                        Selalu mencari informasi dan edukasi tentang PMS, mulai
+                        dari gejala, pencegahan, dan pengobatan
+                      </li>
+                    </ul>
                   </div>
 
                   {/* Metode dan Media */}
@@ -1796,6 +1867,63 @@ const Bab3 = () => {
                   </p>
                 </div>
               </section>
+              <section id="rangkuman-bab3" className="mb-10">
+                <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                  RANGKUMAN
+                </h3>
+                <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                  <p className="text-justify text-gray-700 leading-relaxed">
+                    Anak dengan hambatan penglihatan harus mengetahui
+                    bagian-bagian tubuh mereka dengan penyebutan yang tepat.
+                    Dalam pelaksanaannya juga anak diajarkan defenisi “ADA
+                    RAHASIA DIBALIK BAJUMU”. Dimana defenisi tersebut meliputi 4
+                    bagian terlarang yang disentuh oleh orang lain. Dalam
+                    menjaga kesehatan reproduksi anak dikenalkan tentang tata
+                    cara menjaga kebersihan organ reproduksi dengan runtutan
+                    yang baik dan benar. Bagi anak perempuan dijelaskan juga
+                    bagaimana cara menggunakan pembalut dengan baik dan benar
+                    dalam menjaga kebersihan organ reproduksi ketika menstruasi.
+                    Nama-nama organ reproduksi serta fungsinya merupakan hal
+                    yang termasuk kedalam pengetahuan menjaga kesehatan
+                    reproduksi sehingga anak dengan hambatan penglihatan dapat
+                    menjauhi segala resiko penyakit menular seksual baik karena
+                    tidak menjaga kebersihan organ reproduksi maupun tidak
+                    menjaga perilaku seksualnya. Sebagai guru, kita harus
+                    memberikan beberapa tips kepada anak dengan hambatan
+                    penglihatan dalam menjaga pergaulannya sehingga menjadi
+                    pergaulan yang sehat.
+                  </p>
+                </div>
+              </section>
+
+              <section id="latihan-mandiri-bab3" className="mb-10">
+                <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                  LATIHAN MANDIRI
+                </h3>
+                <div className="space-y-4 text-gray-700 text-justify leading-relaxed">
+                  <ol className="list-decimal list-inside space-y-4 text-gray-700">
+                    <li className="leading-relaxed">
+                      Sebutkan area apa saja yang masuk kedalam defenisi “ADA
+                      RAHASIA DIBALIK BAJUMU”
+                    </li>
+                    <li className="leading-relaxed">
+                      Apa fungsi organ Testis pada laki-laki?
+                    </li>
+                    <li className="leading-relaxed">
+                      Apa itu Hidrokel yang menjadi masalah kesehatan reproduksi
+                      perempuan?
+                    </li>
+                    <li className="leading-relaxed">
+                      Kenapa tindakan petting harus dihindari?
+                    </li>
+                    <li className="leading-relaxed">
+                      Umur berapa idealnya anak laki-laki mengalami masa
+                      pubertas?
+                    </li>
+                  </ol>
+                </div>
+              </section>
+
               {/* Referensi */}
               <section id="referensi" className="mt-8">
                 <h3 className="text-lg font-bold text-amber-700 border-b-2 border-amber-500 pb-2 mb-4">
@@ -1823,6 +1951,22 @@ const Bab3 = () => {
                       Homosexual, lesbian, dan masturbasi perspektif islam
                     </em>
                     . Jurnal Addayan, 19 (1), 35–44.
+                  </li>
+                  <li>
+                    Bria, M., D. (2022).
+                    <em>
+                      Stop HIV/AIDS : kenali penyakitnya, hindari penularannya
+                      dengan ABCDE.
+                    </em>
+                    Rotendaokab.go.id.
+                    <a
+                      href="https://rotendaokab.go.id/stop-hiv-aids-kenali-penyakitnya-hindari-penularannya-dengan-abcde.php"
+                      className="text-blue-600 underline ml-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      (https://rotendaokab.go.id/stop-hiv-aids-kenali-penyakitnya-hindari-penularannya-dengan-abcde.php)
+                    </a>
                   </li>
                   <li>
                     Hidayat, D., FINSIDV., FAADV., Wedayani, A. A., A., N.,
