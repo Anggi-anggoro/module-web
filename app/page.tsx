@@ -39,32 +39,31 @@ export default function Home() {
             <div className="absolute bottom-20 right-20 w-24 h-24 bg-amber-300 rounded-full opacity-30 animate-bounce"></div>
             <div className="absolute top-1/2 left-5 w-16 h-16 bg-yellow-200 rounded-full opacity-25"></div>
 
-            {/* UNY Logo positioned at top - now in normal flow */}
-            <div className="w-full flex justify-center mb-8 lg:mb-12 z-20">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 lg:p-4 shadow-xl border border-white/20 max-w-fit">
-                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
-                  {/* Placeholder for UNY Logo - replace with actual logo */}
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shadow-md flex-shrink-0">
-                    {/* Uncomment and use your actual UNY logo */}
+            {/* UNY Logo - Clean Mobile-First Layout */}
+            <div className="w-full flex justify-center mb-2 md:mb-4 lg:mb-8">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 md:gap-5 px-4">
+                {/* Logo Container */}
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg">
                     <Image
                       src={UNYLogo}
                       alt="Logo UNY"
-                      width={64}
-                      height={64}
+                      width={96}
+                      height={96}
                       className="object-contain w-full h-full"
+                      priority
                     />
                   </div>
-                  <div className="text-gray-800 text-center sm:text-left">
-                    <p className="font-bold text-sm sm:text-base lg:text-lg leading-tight">
-                      Universitas Negeri Yogyakarta
-                    </p>
-                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">
-                      Fakultas Ilmu Pendidikan Psikologi
-                    </p>
-                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">
-                      Program Studi Pendidikan Luar Biasa
-                    </p>
-                  </div>
+                </div>
+
+                {/* Text Container */}
+                <div className="text-center sm:text-left">
+                  <h1 className="font-bold text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight tracking-wide">
+                    Universitas Negeri Yogyakarta
+                  </h1>
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base mt-1 font-medium">
+                    State University of Yogyakarta
+                  </p>
                 </div>
               </div>
             </div>
