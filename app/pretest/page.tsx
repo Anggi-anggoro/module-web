@@ -39,10 +39,10 @@ export default function PreTestPage() {
             id: 1,
             question: "Apa yang dimaksud dengan pendidikan seksual?",
             options: {
-                a: "Pembelajaran berhubungan badan yang mencakup semua tentang alat kelamin",
-                b: "Pembelajaran yang bertujuan memberikan pemahaman aspek biologis, psikologis, dan sosial yang berkaitan dengan seksualitas.",
-                c: "Pembelajaran yang mendorong perilaku seksual berisiko dan menanamkan pemahamannya pada remaja",
-                d: "Semua Benar"
+                a: "Pendidikan berhubungan badan yang mencakup semua tentang alat kelamin.",
+                b: "Pembelajaran yang bertujuan memberikan pemahaman segala aspek seputar seksualitas.",
+                c: "Hal-hal yang mendorong perilaku seksual berisiko tinggi dan hanya penyakit.",
+                d: "Semua yang berhubungan tentang alat kelamin dan mengatur cara berhubungan seksual."
             },
             correct: "b"
         },
@@ -50,10 +50,10 @@ export default function PreTestPage() {
             id: 2,
             question: "Apa tujuan utama dari pendidikan seksual?",
             options: {
-                a: "Untuk mendorong perilaku seksual yang tidak aman",
-                b: "Untuk mengajarkan cara berhubungan seksual",
-                c: "Untuk memberikan informasi yang benar dan mengurangi stigma",
-                d: "Untuk melarang hubungan seksual sebelum menikah"
+                a: "Mendorong perilaku seksual yang tidak aman",
+                b: "Mengajarkan cara berhubungan seksual",
+                c: "Memberikan informasi yang benar dan mengurangi stigma",
+                d: "Melarang hubungan seksual sebelum menikah"
             },
             correct: "c"
         },
@@ -64,13 +64,13 @@ export default function PreTestPage() {
                 a: "Penis",
                 b: "Burung",
                 c: "Kelamin",
-                d: "Semua Benar"
+                d: "Alat Vital"
             },
             correct: "a"
         },
         {
             id: 4,
-            question: "Dibawah ini yang bagian tubuh yang tidak boleh dipegang orang lain, kecuali…",
+            question: "Dibawah ini yang bagian tubuh yang tidak boleh dipegang orang lain, kecuali…..",
             options: {
                 a: "Bokong",
                 b: "Mulut",
@@ -92,7 +92,7 @@ export default function PreTestPage() {
         },
         {
             id: 6,
-            question: "Proses alami yang terjadi pada wanita, berupa keluarnya darah dari vagina secara teratur setiap bulan, disebut…",
+            question: "Proses alami yang terjadi pada wanita, berupa keluarnya darah dari vagina secara teratur setiap bulan, disebut….",
             options: {
                 a: "Pembalut",
                 b: "Demam",
@@ -103,7 +103,7 @@ export default function PreTestPage() {
         },
         {
             id: 7,
-            question: "Penyakit yang disebabkan oleh bakteri treponema pallidum dan ditularkan terutama melalui hubungan seksual adalah penyakit…",
+            question: "Penyakit yang disebabkan oleh bakteri treponema pallidum dan ditularkan terutama melalui hubungan seksual adalah penyakit…..",
             options: {
                 a: "Sifilis",
                 b: "Herpes Genital",
@@ -130,7 +130,7 @@ export default function PreTestPage() {
                 a: "Boleh",
                 b: "Tidak Boleh",
                 c: "Kadang-Kadang",
-                d: "Semua Benar"
+                d: "Sewajarnya"
             },
             correct: "b"
         },

@@ -6,7 +6,12 @@ import { ScrollToId } from "./utils";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-const Navbar = () => {
+interface shopPopUp {
+  isShowPopUp: (data: boolean) => void;
+}
+
+
+const Navbar = ({ isShowPopUp }: shopPopUp) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isPostTest, setIsPostTest] = useState<boolean | null>(false);
@@ -40,6 +45,13 @@ const Navbar = () => {
   const toggleChapter = (id: string) => {
     setOpenChapters((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+
+  const handlePostTest = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    isShowPopUp(true)
+
+  }
+
 
   const chapters = [
     {
@@ -131,11 +143,11 @@ const Navbar = () => {
           title: "Perencanaan Pembelajaran Pendidikan Seksual",
         },
         {
-          id: "modulajar",                    
+          id: "modulajar",
           title: "Contoh modul ajar / RPP terintegrasi dengan pendidikan seksual",
         },
         {
-          id: "contohsoalevaluasi",                    
+          id: "contohsoalevaluasi",
           title: "Contoh soal evaluasi",
         },
       ],
@@ -197,47 +209,52 @@ const Navbar = () => {
       <ul className="space-y-2">
         {filteredChapters.map(
           (chapter, index) =>
-            (index <= 2 || isPostTest) && (
-              <li key={chapter.id}>
-                <div className="flex items-start justify-between">
+            <li key={chapter.id}>
+              <div className="flex items-start justify-between">
+                <button
+                  onClick={() => toggleChapter(chapter.id)}
+                  className="font-medium hover:underline text-left"
+                >
+                  {chapter.title}
+                </button>
+                {chapter.subChapters.length > 0 && (
                   <button
                     onClick={() => toggleChapter(chapter.id)}
-                    className="font-medium hover:underline text-left"
+                    className="ml-2"
                   >
-                    {chapter.title}
+                    {openChapters[chapter.id] ? (
+                      <ChevronDown size={20} />
+                    ) : (
+                      <ChevronRight size={20} />
+                    )}
                   </button>
-                  {chapter.subChapters.length > 0 && (
-                    <button
-                      onClick={() => toggleChapter(chapter.id)}
-                      className="ml-2"
-                    >
-                      {openChapters[chapter.id] ? (
-                        <ChevronDown size={20} />
-                      ) : (
-                        <ChevronRight size={20} />
-                      )}
-                    </button>
-                  )}
-                </div>
-
-                {/* Subchapters */}
-                {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
-                  <ul className="pl-4 mt-1 space-y-1 text-gray-700">
-                    {chapter.subChapters.map((sub) => (
-                      <li className="list-disc ml-3" key={sub.id}>
-                        <Link
-                          onClick={(e) => ScrollToId(sub.id, e)}
-                          href={`#${sub.id}`}
-                          className="hover:underline block text-sm"
-                        >
-                          {sub.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
                 )}
-              </li>
-            )
+              </div>
+
+              {/* Subchapters */}
+              {openChapters[chapter.id] && chapter.subChapters.length > 0 && (
+                <ul className="pl-4 mt-1 space-y-1 text-gray-700">
+                  {chapter.subChapters.map((sub) => (
+                    <li className="list-disc ml-3" key={sub.id}>
+                      <Link
+                        onClick={(e) => {
+                          if (index <= 3 || isPostTest) {
+                            ScrollToId(sub.id, e);
+                          } else {
+                            handlePostTest(e);
+                          }
+                        }}
+                        href={`#${sub.id}`}
+                        className="hover:underline block text-sm"
+                      >
+                        {sub.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
         )}
       </ul>
     </aside>
