@@ -5,8 +5,14 @@ import Link from "next/link";
 import { ScrollToId } from "./utils";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import PopupText from "./popup-text";
 
-const Navbar = () => {
+interface shopPopUp {
+  isShowPopUp: (data: boolean) => void;
+}
+
+
+const Navbar = ({ isShowPopUp} : shopPopUp) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isPostTest, setIsPostTest] = useState<boolean | null>(false);
@@ -40,6 +46,13 @@ const Navbar = () => {
   const toggleChapter = (id: string) => {
     setOpenChapters((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+
+  const handlePostTest = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    isShowPopUp(true)
+    console.log('sini')
+
+  }
 
   const chapters = [
     {
@@ -196,8 +209,7 @@ const Navbar = () => {
 
       <ul className="space-y-2">
         {filteredChapters.map(
-          (chapter, index) =>
-            (index <= 2 || isPostTest) && (
+          (chapter, index) =>          
               <li key={chapter.id}>
                 <div className="flex items-start justify-between">
                   <button
@@ -226,8 +238,8 @@ const Navbar = () => {
                     {chapter.subChapters.map((sub) => (
                       <li className="list-disc ml-3" key={sub.id}>
                         <Link
-                          onClick={(e) => ScrollToId(sub.id, e)}
-                          href={`#${sub.id}`}
+                          onClick={(e) => {(index <= 3 || isPostTest) ? ScrollToId(sub.id, e) : handlePostTest(e)}}
+                          href={(index <= 3 || isPostTest) ? `#${sub.id}` : '/post-test'}
                           className="hover:underline block text-sm"
                         >
                           {sub.title}
@@ -237,7 +249,7 @@ const Navbar = () => {
                   </ul>
                 )}
               </li>
-            )
+            
         )}
       </ul>
     </aside>
