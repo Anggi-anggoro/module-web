@@ -168,7 +168,7 @@ export function SignUpForm({
 
         <Button
           type="submit"
-          className="w-full col-span-2 bg-orange-400 font-bold  "
+          className="w-full col-span-2 bg-orange-400 font-bold hover:bg-orange-500 "
           disabled={isLoading}
         >
           {isLoading ? "Mendaftarkan akun..." : "Daftar Akun"}

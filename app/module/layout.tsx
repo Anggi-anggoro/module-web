@@ -64,7 +64,7 @@ export default function ModuleLayout({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <div className={`min-h-[60vh] ${showPopUp ? '' : 'hidden'}`}>
+      <div className={`min-h-[60vh] absolute ${showPopUp ? '' : 'hidden'}`}>
         <PopupText
           url="/post-test"
           message="Kerjakan Post-test terlebih dahulu untuk akses lampiran"
