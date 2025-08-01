@@ -27,18 +27,12 @@ export default function ModulGuruCover() {
           <p className="text-white/90 text-xs sm:text-sm font-medium mb-1">
             Universitas Negeri Yogyakarta
           </p>
-          <p className="text-white/80 text-xs">
-            Fakultas Ilmu Pendidikan Psikologi
-          </p>
-          <p className="text-white/80 text-xs">
-            Program Studi Pendidikan Luar Biasa
-          </p>
         </div>
 
         {/* Title */}
         <div className="mb-10">
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-extrabold text-white leading-none mb-4 drop-shadow-2xl">
-            M⚥DIS
+            MODIS
           </h1>
           <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-2xl w-full max-w-2xl mx-auto">
             <p className="text-yellow-600 font-bold text-xl sm:text-2xl md:text-3xl mb-2">
