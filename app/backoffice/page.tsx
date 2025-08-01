@@ -6,16 +6,8 @@ import React from 'react';
 
 interface UserData {
   nama: string;
-  tempat_lahir: string;
-  tanggal_lahir: string;
-  jabatan: string;
-  jenis_kelamin: string;
-  sekolah: string;
-  kota: string;
-  kecamatan: string;
-  provinsi: string;
   email: string;
-  phone: string;
+  nuptk: string;
   pretest_score: number;
   posttest_score: number;
 }
@@ -70,14 +62,7 @@ const UserDataTable: React.FC = () => {
       const filtered = userData.filter(user =>
         user.nama?.toLowerCase().includes(searchLower) ||
         user.email?.toLowerCase().includes(searchLower) ||
-        user.tempat_lahir?.toLowerCase().includes(searchLower) ||
-        user.jabatan?.toLowerCase().includes(searchLower) ||
-        user.sekolah?.toLowerCase().includes(searchLower) ||
-        user.kota?.toLowerCase().includes(searchLower) ||
-        user.kecamatan?.toLowerCase().includes(searchLower) ||
-        user.provinsi?.toLowerCase().includes(searchLower) ||
-        user.phone?.includes(searchTerm) ||
-        user.jenis_kelamin?.toLowerCase().includes(searchLower)
+        user.nuptk?.includes(searchTerm)        
       );
       setFilteredData(filtered);
     }
@@ -208,17 +193,9 @@ const UserDataTable: React.FC = () => {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Nama</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Tempat Lahir</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Tanggal Lahir</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Jabatan</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Jenis Kelamin</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Sekolah</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Kota</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Kecamatan</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Provinsi</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Nama</th>                
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Email</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Phone</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">NUPTK</th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Pretest Score</th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase text-nowrap tracking-wider">Posttest Score</th>
               </tr>
@@ -256,23 +233,8 @@ const UserDataTable: React.FC = () => {
                 currentData.map((user, index) => (
                   <tr key={index} className="hover:bg-gray-50 transition-colors duration-150">
                     <td className="px-4 py-3 text-sm font-medium text-gray-900  truncate">{user.nama}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600  truncate">{user.tempat_lahir}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{user.tanggal_lahir}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600  truncate">{user.jabatan}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600">
-                      <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${user.jenis_kelamin?.toLowerCase() === 'laki-laki' || user.jenis_kelamin?.toLowerCase() === 'male'
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-pink-100 text-pink-800'
-                        }`}>
-                        {user.jenis_kelamin}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-600 truncate">{user.sekolah}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 truncate">{user.kota}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 truncate">{user.kecamatan}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 truncate">{user.provinsi}</td>
                     <td className="px-4 py-3 text-sm text-gray-600 truncate">{user.email}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{user.phone}</td>
+                    <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{user.nuptk}</td>
                     <td className="px-4 py-3 text-sm text-gray-900">
                       <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${user.pretest_score >= 70 ? 'bg-green-100 text-green-800' :
                         user.pretest_score >= 50 ? 'bg-yellow-100 text-yellow-800' :

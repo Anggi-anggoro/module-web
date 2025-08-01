@@ -34,12 +34,12 @@ export default function PostTestPage() {
             id: 1,
             question: "Apa yang dimaksud dengan pendidikan seksual?",
             options: {
-                a: "Pendekatan komprehensif yang mencakup pembelajaran tentang aspek biologis, emosional, sosial, dan budaya dari seksualitas.",
-                b: "Pembelajaran yang bertujuan memberikan pemahaman aspek biologis, psikologis, dan sosial yang berkaitan dengan seksualitas.",
-                c: "Pembelajaran yang mencakup informasi tentang kesehatan reproduksi, nilai-nilai moral, dan tanggung jawab dalam hubungan interpersonal.",
-                d: "Semua Benar"
+                a: "Pembelajaran yang bertujuan memberikan pemahaman segala aspek seputar seksualitas.",
+                b: "Pendidikan berhubungan badan yang mencakup semua tentang alat kelamin.",
+                c: "Hal-hal yang mendorong perilaku seksual berisiko tinggi dan hanya penyakit.",
+                d: "Semua yang berhubungan tentang alat kelamin dan mengatur cara berhubungan seksual."
             },
-            correct: "d"
+            correct: "a"
         },
         {
             id: 2,
@@ -81,18 +81,18 @@ export default function PostTestPage() {
                 a: "Parfum",
                 b: "Deodoran",
                 c: "Air Mengalir",
-                d: "Alokohol"
+                d: "Alkohol"
             },
             correct: "c"
         },
         {
             id: 6,
-            question: "Berapa waktu idealnya mengganti pembalut bagi perempuan?",
+            question: "Apa fungsi soal latihan pada pembelajaran pendidikan seksual?",
             options: {
-                a: "1-2 kali dalam sehari",
-                b: "3-5 kali dalam sehari",
-                c: "4-7 kali dalam sehari",
-                d: "1 kali sehari"
+                a: "Asesmen awal pada pembelajaran pendidikan seksual",
+                b: "Alat evaluasi untuk mengukur pemahaman siswa terhadap materi",
+                c: "Pelengkap pembelajaran pendidikan seksual di sekolah",
+                d: "Pemetaan anak yang mengerti dan tidak mengerti"
             },
             correct: "b"
         },
@@ -122,25 +122,25 @@ export default function PostTestPage() {
             id: 9,
             question: "Suatu aktivitas yang mengarah pada pemusatan nafsu birahi melalui rangsangan alat kelamin dan alat vital lainnya, baik dilakukan sendiri atau orang lain hingga mencapai orgasme bagi laki-laki dan ejakulasi bagi wanita dengan berkontraksinya otot-otot secara otomatis terutama otot vagina yang kadar kontraksinya paling besar. Disebut perilaku seksual…..",
             options: {
-                a: "Berfantasi",
-                b: "Masturbasi",
+                a: "Masturbasi",
+                b: "Berfantasi",
                 c: "Berciuman",
                 d: "Petting"
             },
-            correct: "b"
+            correct: "a"
         },
         {
             id: 10,
             question: "Salah satu bukan cara mengajarkan anak terhindar dari pergaulan bebas, yaitu…..",
             options: {
                 a: "Memberikan pendidikan seksual yang sesuai dengan usia dan kesiapan mental anak",
-                b: "Mengajarkan anak-anak nilai moral yang kuat",
+                b: "Mengajarkan anak-anak nilai moral yang kuat sebagai pelindung diri",
                 c: "Mendorong anak berpartisipasi dalam kegiatan yang positif",
                 d: "Membebaskan anak berpacaran kapanpun dan dimanapun tanpa pengawasan orang tua"
             },
             correct: "d"
         }
-    ]
+    ];
 
     const handleAnswerChange = (questionId: number, selectedAnswer: string) => {
         setAnswers({
@@ -200,8 +200,8 @@ export default function PostTestPage() {
             <div className="md:w-3/4 mx-auto">
                 <div className="bg-white rounded-2xl shadow-xl p-8">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl font-bold text-gray-800 mb-2">Pre-Test MODIS</h1>
-                        <p className="text-gray-600">Selesaikan Pre-test untuk mengakses modul</p>
+                        <h1 className="text-4xl font-bold text-gray-800 mb-2">Post-Test MODIS</h1>
+                        <p className="text-gray-600">Selesaikan Post-test untuk mengakses modul</p>
                     </div>
 
                     {!showResults ? (

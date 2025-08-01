@@ -27,12 +27,6 @@ export default function ModulGuruCover() {
           <p className="text-white/90 text-xs sm:text-sm font-medium mb-1">
             Universitas Negeri Yogyakarta
           </p>
-          <p className="text-white/80 text-xs">
-            Fakultas Ilmu Pendidikan Psikologi
-          </p>
-          <p className="text-white/80 text-xs">
-            Program Studi Pendidikan Luar Biasa
-          </p>
         </div>
 
         {/* Title */}

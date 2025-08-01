@@ -13,6 +13,7 @@ export default function ModuleLayout({
   children: React.ReactNode;
 }) {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const router = useRouter();
 
@@ -63,6 +64,13 @@ export default function ModuleLayout({
 
   return (
     <div className="min-h-screen flex flex-col">
+      <div className={`min-h-[60vh] absolute ${showPopUp ? '' : 'hidden'}`}>
+        <PopupText
+          url="/post-test"
+          message="Kerjakan Post-test terlebih dahulu untuk akses lampiran"
+          buttonText="Kerjakan Sekarang"
+        />
+      </div>
       <div className="md:hidden p-4 bg-orange-100 sticky top-0 left-0 w-full z-30">
         <button
           onClick={() => setShowSidebar(!showSidebar)}
@@ -81,7 +89,7 @@ export default function ModuleLayout({
             md:translate-x-0 md:basis-1/5 shrink-0
           `}
         >
-          <SidebarLeft />
+          <SidebarLeft isShowPopUp={setShowPopUp} />
         </div>
 
         {showSidebar && (
