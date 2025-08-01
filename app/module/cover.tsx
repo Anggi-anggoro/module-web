@@ -1,3 +1,5 @@
+import Image from "next/image";
+import LogoUny from "@/app/assets/logo-uny.png";
 export default function ModulGuruCover() {
   return (
     <div className="relative w-full min-h-screen overflow-y-auto overflow-hidden bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-500">
@@ -11,7 +13,17 @@ export default function ModulGuruCover() {
       {/* Centered Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-8 py-8 text-center">
         {/* Universitas Info */}
-        <div className="mb-6">
+        <div className="mb-6 flex flex-col items-center">
+          {/* UNY Logo */}
+          <div className="mb-4">
+            <Image
+              src={LogoUny}
+              alt="Logo Universitas Negeri Yogyakarta"
+              width={80}
+              height={80}
+              className="drop-shadow-lg"
+            />
+          </div>
           <p className="text-white/90 text-xs sm:text-sm font-medium mb-1">
             Universitas Negeri Yogyakarta
           </p>

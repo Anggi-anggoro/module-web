@@ -135,6 +135,47 @@ const Bab1 = () => {
                   </li>
                 </ol>
               </section>
+              <section id="rangkuman-bab1" className="mb-10">
+                <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                  RANGKUMAN
+                </h3>
+                <div className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                  <p className="text-justify text-gray-700 leading-relaxed">
+                    Anak dengan hambatan penglihatan adalah individu yang
+                    mengalami gangguan penglihatan yang signifikan, baik sejak
+                    lahir maupun akibat kondisi tertentu, yang mempengaruhi
+                    kemampuan mereka untuk berpartisipasi dalam aktivitas
+                    pendidikan dan sosial tanpa dukungan khusus. Anak dengan
+                    hambatan penglihatan diklasifikasikan mulai dari{" "}
+                    <em>low vision</em> hingga <em>totally blind</em>.
+                    Keterbatasan dalam mobilitas, ketergantungan pada indera
+                    lain, dan perkembangan kognitif yang unik merupakan
+                    karakteristik yang dapat dijumpai pada anak dengan hambatan
+                    penglihatan.
+                  </p>
+                </div>
+              </section>
+
+              <section id="latihan-mandiri-bab1" className="mb-10">
+                <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                  LATIHAN MANDIRI
+                </h3>
+                <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <ol className="list-decimal list-inside space-y-4 text-gray-700">
+                    <li className="leading-relaxed">
+                      Siapa yang dimaksud anak dengan hambatan penglihatan?
+                    </li>
+                    <li className="leading-relaxed">
+                      Kelompok anak dengan hambatan penglihatan yang tidak
+                      mempunyai persepsi cahaya disebut....
+                    </li>
+                    <li className="leading-relaxed">
+                      Apa saja karakteristik yang dapat ditemui pada anak dengan
+                      hambatan penglihatan?
+                    </li>
+                  </ol>
+                </div>
+              </section>
 
               <section id="referensi-bab1" className="mt-16 mb-10">
                 <h3 className="text-xl font-bold mb-6 text-yellow-700 border-b-2 border-yellow-500 pb-2">

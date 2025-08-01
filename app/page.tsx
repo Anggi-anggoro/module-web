@@ -7,6 +7,7 @@ import Bulp from "@/app/assets/bulb.png";
 import OpenedBook from "@/app/assets/opened-book.png";
 import Notes from "@/app/assets/notes.png";
 import Target from "@/app/assets/target.png";
+import UNYLogo from "@/app/assets/logo-uny.png";
 import { ScrollToId } from "@/components/utils";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -31,37 +32,69 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center w-full">
       <div className="w-full">
         <main className="">
-          {/* Hero Section with Yellow Gradient */}
-          <section className="px-6 py-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 relative overflow-hidden min-h-screen flex justify-center items-center">
+          {/* Hero Section with Yellow Gradient and UNY Logo */}
+          <section className="px-6 py-8 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 relative overflow-hidden min-h-screen flex flex-col justify-center items-center">
             {/* Decorative elements */}
             <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute bottom-20 right-20 w-24 h-24 bg-amber-300 rounded-full opacity-30 animate-bounce"></div>
             <div className="absolute top-1/2 left-5 w-16 h-16 bg-yellow-200 rounded-full opacity-25"></div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-7xl relative z-10">
-              <div className="lg:w-1/2 flex justify-center items-center">
-                <div className="relative">
+            {/* UNY Logo positioned at top - now in normal flow */}
+            <div className="w-full flex justify-center mb-8 lg:mb-12 z-20">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 lg:p-4 shadow-xl border border-white/20 max-w-fit">
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+                  {/* Placeholder for UNY Logo - replace with actual logo */}
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shadow-md flex-shrink-0">
+                    {/* Uncomment and use your actual UNY logo */}
+                    <Image
+                      src={UNYLogo}
+                      alt="Logo UNY"
+                      width={64}
+                      height={64}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                  <div className="text-gray-800 text-center sm:text-left">
+                    <p className="font-bold text-sm sm:text-base lg:text-lg leading-tight">
+                      Universitas Negeri Yogyakarta
+                    </p>
+                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">
+                      Fakultas Ilmu Pendidikan Psikologi
+                    </p>
+                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">
+                      Program Studi Pendidikan Luar Biasa
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Main content */}
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-7xl relative z-10 flex-1">
+              <div className="lg:w-1/2 flex justify-center items-center order-1 lg:order-1">
+                <div className="relative w-full max-w-md lg:max-w-none">
                   <div className="absolute -inset-4 bg-white/20 rounded-2xl blur-xl"></div>
                   <Image
                     src={CoverImage}
                     alt="cover"
                     width={800}
                     height={800}
-                    className="relative object-contain rounded-2xl shadow-2xl border-4 border-white/30"
+                    className="relative object-contain rounded-2xl shadow-2xl border-4 border-white/30 w-full h-auto"
                     priority
                   />
                 </div>
               </div>
-              <div className="lg:w-1/2 text-center lg:text-left space-y-6">
+
+              <div className="lg:w-1/2 text-center lg:text-left space-y-6 order-2 lg:order-2">
                 <div className="space-y-4">
-                  <h1 className="text-6xl lg:text-8xl font-black text-white drop-shadow-lg">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-white drop-shadow-lg">
                     MODIS
                   </h1>
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
-                    <h2 className="text-2xl lg:text-3xl text-gray-800 font-bold mb-4">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-xl">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-bold mb-3 lg:mb-4 leading-tight">
                       Modul Pendidikan Seksual Anak dengan Hambatan Penglihatan
                     </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
                       Sebuah modul guru pendidikan seksual untuk anak dengan
                       hambatan penglihatan yang dirancang untuk membantu mereka
                       memahami konsep dasar pendidikan seksual, kesehatan dan
@@ -73,7 +106,7 @@ export default function Home() {
                 <Link
                   onClick={(e) => ScrollToId("selengkapnya", e)}
                   href="#selengkapnya"
-                  className="inline-block bg-white text-yellow-600 font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-50 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="inline-block bg-white text-yellow-600 font-bold py-3 px-6 lg:py-4 lg:px-8 rounded-full shadow-lg hover:bg-yellow-50 hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm lg:text-base"
                 >
                   Selengkapnya →
                 </Link>
@@ -111,8 +144,7 @@ export default function Home() {
                       "Meningkatkan Pemahaman Guru",
                       "Menyediakan Informasi yang Akurat",
                       "Meningkatkan Keterampilan Praktis Guru",
-                      "Menciptakan Lingkungan Belajar yang Aman dan Mendukung",
-                      "Menyusun Kurikulum Pendidikan Seksual yang Inklusif",
+                      "Menciptakan Lingkungan Belajar yang Mendukung perkembangan anak dengan hambatan penglihatan ",
                     ].map((item, index) => (
                       <li
                         key={index}

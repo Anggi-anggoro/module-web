@@ -80,6 +80,33 @@ const Bab4 = () => {
                 </p>
               </section>
             </section>
+            <section id="rangkuman-bab4" className="mb-10">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                RANGKUMAN
+              </h3>
+              <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                <p className="text-justify text-gray-700 leading-relaxed">
+                  Dalam mengevaluasi pembelajaran pendidikan seksual, guru dapat
+                  memberikan soal-soal latihan seputar materi yang telah
+                  dipelajari oleh murid. Soal ini juga dapat menjadi alat ukur
+                  tingkat pemahaman peserta didik.
+                </p>
+              </div>
+            </section>
+
+            <section id="latihan-mandiri-bab4" className="mb-10">
+              <h3 className="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
+                LATIHAN MANDIRI
+              </h3>
+              <div className="space-y-4 text-gray-700 text-justify leading-relaxed">
+                <ol className="list-decimal list-inside space-y-4 text-gray-700">
+                  <li className="leading-relaxed">
+                    Buatlah soal tentang pendidikan seksual melalui materi yang
+                    telah ada pada modul ini!
+                  </li>
+                </ol>
+              </div>
+            </section>
           </main>
         </div>
       </div>
