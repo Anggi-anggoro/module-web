@@ -1,5 +1,5 @@
 "use client";
-import CoverImage from "@/app/assets/cover-module.jpeg";
+import CoverImage from "@/app/assets/d.png";
 import Hero from "@/app/assets/hero-kid.jpg";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,77 +39,100 @@ export default function Home() {
             <div className="absolute bottom-20 right-20 w-24 h-24 bg-amber-300 rounded-full opacity-30 animate-bounce"></div>
             <div className="absolute top-1/2 left-5 w-16 h-16 bg-yellow-200 rounded-full opacity-25"></div>
 
-            {/* UNY Logo positioned at top - now in normal flow */}
-            <div className="w-full flex justify-center mb-8 lg:mb-12 z-20">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 lg:p-4 shadow-xl border border-white/20 max-w-fit">
-                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
-                  {/* Placeholder for UNY Logo - replace with actual logo */}
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center shadow-md flex-shrink-0">
-                    {/* Uncomment and use your actual UNY logo */}
+            {/* UNY Logo - Clean Mobile-First Layout */}
+            <div className="w-full flex justify-center mb-3 md:mb-4 lg:mb-5">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 md:gap-5 px-4">
+                {/* Logo Container */}
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg">
                     <Image
                       src={UNYLogo}
                       alt="Logo UNY"
-                      width={64}
-                      height={64}
+                      width={96}
+                      height={96}
                       className="object-contain w-full h-full"
+                      priority
                     />
                   </div>
-                  <div className="text-gray-800 text-center sm:text-left">
-                    <p className="font-bold text-sm sm:text-base lg:text-lg leading-tight">
-                      Universitas Negeri Yogyakarta
-                    </p>
-                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">
-                      Fakultas Ilmu Pendidikan Psikologi
-                    </p>
-                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">
-                      Program Studi Pendidikan Luar Biasa
-                    </p>
-                  </div>
+                </div>
+
+                {/* Text Container */}
+                <div className="text-center sm:text-left">
+                  <h1 className="font-bold text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight tracking-wide">
+                    Universitas Negeri Yogyakarta
+                  </h1>
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base mt-1 font-medium">
+                    State University of Yogyakarta
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Main content */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-7xl relative z-10 flex-1">
-              <div className="lg:w-1/2 flex justify-center items-center order-1 lg:order-1">
-                <div className="relative w-full max-w-md lg:max-w-none">
-                  <div className="absolute -inset-4 bg-white/20 rounded-2xl blur-xl"></div>
-                  <Image
-                    src={CoverImage}
-                    alt="cover"
-                    width={800}
-                    height={800}
-                    className="relative object-contain rounded-2xl shadow-2xl border-4 border-white/30 w-full h-auto"
-                    priority
-                  />
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-20 max-w-7xl mx-auto relative z-10 flex-1 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+              {/* Image Section */}
+              <div className="w-full lg:w-1/2 flex justify-center items-center order-1 lg:order-1">
+                <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl">
+                  {/* Glow effect */}
+                  <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-white/15 to-yellow-200/20 rounded-3xl blur-2xl opacity-50"></div>
+                  <div className="relative">
+                    <Image
+                      src={CoverImage}
+                      alt="MODIS - Modul Pendidikan Seksual"
+                      width={800}
+                      height={800}
+                      className="relative object-cover rounded-2xl shadow-xl border-2 border-white/30 w-full h-auto backdrop-blur-sm"
+                      priority
+                    />
+                    {/* Additional decorative border */}
+                    <div className="absolute -inset-1 border border-white/10 rounded-3xl pointer-events-none"></div>
+                  </div>
                 </div>
               </div>
 
-              <div className="lg:w-1/2 text-center lg:text-left space-y-6 order-2 lg:order-2">
-                <div className="space-y-4">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-white drop-shadow-lg">
+              {/* Content Section */}
+              <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 order-2 lg:order-2">
+                {/* Title */}
+                <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+                  <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white drop-shadow-2xl tracking-tight leading-none">
                     MODIS
                   </h1>
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-xl">
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-bold mb-3 lg:mb-4 leading-tight">
-                      Modul Pendidikan Seksual Anak dengan Hambatan Penglihatan
-                    </h2>
-                    <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
-                      Sebuah modul guru pendidikan seksual untuk anak dengan
-                      hambatan penglihatan yang dirancang untuk membantu mereka
-                      memahami konsep dasar pendidikan seksual, kesehatan dan
-                      fungsi reproduksi, pergaulan sehat, serta perilaku
-                      seksual.
-                    </p>
-                  </div>
                 </div>
-                <Link
-                  onClick={(e) => ScrollToId("selengkapnya", e)}
-                  href="#selengkapnya"
-                  className="inline-block bg-white text-yellow-600 font-bold py-3 px-6 lg:py-4 lg:px-8 rounded-full shadow-lg hover:bg-yellow-50 hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm lg:text-base"
-                >
-                  Selengkapnya →
-                </Link>
+
+                {/* Description Card */}
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl lg:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 shadow-lg border border-white/20 hover:bg-white/85 hover:shadow-xl transition-all duration-300">
+                  <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl text-gray-800 font-semibold mb-3 sm:mb-4 md:mb-4 lg:mb-5 leading-tight">
+                    Modul Pendidikan Seksual Anak dengan Hambatan Penglihatan
+                  </h2>
+                  <p className="text-gray-600 text-sm xs:text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl leading-relaxed font-normal">
+                    Sebuah modul guru pendidikan seksual untuk anak dengan
+                    hambatan penglihatan yang dirancang untuk membantu mereka
+                    memahami konsep dasar pendidikan seksual, kesehatan dan
+                    fungsi reproduksi, pergaulan sehat, serta perilaku seksual.
+                  </p>
+                </div>
+
+                {/* CTA Button */}
+                <div className="pt-2 lg:pt-4">
+                  <Link
+                    onClick={(e) => ScrollToId("selengkapnya", e)}
+                    href="#selengkapnya"
+                    className="inline-flex items-center gap-2 bg-white text-yellow-600 font-bold py-4 px-8 lg:py-5 lg:px-10 rounded-full shadow-xl hover:bg-yellow-50 hover:shadow-2xl hover:text-yellow-700 transform hover:scale-105 active:scale-95 transition-all duration-300 text-base lg:text-lg border-2 border-transparent hover:border-yellow-200"
+                  >
+                    <span>Selengkapnya</span>
+                    <svg
+                      className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
