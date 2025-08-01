@@ -4,7 +4,7 @@ import "./globals.css";
 import { hasEnvVars } from "@/lib/utils";
 import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
-import Logo from "@/app/assets/xxxx.png";
+import Logo from "@/app/assets/m.png";
 import WhatsAppButton from "@/components/whatsapp";
 import Header from "@/components/header";
 import Footer from "@/components/footer";

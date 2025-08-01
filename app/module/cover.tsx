@@ -35,15 +35,15 @@ export default function ModulGuruCover() {
             <span>M</span>
             <span className="relative inline-block">
               <span className="opacity-0">O</span>
-              <span className="absolute inset-0 flex items-center justify-center text-pink-300">
+              <span className="absolute inset-0 flex items-center justify-center">
                 ♀
               </span>
             </span>
             <span className="relative inline-block">
-              <span className="absolute top-0 right-0 transform translate-x-0 -translate-y-1/6 text-blue-300 text-4xl sm:text-6xl md:text-6xl font-black z-0">
+              <span className="absolute top-0 right-0 transform -translate-x-1/6 -translate-y-1/4  text-4xl sm:text-6xl md:text-8xl font-black z-0">
                 ♂
               </span>
-              <span className="relative text-blue-300 z-10">D</span>
+              <span className="relative  z-10">D</span>
             </span>
             <span>IS</span>
           </h1>
