@@ -1,363 +1,458 @@
-import React, { useRef, useState, useCallback, useMemo } from "react";
-import dynamic from "next/dynamic";
+import React, { useRef, useState, useCallback } from "react";
 
-// Interface untuk mengatasi masalah TypeScript dengan html2canvas options
-interface Html2CanvasOptions {
-  background?: string;
-  scale?: number;
-  useCORS?: boolean;
-  allowTaint?: boolean;
-  width?: number;
-  height?: number;
-  logging?: boolean;
-  proxy?: string;
-  removeContainer?: boolean;
-  foreignObjectRendering?: boolean;
-  imageTimeout?: number;
-  ignoreElements?: (element: Element) => boolean;
-}
+// Updated type definition for html2canvas to match actual library
+type Html2CanvasFunction = (
+  element: HTMLElement,
+  options?: Record<string, unknown>
+) =>
+  | Promise<HTMLCanvasElement>
+  | { then: (callback: (canvas: HTMLCanvasElement) => void) => void };
 
-// Interface untuk JSZip generateAsync options
-interface JSZipGenerateOptions {
-  type: "blob";
-  compression?: "STORE" | "DEFLATE";
-  compressionOptions?: {
-    level: number;
-  };
-}
+// Type for the html2canvas module structure
+type Html2CanvasModule =
+  | {
+      default: Html2CanvasFunction;
+    }
+  | Html2CanvasFunction;
 
-// Lazy load komponen untuk mengurangi bundle size awal
-const ModulGuruCover = dynamic(() => import("@/app/module/cover"), {
-  loading: () => (
-    <div className="h-screen flex items-center justify-center">
-      Loading Cover...
-    </div>
-  ),
-  ssr: false,
-});
-const CoverBab1 = dynamic(
+// Component mapping untuk dynamic loading individual
+const componentMap = [
+  () => import("@/app/module/cover"),
   () => import("@/components/module-page/1/cover-bab1"),
-  {
-    loading: () => (
-      <div className="h-screen flex items-center justify-center">
-        Loading Bab 1 Cover...
-      </div>
-    ),
-    ssr: false,
-  }
-);
-const IsiBab1 = dynamic(() => import("@/components/module-page/1/page"), {
-  loading: () => (
-    <div className="h-screen flex items-center justify-center">
-      Loading Bab 1...
-    </div>
-  ),
-  ssr: false,
-});
-const CoverBab2 = dynamic(
+  () => import("@/components/module-page/1/page"),
   () => import("@/components/module-page/2/cover-bab2"),
-  {
-    loading: () => (
-      <div className="h-screen flex items-center justify-center">
-        Loading Bab 2 Cover...
-      </div>
-    ),
-    ssr: false,
-  }
-);
-const IsiBab2 = dynamic(() => import("@/components/module-page/2/page"), {
-  loading: () => (
-    <div className="h-screen flex items-center justify-center">
-      Loading Bab 2...
-    </div>
-  ),
-  ssr: false,
-});
-const CoverBab3 = dynamic(() => import("@/components/module-page/3/cover"), {
-  loading: () => (
-    <div className="h-screen flex items-center justify-center">
-      Loading Bab 3 Cover...
-    </div>
-  ),
-  ssr: false,
-});
-const IsiBab3 = dynamic(() => import("@/components/module-page/3/page"), {
-  loading: () => (
-    <div className="h-screen flex items-center justify-center">
-      Loading Bab 3...
-    </div>
-  ),
-  ssr: false,
-});
-const CoverBab4 = dynamic(
+  () => import("@/components/module-page/2/page"),
+  () => import("@/components/module-page/3/cover"),
+  () => import("@/components/module-page/3/page"),
   () => import("@/components/module-page/4/cover-bab4"),
-  {
-    loading: () => (
-      <div className="h-screen flex items-center justify-center">
-        Loading Bab 4 Cover...
-      </div>
-    ),
-    ssr: false,
-  }
-);
-const IsiBab4 = dynamic(() => import("@/components/module-page/4/page"), {
-  loading: () => (
-    <div className="h-screen flex items-center justify-center">
-      Loading Bab 4...
-    </div>
-  ),
-  ssr: false,
-});
-const Lampiran1 = dynamic(
+  () => import("@/components/module-page/4/page"),
   () => import("@/components/module-page/Lampiran/page"),
-  {
-    loading: () => (
-      <div className="h-screen flex items-center justify-center">
-        Loading Lampiran 1...
-      </div>
-    ),
-    ssr: false,
-  }
-);
-const Lampiran2 = dynamic(
   () => import("@/components/module-page/Lampiran/page1"),
-  {
-    loading: () => (
-      <div className="h-screen flex items-center justify-center">
-        Loading Lampiran 2...
-      </div>
-    ),
-    ssr: false,
-  }
-);
-const Lampiran3 = dynamic(
   () => import("@/components/module-page/Lampiran/page2"),
-  {
-    loading: () => (
-      <div className="h-screen flex items-center justify-center">
-        Loading Lampiran 3...
-      </div>
-    ),
-    ssr: false,
-  }
-);
+];
 
-export default function CompleteModulDownloader() {
-  const modulRef = useRef<HTMLDivElement>(null);
+const componentNames = [
+  "Cover Modul",
+  "Cover Bab 1",
+  "Isi Bab 1",
+  "Cover Bab 2",
+  "Isi Bab 2",
+  "Cover Bab 3",
+  "Isi Bab 3",
+  "Cover Bab 4",
+  "Isi Bab 4",
+  "Lampiran 1",
+  "Lampiran 2",
+  "Lampiran 3",
+];
+
+// Worker-like function untuk memproses canvas
+const processCanvasInChunks = async (
+  canvas: HTMLCanvasElement
+): Promise<string> => {
+  return new Promise((resolve) => {
+    // Use PNG format for better quality (removed unused quality variable)
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(() => {
+        resolve(canvas.toDataURL("image/png"));
+      });
+    } else {
+      setTimeout(() => {
+        resolve(canvas.toDataURL("image/png"));
+      }, 0);
+    }
+  });
+};
+
+export default function PDFModulDownloader() {
+  const tempContainerRef = useRef<HTMLDivElement>(null);
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState("");
+  const [canCancel, setCanCancel] = useState(false);
+  const [isCancelled, setIsCancelled] = useState(false);
 
-  // Memoize page names untuk menghindari re-creation
-  const pageNames = useMemo(
-    () => [
-      "Cover-Modul",
-      "Cover-Bab-1",
-      "Isi-Bab-1",
-      "Cover-Bab-2",
-      "Isi-Bab-2",
-      "Cover-Bab-3",
-      "Isi-Bab-3",
-      "Cover-Bab-4",
-      "Isi-Bab-4",
-      "Lampiran-1",
-      "Lampiran-2",
-      "Lampiran-3",
-    ],
-    []
+  // Sleep function dengan yield control
+  const sleep = (ms: number) =>
+    new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
+
+  // Force garbage collection jika tersedia
+  const forceGC = () => {
+    if (typeof window !== "undefined" && "gc" in window) {
+      try {
+        (window as typeof window & { gc: () => void }).gc();
+      } catch {
+        // Ignore if gc is not available
+      }
+    }
+  };
+
+  // Process single page dengan optimasi memory
+  const processSinglePage = useCallback(
+    async (
+      pageIndex: number,
+      html2canvasModule: Html2CanvasModule,
+      totalPages: number
+    ): Promise<string> => {
+      if (isCancelled) {
+        throw new Error("Process cancelled by user");
+      }
+
+      setCurrentStep(`Memuat ${componentNames[pageIndex]}...`);
+
+      // Dynamic import komponen individual
+      const ComponentModule = await componentMap[pageIndex]();
+      const Component = ComponentModule.default;
+
+      if (isCancelled) {
+        throw new Error("Process cancelled by user");
+      }
+
+      // Buat temporary container untuk komponen ini saja
+      const tempContainer = document.createElement("div");
+      tempContainer.style.cssText = `
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        width: 1200px;
+        min-height: 1600px;
+        background: #ffffff;
+        z-index: -1;
+        padding: 40px;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+      `;
+
+      document.body.appendChild(tempContainer);
+
+      // Render React component ke temporary container
+      const { createRoot } = await import("react-dom/client");
+      const root = createRoot(tempContainer);
+
+      // Wait for component to fully render
+      await new Promise<void>((resolve, reject) => {
+        const timeout = setTimeout(() => {
+          reject(new Error(`Timeout rendering ${componentNames[pageIndex]}`));
+        }, 30000);
+
+        root.render(React.createElement(Component));
+
+        // Wait for component and images to load
+        setTimeout(() => {
+          const images = tempContainer.querySelectorAll("img");
+          let loadedImages = 0;
+
+          const checkComplete = () => {
+            loadedImages++;
+            if (loadedImages === images.length || images.length === 0) {
+              clearTimeout(timeout);
+              setTimeout(resolve, 500); // Extra wait for any async rendering
+            }
+          };
+
+          if (images.length === 0) {
+            clearTimeout(timeout);
+            setTimeout(resolve, 1000);
+          } else {
+            images.forEach((img) => {
+              if (img.complete && img.naturalHeight !== 0) {
+                checkComplete();
+              } else {
+                img.onload = checkComplete;
+                img.onerror = checkComplete;
+              }
+            });
+          }
+        }, 2000);
+      });
+
+      if (isCancelled) {
+        root.unmount();
+        document.body.removeChild(tempContainer);
+        throw new Error("Process cancelled by user");
+      }
+
+      setCurrentStep(
+        `Memproses ${componentNames[pageIndex]} (${
+          pageIndex + 1
+        }/${totalPages})...`
+      );
+
+      // Final wait for content to settle
+      await sleep(1000);
+
+      // Check if container has content
+      const hasContent =
+        tempContainer.innerText.trim().length > 0 ||
+        tempContainer.querySelectorAll("img, svg, canvas").length > 0;
+
+      if (!hasContent) {
+        console.warn(`No content found in ${componentNames[pageIndex]}`);
+      }
+
+      // Handle html2canvas with proper typing
+      const html2canvas: Html2CanvasFunction =
+        typeof html2canvasModule === "function"
+          ? html2canvasModule
+          : html2canvasModule.default;
+
+      const options = {
+        backgroundColor: "#ffffff",
+        scale: 1.5,
+        useCORS: true,
+        allowTaint: false,
+        logging: true, // Enable logging for debugging
+        width: tempContainer.scrollWidth,
+        height: Math.max(tempContainer.scrollHeight, 1600),
+        imageTimeout: 30000,
+        onclone: (clonedDoc: Document) => {
+          // Ensure all styles are preserved in cloned document
+          const clonedContainer = clonedDoc.querySelector("div");
+          if (clonedContainer) {
+            clonedContainer.style.cssText = tempContainer.style.cssText;
+            // Force visibility
+            clonedContainer.style.visibility = "visible";
+            clonedContainer.style.display = "block";
+          }
+        },
+      };
+
+      let canvas: HTMLCanvasElement;
+
+      try {
+        console.log(`Starting capture for ${componentNames[pageIndex]}...`);
+        const result = html2canvas(tempContainer, options);
+
+        if (result && typeof result === "object" && "then" in result) {
+          canvas = await new Promise<HTMLCanvasElement>((resolve, reject) => {
+            const timeout = setTimeout(() => {
+              reject(
+                new Error(`Timeout capturing ${componentNames[pageIndex]}`)
+              );
+            }, 45000);
+
+            const promise = result.then((c) => {
+              clearTimeout(timeout);
+              console.log(
+                `Capture successful for ${componentNames[pageIndex]}, canvas size: ${c.width}x${c.height}`
+              );
+              resolve(c);
+            });
+
+            if (promise && typeof promise.catch === "function") {
+              promise.catch((error: unknown) => {
+                clearTimeout(timeout);
+                reject(error);
+              });
+            }
+          });
+        } else {
+          canvas = await (result as Promise<HTMLCanvasElement>);
+        }
+
+        if (isCancelled) {
+          throw new Error("Process cancelled by user");
+        }
+
+        // Validate canvas
+        if (!canvas || canvas.width === 0 || canvas.height === 0) {
+          throw new Error(
+            `Invalid canvas for ${componentNames[pageIndex]}: ${canvas?.width}x${canvas?.height}`
+          );
+        }
+
+        // Convert to base64
+        const imgData = await processCanvasInChunks(canvas);
+
+        // Validate image data
+        if (!imgData || imgData === "data:image/png;base64,") {
+          throw new Error(`Empty image data for ${componentNames[pageIndex]}`);
+        }
+
+        console.log(
+          `Successfully processed ${componentNames[pageIndex]}, data length: ${imgData.length}`
+        );
+
+        // Cleanup immediately
+        root.unmount();
+        document.body.removeChild(tempContainer);
+
+        // Clean canvas
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        canvas.width = 0;
+        canvas.height = 0;
+
+        forceGC();
+
+        return imgData;
+      } catch (error) {
+        console.error(`Error processing ${componentNames[pageIndex]}:`, error);
+
+        // Cleanup on error
+        root.unmount();
+        if (document.body.contains(tempContainer)) {
+          document.body.removeChild(tempContainer);
+        }
+        throw error;
+      }
+    },
+    [isCancelled]
   );
 
-  // Optimized PDF download dengan error handling dan memory management yang lebih baik
+  // Cancel function
+  const cancelDownload = useCallback(() => {
+    setIsCancelled(true);
+    setIsDownloading(false);
+    setDownloadProgress(0);
+    setCurrentStep("Download dibatalkan");
+    setCanCancel(false);
+
+    setTimeout(() => {
+      setCurrentStep("");
+      setIsCancelled(false);
+    }, 2000);
+  }, []);
+
+  // Optimized PDF download
   const downloadAsPDF = useCallback(async () => {
-    if (!modulRef.current || isDownloading) return;
+    if (isDownloading) return;
 
     setIsDownloading(true);
-    setDownloadProgress(5);
-
-    // Tampilkan komponen yang tersembunyi untuk proses download
-    if (modulRef.current) {
-      modulRef.current.classList.remove("hidden");
-    }
-
-    setDownloadProgress(10);
+    setIsCancelled(false);
+    setDownloadProgress(0);
+    setCurrentStep("Mempersiapkan download...");
+    setCanCancel(true);
 
     try {
-      // Dynamic import untuk mengurangi bundle size
-      const [{ default: jsPDF }, { default: html2canvas }] = await Promise.all([
+      setDownloadProgress(5);
+      setCurrentStep("Memuat library PDF...");
+
+      // Dynamic import untuk library
+      const [{ default: jsPDF }, html2canvasModule] = await Promise.all([
         import("jspdf"),
         import("html2canvas"),
       ]);
 
-      setDownloadProgress(20);
+      if (isCancelled) return;
 
-      const pages = Array.from(modulRef.current.children);
+      setDownloadProgress(10);
+
       const pdf = new jsPDF("p", "mm", "a4");
+      const totalComponents = componentMap.length;
+      let processedPages = 0;
 
-      // Process pages dengan batch untuk menghindari memory overload
-      for (let i = 0; i < pages.length; i++) {
-        setDownloadProgress(20 + (i / pages.length) * 70);
-
-        const pageElement = pages[i] as HTMLElement;
-
-        // Optimized html2canvas options untuk performa
-        const canvas = await html2canvas(pageElement, {
-          background: "#ffffff",
-          scale: 1.5, // Turunkan scale untuk performa lebih baik
-          useCORS: true,
-          allowTaint: true,
-          logging: false, // Disable logging untuk performa
-          width: pageElement.scrollWidth,
-          height: pageElement.scrollHeight,
-          imageTimeout: 15000, // Timeout untuk menghindari hanging
-        } as Html2CanvasOptions);
-
-        const imgData = canvas.toDataURL("image/jpeg", 0.8); // Gunakan JPEG dengan kompresi
-        const imgWidth = 210; // A4 width in mm
-        const pageHeight = 295; // A4 height in mm
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        if (i > 0) {
-          pdf.addPage();
+      // Process each component individually
+      for (let i = 0; i < totalComponents; i++) {
+        if (isCancelled) {
+          throw new Error("Download cancelled by user");
         }
 
-        pdf.addImage(
-          imgData,
-          "JPEG",
-          0,
-          0,
-          imgWidth,
-          Math.min(imgHeight, pageHeight)
-        );
+        try {
+          const imgData = await processSinglePage(
+            i,
+            html2canvasModule,
+            totalComponents
+          );
 
-        // Clear canvas dari memory
-        canvas.width = 0;
-        canvas.height = 0;
+          if (isCancelled) {
+            throw new Error("Download cancelled by user");
+          }
 
-        // Force garbage collection hint
-        if (i % 3 === 0) {
-          await new Promise((resolve) => setTimeout(resolve, 100));
+          // Add page to PDF (except for first page)
+          if (processedPages > 0) {
+            pdf.addPage();
+          }
+
+          // A4 dimensions in mm
+          const pdfWidth = 210;
+          const pdfHeight = 297;
+
+          // Add image to PDF
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          processedPages++;
+
+          console.log(
+            `Added page ${processedPages} to PDF: ${componentNames[i]}`
+          );
+
+          // Update progress
+          const progress = 10 + ((i + 1) / totalComponents) * 80;
+          setDownloadProgress(Math.min(progress, 90));
+
+          // Small delay to prevent overwhelming
+          await sleep(500);
+          forceGC();
+        } catch (pageError: unknown) {
+          console.error(`Error processing component ${i + 1}:`, pageError);
+
+          const errorMessage =
+            pageError instanceof Error ? pageError.message : "Unknown error";
+
+          if (isCancelled || errorMessage.includes("cancelled")) {
+            throw pageError;
+          }
+
+          // Add a placeholder page or continue
+          setCurrentStep(`Error pada ${componentNames[i]}, melanjutkan...`);
+          await sleep(1000);
         }
       }
 
+      if (isCancelled) return;
+
+      // Validate PDF has pages
+      if (processedPages === 0) {
+        throw new Error("No pages were successfully processed");
+      }
+
       setDownloadProgress(95);
+      setCurrentStep("Menyimpan file PDF...");
 
       // Save the PDF
       pdf.save("Modul-Pendidikan-Seksual-Lengkap.pdf");
 
       setDownloadProgress(100);
+      setCurrentStep(
+        `Download selesai! ${processedPages} halaman berhasil diproses`
+      );
+      setCanCancel(false);
+
       setTimeout(() => {
         setIsDownloading(false);
         setDownloadProgress(0);
-        // Sembunyikan kembali komponen setelah download selesai
-        if (modulRef.current) {
-          modulRef.current.classList.add("hidden");
-        }
-      }, 1000);
-    } catch (error) {
+        setCurrentStep("");
+      }, 3000);
+    } catch (error: unknown) {
       console.error("Error downloading PDF:", error);
-      alert("Gagal mendownload PDF. Silakan coba lagi.");
-      setIsDownloading(false);
-      setDownloadProgress(0);
-      // Sembunyikan kembali komponen jika error
-      if (modulRef.current) {
-        modulRef.current.classList.add("hidden");
-      }
-    }
-  }, [isDownloading]);
 
-  // Optimized image download
-  const downloadAsImages = useCallback(async () => {
-    if (!modulRef.current || isDownloading) return;
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
 
-    setIsDownloading(true);
-    setDownloadProgress(5);
-
-    // Tampilkan komponen yang tersembunyi untuk proses download
-    if (modulRef.current) {
-      modulRef.current.classList.remove("hidden");
-    }
-
-    setDownloadProgress(10);
-
-    try {
-      const [{ default: JSZip }, { default: html2canvas }] = await Promise.all([
-        import("jszip"),
-        import("html2canvas"),
-      ]);
-
-      const zip = new JSZip();
-      const pages = Array.from(modulRef.current.children);
-
-      for (let i = 0; i < pages.length; i++) {
-        setDownloadProgress(10 + (i / pages.length) * 80);
-
-        const pageElement = pages[i] as HTMLElement;
-
-        const canvas = await html2canvas(pageElement, {
-          background: "#ffffff",
-          scale: 1.5, // Turunkan scale untuk performa
-          useCORS: true,
-          allowTaint: true,
-          logging: false,
-          imageTimeout: 15000,
-        } as Html2CanvasOptions);
-
-        const imgData = canvas.toDataURL("image/jpeg", 0.8).split(",")[1]; // JPEG dengan kompresi
-        const fileName = `${String(i + 1).padStart(2, "0")}-${
-          pageNames[i] || `Page-${i + 1}`
-        }.jpg`; // Gunakan .jpg
-
-        zip.file(fileName, imgData, { base64: true });
-
-        // Memory cleanup
-        canvas.width = 0;
-        canvas.height = 0;
-
-        if (i % 2 === 0) {
-          await new Promise((resolve) => setTimeout(resolve, 50));
-        }
+      if (isCancelled || errorMessage.includes("cancelled")) {
+        return;
       }
 
-      setDownloadProgress(95);
+      setCurrentStep(`Error: ${errorMessage}`);
 
-      // Fixed JSZip generateAsync call with proper typing
-      const zipOptions: JSZipGenerateOptions = {
-        type: "blob",
-        compression: "DEFLATE",
-        compressionOptions: { level: 6 },
-      };
-
-      const content = await zip.generateAsync(zipOptions);
-
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(content);
-      link.download = "Modul-Pendidikan-Seksual-Images.zip";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Cleanup URL
-      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-
-      setDownloadProgress(100);
       setTimeout(() => {
+        alert(
+          `Gagal mendownload PDF: ${errorMessage}\n\nTips:\n- Coba refresh halaman dan ulangi\n- Buka Developer Console untuk melihat detail error\n- Pastikan semua komponen dapat di-render dengan benar\n- Gunakan browser Chrome/Firefox untuk performa terbaik`
+        );
         setIsDownloading(false);
         setDownloadProgress(0);
-        // Sembunyikan kembali komponen setelah download selesai
-        if (modulRef.current) {
-          modulRef.current.classList.add("hidden");
-        }
+        setCurrentStep("");
+        setCanCancel(false);
       }, 1000);
-    } catch (error) {
-      console.error("Error downloading images:", error);
-      alert("Gagal mendownload gambar. Silakan coba lagi.");
-      setIsDownloading(false);
-      setDownloadProgress(0);
-      // Sembunyikan kembali komponen jika error
-      if (modulRef.current) {
-        modulRef.current.classList.add("hidden");
-      }
     }
-  }, [isDownloading, pageNames]);
+  }, [isDownloading, processSinglePage, isCancelled]);
 
   return (
     <div className="relative">
@@ -382,10 +477,10 @@ export default function CompleteModulDownloader() {
                 </svg>
               </div>
               <h1 className="text-3xl font-bold text-gray-800 mb-2">
-                Modul Lengkap Downloader
+                Modul PDF Downloader
               </h1>
               <p className="text-gray-600">
-                Download modul pendidikan dalam format PDF atau kumpulan gambar
+                Download modul pendidikan dalam format PDF
               </p>
             </div>
 
@@ -394,26 +489,37 @@ export default function CompleteModulDownloader() {
                 <div className="flex items-center gap-3 mb-3">
                   <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500" />
                   <span className="font-medium text-blue-800">
-                    Memproses Download...
+                    {currentStep || "Memproses Download..."}
                   </span>
                 </div>
                 <div className="w-full bg-blue-200 rounded-full h-3">
                   <div
-                    className="bg-blue-600 h-3 rounded-full transition-all duration-300 ease-out"
+                    className="bg-blue-600 h-3 rounded-full transition-all duration-500 ease-out"
                     style={{ width: `${downloadProgress}%` }}
                   />
                 </div>
                 <p className="text-sm text-blue-700 mt-2 text-center">
                   {downloadProgress}% selesai
                 </p>
+
+                {canCancel && (
+                  <div className="mt-3 text-center">
+                    <button
+                      onClick={cancelDownload}
+                      className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm rounded-lg transition-colors"
+                    >
+                      Batalkan Download
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="flex justify-center mb-6">
               <button
                 onClick={downloadAsPDF}
                 disabled={isDownloading}
-                className="group bg-red-500 hover:bg-red-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 flex flex-col items-center gap-3 transform hover:scale-105 active:scale-95"
+                className="group bg-red-500 hover:bg-red-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 flex items-center gap-3 transform hover:scale-105 active:scale-95 min-w-[300px] justify-center"
               >
                 <svg
                   className="w-8 h-8"
@@ -430,38 +536,10 @@ export default function CompleteModulDownloader() {
                 </svg>
                 <div className="text-center">
                   <div className="text-lg font-bold">
-                    {isDownloading ? "Processing..." : "Download PDF"}
+                    {isDownloading ? "Memproses..." : "Download PDF"}
                   </div>
                   <div className="text-sm opacity-90">
-                    Satu file lengkap dengan semua halaman
-                  </div>
-                </div>
-              </button>
-
-              <button
-                onClick={downloadAsImages}
-                disabled={isDownloading}
-                className="group bg-green-500 hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 flex flex-col items-center gap-3 transform hover:scale-105 active:scale-95"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                <div className="text-center">
-                  <div className="text-lg font-bold">
-                    {isDownloading ? "Processing..." : "Download Images"}
-                  </div>
-                  <div className="text-sm opacity-90">
-                    Koleksi gambar JPEG untuk setiap halaman
+                    Dengan validasi konten dan debugging
                   </div>
                 </div>
               </button>
@@ -482,108 +560,87 @@ export default function CompleteModulDownloader() {
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                Informasi Download
+                Debugging & Troubleshooting
               </h3>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Buka Developer Console (F12) untuk melihat log proses</li>
                 <li>
-                  • Modul terdiri dari 12 halaman (Cover + 4 Bab + 3 Lampiran)
+                  • Sistem akan memvalidasi setiap halaman sebelum diproses
                 </li>
-                <li>
-                  • Format PDF: Satu file dengan kualitas JPEG untuk ukuran
-                  optimal
-                </li>
-                <li>• Format ZIP: Kumpulan file gambar JPEG terpisah</li>
-                <li>• Proses download memerlukan waktu beberapa menit</li>
+                <li>• Jika ada error, detail akan muncul di console</li>
+                <li>• Pastikan semua komponen dapat di-render dengan benar</li>
+                <li>• Proses menggunakan PNG format untuk kualitas maksimal</li>
+                <li>• Waktu timeout diperpanjang untuk komponen kompleks</li>
               </ul>
+            </div>
+
+            {/* Warning untuk debugging */}
+            <div className="mt-4 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+              <div className="flex items-start">
+                <svg
+                  className="w-5 h-5 text-yellow-500 mt-0.5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.314 15.5c-.77.833.192 2.5 1.732 2.5z"
+                  />
+                </svg>
+                <div>
+                  <p className="text-sm text-yellow-800">
+                    <strong>Debug Mode:</strong> Jika PDF masih kosong, buka
+                    Developer Console untuk melihat log detail. Kemungkinan
+                    penyebab: komponen tidak ter-render, error import, atau
+                    masalah styling.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Hidden Content Container - Hanya dimuat saat download */}
-      <div ref={modulRef} className="hidden space-y-0">
-        <div className="page-break">
-          <ModulGuruCover />
-        </div>
-        <div className="page-break">
-          <CoverBab1 />
-        </div>
-        <div className="page-break">
-          <IsiBab1 />
-        </div>
-        <div className="page-break">
-          <CoverBab2 />
-        </div>
-        <div className="page-break">
-          <IsiBab2 />
-        </div>
-        <div className="page-break">
-          <CoverBab3 />
-        </div>
-        <div className="page-break">
-          <IsiBab3 />
-        </div>
-        <div className="page-break">
-          <CoverBab4 />
-        </div>
-        <div className="page-break">
-          <IsiBab4 />
-        </div>
-        <div className="page-break">
-          <Lampiran1 />
-        </div>
-        <div className="page-break">
-          <Lampiran2 />
-        </div>
-        <div className="page-break">
-          <Lampiran3 />
-        </div>
-      </div>
+      {/* Hidden temp container */}
+      <div ref={tempContainerRef} className="hidden" />
 
-      {/* Loading Overlay - Improved */}
+      {/* Enhanced Loading Overlay */}
       {isDownloading && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 max-w-sm w-full mx-4 shadow-2xl">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">
-                Memproses Download...
+                {currentStep || "Memproses Download..."}
               </h3>
               <p className="text-gray-600 text-sm mb-4">
-                Mohon tunggu, komponen sedang dimuat dan file sedang disiapkan
+                Memproses dengan validasi konten. Cek console untuk detail log.
               </p>
               <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                 <div
-                  className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-out"
+                  className="bg-blue-500 h-2 rounded-full transition-all duration-500 ease-out"
                   style={{ width: `${downloadProgress}%` }}
                 />
               </div>
               <p className="text-sm text-gray-500">
                 {downloadProgress}% selesai
               </p>
+
+              {canCancel && (
+                <button
+                  onClick={cancelDownload}
+                  className="mt-4 px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm rounded-lg transition-colors"
+                >
+                  Batalkan Download
+                </button>
+              )}
             </div>
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .page-break {
-          break-after: page;
-          min-height: 100vh;
-          will-change: transform;
-        }
-
-        @media print {
-          .page-break {
-            page-break-after: always;
-          }
-        }
-
-        /* Optimize rendering */
-        .page-break > * {
-          contain: layout style paint;
-        }
-      `}</style>
     </div>
   );
 }
