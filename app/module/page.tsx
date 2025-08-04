@@ -8,7 +8,6 @@ import Bab3 from "../../components/module-page/3/page";
 import Bab4 from "../../components/module-page/4/page";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import Link from "next/link";
 import Lampiran from "../../components/module-page/Lampiran/page";
 import Bab4Cover from "../../components/module-page/4/cover-bab4";
 import Bab2Cover from "../../components/module-page/2/cover-bab2";
@@ -99,9 +98,7 @@ export default function ModulGabungan() {
         <section id="bab4" className="px-4 md:px-10 py-8 md:py-16 bg-white">
           <Bab4 />
         </section>
-      </Suspense>
-      {isPostTest ? (
-        <>
+      </Suspense>            
           <Suspense fallback={<div>Loading...</div>}>
             <section
               id="lampiran"
@@ -125,22 +122,7 @@ export default function ModulGabungan() {
             >
               <ContohSoalEvaluasi />
             </section>
-          </Suspense>
-        </>
-      ) : (
-        <section className="px-4 md:px-10 py-8 md:py-16 bg-white">
-          <h1 className="max-w-2xl mx-auto text-center">
-            Anda telah menyelesaikan modul ini. Silakan kerjakan post-test untuk
-            mendapatkan akses ke Bab Selanjutnya.
-          </h1>
-          <Link
-            href={"/post-test"}
-            className="block max-w-md mx-auto mt-6 bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded text-center"
-          >
-            Kerjakan Post-test
-          </Link>
-        </section>
-      )}
+          </Suspense>              
     </div>
   );
 }
