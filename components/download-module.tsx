@@ -1,552 +1,376 @@
-import React, { useState } from "react";
-import { Download, FileText, CheckCircle, Loader2 } from "lucide-react";
+import React, { useRef, useState } from "react";
+// Import semua komponen yang sudah ada
+import ModulGuruCover from "@/app/module/cover";
 
-interface ModuleData {
-  id: string;
-  title: string;
-  coverTitle: string;
-  sections: Array<{
-    id: string;
-    title: string;
-    content: string;
-  }>;
-  summary?: string;
-  exercises?: Array<{
-    question: string;
-    type: "essay" | "multiple_choice";
-    options?: string[];
-  }>;
-  references?: string[];
+// Interface untuk mengatasi masalah TypeScript dengan html2canvas options
+interface Html2CanvasOptions {
+  background?: string;
+  scale?: number;
+  useCORS?: boolean;
+  allowTaint?: boolean;
+  width?: number;
+  height?: number;
+  logging?: boolean;
+  proxy?: string;
+  removeContainer?: boolean;
+  foreignObjectRendering?: boolean;
+  imageTimeout?: number;
+  ignoreElements?: (element: Element) => boolean;
 }
+import CoverBab1 from "@/components/module-page/1/cover-bab1";
+import IsiBab1 from "@/components/module-page/1/page";
+import CoverBab2 from "@/components/module-page/2/cover-bab2";
+import IsiBab2 from "@/components/module-page/2/page";
+import CoverBab3 from "@/components/module-page/3/cover";
+import IsiBab3 from "@/components/module-page/3/page";
+import CoverBab4 from "@/components/module-page/4/cover-bab4";
+import IsiBab4 from "@/components/module-page/4/page";
+import Lampiran1 from "@/components/module-page/Lampiran/page";
+import Lampiran2 from "@/components/module-page/Lampiran/page1";
+import Lampiran3 from "@/components/module-page/Lampiran/page2";
 
-const BulkPDFDownloader: React.FC = () => {
+export default function CompleteModulDownloader() {
+  const modulRef = useRef<HTMLDivElement>(null);
   const [isDownloading, setIsDownloading] = useState(false);
-  const [downloadProgress, setDownloadProgress] = useState<string[]>([]);
+  const [downloadProgress, setDownloadProgress] = useState(0);
 
-  // Data modul lengkap
-  const modulesData: ModuleData[] = [
-    {
-      id: "1",
-      title: "BAB 1",
-      coverTitle: "Anak dengan Hambatan Penglihatan",
-      sections: [
-        {
-          id: "pengertian",
-          title: "A. Pengertian Anak Dengan Hambatan Penglihatan",
-          content:
-            "Anak dengan hambatan penglihatan adalah individu yang mengalami gangguan penglihatan yang signifikan, baik sejak lahir maupun akibat kondisi tertentu, yang mempengaruhi kemampuan mereka untuk berpartisipasi dalam aktivitas pendidikan dan sosial tanpa dukungan khusus. Anak dengan hambatan penglihatan adalah individu yang mengalami gangguan penglihatan secara signifikan, baik sebagian maupun total, sehingga memengaruhi kemampuan mereka untuk belajar dan berinteraksi dengan lingkungan tanpa bantuan khusus. Mereka memerlukan adaptasi dalam metode pembelajaran dan alat bantu untuk mengakses informasi visual.",
-        },
-        {
-          id: "klasifikasi",
-          title: "B. Klasifikasi Anak Dengan Hambatan Penglihatan",
-          content:
-            "Dengan hambatan penglihatan yang dikasifikasikan dari kemampuan matanya, yaitu:\n1. Kelompok yang mempunyai acuity 20/70 feet (6/21 meter) artinya ia bisa melihat jarak 20 feet sedangkan anak normal dari jarak 70 feet ini tergolong kurang melihat atau low vision.\n2. Kelompok yang hanya dapat membaca huruf E paling besar pada kartu Snellen dari jarak 20 feet, sedang orang normal dapat membacanya dari jarak 200 feet (20/200 feet atau 6/60 meter, dan ini secara hukum sudah tergolong buta atau legally blind).\n3. Kelompok yang sangat sedikit penglihatannya sehingga ia hanya mengenal bentuk dan objek.\n4. Kelompok yang hanya dapat menghitung jari dari berbagai jarak.\n5. Kelompok yang melihat tangan digerakan.\n6. Kelompok yang hanya mempunyai light projection (dapat melihat terang serta gelap dan dapat menunjuk sumber cahaya)\n7. Kelompok yang hanya mempunyai persepsi cahaya (light perception) yaitu hanya bisa melihat terang dan gelap.\n8. Kelompok yang tidak mempunyai persepsi cahaya (no light perception) disebut dengan buta total (totally blind).",
-        },
-        {
-          id: "karakteristik",
-          title: "C. Karakteristik Anak Dengan Hambatan Penglihatan",
-          content:
-            "Anak dengan hambatan penglihatan memiliki karakteristik yang bervariasi tergantung pada tingkat gangguan penglihatan dan usia saat gangguan tersebut terjadi. Beberapa karakteristik umum meliputi:\n1. Keterbatasan dalam mobilitas: Anak dengan hambatan penglihatan sering mengalami kesulitan dalam bergerak dan menavigasi lingkungan tanpa bantuan.\n2. Ketergantungan pada indera lain: Mereka cenderung mengandalkan indera pendengaran, peraba, penciuman, dan kinestetik untuk memahami dunia sekitar.\n3. Perkembangan kognitif yang unik: Anak dengan hambatan penglihatan mungkin mengalami keterlambatan dalam konsep spasial dan pemahaman visual, tetapi dapat mengembangkan kemampuan memori pendengaran yang kuat.",
-        },
-      ],
-      summary:
-        "Anak dengan hambatan penglihatan adalah individu yang mengalami gangguan penglihatan yang signifikan, baik sejak lahir maupun akibat kondisi tertentu, yang mempengaruhi kemampuan mereka untuk berpartisipasi dalam aktivitas pendidikan dan sosial tanpa dukungan khusus. Anak dengan hambatan penglihatan diklasifikasikan mulai dari low vision hingga totally blind. Keterbatasan dalam mobilitas, ketergantungan pada indera lain, dan perkembangan kognitif yang unik merupakan karakteristik yang dapat dijumpai pada anak dengan hambatan penglihatan.",
-      exercises: [
-        {
-          question: "Siapa yang dimaksud anak dengan hambatan penglihatan?",
-          type: "essay",
-        },
-        {
-          question:
-            "Kelompok anak dengan hambatan penglihatan yang tidak mempunyai persepsi cahaya disebut....",
-          type: "essay",
-        },
-        {
-          question:
-            "Apa saja karakteristik yang dapat ditemui pada anak dengan hambatan penglihatan?",
-          type: "essay",
-        },
-      ],
-      references: [
-        "Hosni. (2016) Pendidikan Anak Tunanetra. Departemen Pendidikan Dan Kebudayaan Direktorat Jendral Pendidikan Tinggi Proyek Pendidikan Tenaga Guru.",
-        "Hallahan, D. P., Kauffman, J. M., & Pullen, P., C. (2018). Exceptional learners: An introduction to special education. Pearson.",
-        "Kirk, S., Gallagher, J., & Coleman, M., R. (2015). Educating exceptional children. Cengage learning.",
-        "Westling, D., L., Fox, L., & Carter, E., W. (2015). Teaching student with severe disabilities. Pearson.",
-      ],
-    },
-    {
-      id: "2",
-      title: "BAB 2",
-      coverTitle:
-        "Strategi Pembelajaran untuk Anak dengan Hambatan Penglihatan",
-      sections: [
-        {
-          id: "pendekatan",
-          title: "A. Pendekatan Pembelajaran Multisensori",
-          content:
-            "Pendekatan pembelajaran multisensori merupakan strategi yang mengintegrasikan berbagai indera dalam proses pembelajaran. Untuk anak dengan hambatan penglihatan, pendekatan ini sangat penting karena mereka perlu mengoptimalkan indera lain seperti pendengaran, peraba, penciuman, dan kinestetik.",
-        },
-        {
-          id: "media",
-          title: "B. Media dan Alat Bantu Pembelajaran",
-          content:
-            "Media pembelajaran untuk anak dengan hambatan penglihatan meliputi: Braille, audio books, teknologi assistive, model taktil, dan perangkat lunak pembaca layar.",
-        },
-      ],
-      summary:
-        "Strategi pembelajaran untuk anak dengan hambatan penglihatan memerlukan pendekatan multisensori dan penggunaan media serta alat bantu yang sesuai.",
-      exercises: [
-        {
-          question:
-            "Jelaskan pentingnya pendekatan multisensori dalam pembelajaran anak dengan hambatan penglihatan.",
-          type: "essay",
-        },
-      ],
-      references: [
-        "Smith, J. (2020). Teaching Students with Visual Impairments. Academic Press.",
-      ],
-    },
-    {
-      id: "3",
-      title: "BAB 3",
-      coverTitle: "Teknologi Assistive untuk Pembelajaran",
-      sections: [
-        {
-          id: "teknologi",
-          title: "A. Jenis-jenis Teknologi Assistive",
-          content:
-            "Teknologi assistive mencakup berbagai perangkat dan software yang membantu anak dengan hambatan penglihatan dalam mengakses informasi dan berpartisipasi dalam pembelajaran.",
-        },
-      ],
-      summary:
-        "Teknologi assistive memainkan peran penting dalam mendukung pembelajaran anak dengan hambatan penglihatan.",
-      exercises: [
-        {
-          question:
-            "Sebutkan jenis-jenis teknologi assistive yang dapat digunakan.",
-          type: "essay",
-        },
-      ],
-      references: [
-        "Brown, A. (2019). Assistive Technology in Education. Tech Publications.",
-      ],
-    },
-    {
-      id: "4",
-      title: "BAB 4",
-      coverTitle: "Evaluasi dan Penilaian Pembelajaran",
-      sections: [
-        {
-          id: "evaluasi",
-          title: "A. Metode Evaluasi yang Adaptif",
-          content:
-            "Evaluasi pembelajaran untuk anak dengan hambatan penglihatan memerlukan adaptasi dalam metode dan instrumen penilaian.",
-        },
-      ],
-      summary:
-        "Evaluasi yang adaptif diperlukan untuk mengukur kemajuan pembelajaran anak dengan hambatan penglihatan secara efektif.",
-      exercises: [
-        {
-          question: "Bagaimana cara melakukan evaluasi yang adaptif?",
-          type: "essay",
-        },
-      ],
-      references: [
-        "Johnson, K. (2021). Assessment Methods for Special Education. Education Press.",
-      ],
-    },
-  ];
+  // Download sebagai PDF (recommended untuk modul lengkap)
+  const downloadAsPDF = async () => {
+    if (!modulRef.current) return;
 
-  const generateModuleHTML = (moduleData: ModuleData): string => {
-    const sectionsHTML = moduleData.sections
-      .map(
-        (section) => `
-      <section class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
-          ${section.title}
-        </h3>
-        <div class="text-justify text-gray-700 leading-relaxed">
-          ${section.content
-            .split("\n")
-            .map((paragraph) =>
-              paragraph.trim() ? `<p class="mb-4">${paragraph}</p>` : ""
-            )
-            .join("")}
-        </div>
-      </section>
-    `
-      )
-      .join("");
-
-    const summaryHTML = moduleData.summary
-      ? `
-      <section class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
-          RANGKUMAN
-        </h3>
-        <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
-          <p class="text-justify text-gray-700 leading-relaxed">${moduleData.summary}</p>
-        </div>
-      </section>
-    `
-      : "";
-
-    const exercisesHTML = moduleData.exercises
-      ? `
-      <section class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-yellow-700 border-b-2 border-yellow-500 pb-2">
-          LATIHAN MANDIRI
-        </h3>
-        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-          <ol class="list-decimal list-inside space-y-4 text-gray-700">
-            ${moduleData.exercises
-              .map(
-                (exercise) => `
-              <li class="leading-relaxed">${exercise.question}</li>
-            `
-              )
-              .join("")}
-          </ol>
-        </div>
-      </section>
-    `
-      : "";
-
-    const referencesHTML = moduleData.references
-      ? `
-      <section class="mt-16 mb-10">
-        <h3 class="text-xl font-bold mb-6 text-yellow-700 border-b-2 border-yellow-500 pb-2">
-          REFERENSI
-        </h3>
-        <div class="space-y-4 text-gray-700">
-          ${moduleData.references
-            .map(
-              (ref) => `
-            <p class="text-justify leading-relaxed">${ref}</p>
-          `
-            )
-            .join("")}
-        </div>
-      </section>
-    `
-      : "";
-
-    return `
-      <div class="page-break">
-        <!-- Header Section -->
-        <div class="relative bg-yellow-500 pt-16 pb-32 mb-8">
-          <div class="absolute top-0 right-0 w-64 h-32 bg-yellow-600 transform rotate-12 origin-top-right"></div>
-          <div class="absolute top-8 right-8 w-48 h-24 bg-yellow-400 transform -rotate-6"></div>
-          
-          <div class="container mx-auto px-6 relative z-10">
-            <div class="text-right mb-8">
-              <h1 class="text-6xl font-bold text-white mb-2">${moduleData.title}</h1>
-            </div>
-            
-            <div class="max-w-2xl">
-              <h2 class="text-4xl font-bold text-yellow-900 leading-tight">
-                ${moduleData.coverTitle}
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Content Section -->
-        <div class="container mx-auto px-6">
-          <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <main class="text-gray-900 leading-relaxed">
-              ${sectionsHTML}
-              ${summaryHTML}
-              ${exercisesHTML}
-              ${referencesHTML}
-            </main>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="flex justify-center items-center py-6 text-yellow-600">
-          <div class="flex items-center space-x-2">
-            <span class="text-lg font-semibold">${moduleData.id}</span>
-            <span class="text-2xl">⚥</span>
-          </div>
-        </div>
-      </div>
-    `;
-  };
-
-  const downloadAllModulesPDF = async () => {
     setIsDownloading(true);
-    setDownloadProgress([]);
+    setDownloadProgress(10);
 
     try {
-      // Create a new window for the combined PDF
-      const printWindow = window.open("", "_blank");
+      // Dynamic import untuk mengurangi bundle size
+      const { default: jsPDF } = await import("jspdf");
+      const { default: html2canvas } = await import("html2canvas");
 
-      if (!printWindow) {
-        alert("Pop-up diblokir! Silakan izinkan pop-up untuk mengunduh PDF.");
-        setIsDownloading(false);
-        return;
+      setDownloadProgress(20);
+
+      // Get all pages
+      const pages = modulRef.current!.children;
+      const pdf = new jsPDF("p", "mm", "a4");
+
+      for (let i = 0; i < pages.length; i++) {
+        setDownloadProgress(20 + (i / pages.length) * 70);
+
+        // Capture each page - Fixed: Menggunakan interface yang proper
+        const canvas = await html2canvas(
+          pages[i] as HTMLElement,
+          {
+            background: "#ffffff",
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            width: (pages[i] as HTMLElement).scrollWidth,
+            height: (pages[i] as HTMLElement).scrollHeight,
+          } as Html2CanvasOptions
+        );
+
+        const imgData = canvas.toDataURL("image/png");
+        const imgWidth = 210; // A4 width in mm
+        const pageHeight = 295; // A4 height in mm
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        if (i > 0) {
+          pdf.addPage();
+        }
+
+        pdf.addImage(
+          imgData,
+          "PNG",
+          0,
+          0,
+          imgWidth,
+          Math.min(imgHeight, pageHeight)
+        );
       }
 
-      // Generate combined HTML for all modules
-      const allModulesHTML = modulesData
-        .map((moduleData) => {
-          setDownloadProgress((prev) => [
-            ...prev,
-            `Memproses ${moduleData.title}...`,
-          ]);
-          return generateModuleHTML(moduleData);
-        })
-        .join("");
+      setDownloadProgress(95);
 
-      const htmlContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <title>Modul Lengkap - Pendidikan Anak dengan Hambatan Penglihatan</title>
-          <script src="https://cdn.tailwindcss.com"></script>
-          <style>
-            @media print {
-              body { margin: 0; }
-              .page-break { page-break-before: always; }
-              .page-break:first-child { page-break-before: avoid; }
-            }
-            body { 
-              font-family: system-ui, -apple-system, sans-serif;
-              background: white;
-            }
-            .container {
-              max-width: 1200px;
-            }
-          </style>
-        </head>
-        <body class="bg-white">
-          <!-- Cover Page -->
-          <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600">
-            <div class="text-center text-white">
-              <h1 class="text-6xl font-bold mb-6">MODUL PEMBELAJARAN</h1>
-              <h2 class="text-3xl font-semibold mb-8">Pendidikan Anak dengan Hambatan Penglihatan</h2>
-              <div class="text-xl">
-                <p class="mb-2">Koleksi Lengkap ${modulesData.length} BAB</p>
-                <p>Tahun ${new Date().getFullYear()}</p>
-              </div>
-            </div>
-          </div>
+      // Save the PDF
+      pdf.save("Modul-Pendidikan-Seksual-Lengkap.pdf");
 
-          <!-- Table of Contents -->
-          <div class="page-break min-h-screen p-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-yellow-700">DAFTAR ISI</h2>
-            <div class="max-w-4xl mx-auto">
-              ${modulesData
-                .map(
-                  (moduleData, index) => `
-                <div class="flex justify-between items-center py-4 border-b border-gray-300">
-                  <div>
-                    <span class="text-xl font-semibold text-yellow-700">${
-                      moduleData.title
-                    }</span>
-                    <span class="ml-4 text-gray-700">${
-                      moduleData.coverTitle
-                    }</span>
-                  </div>
-                  <span class="text-xl font-bold text-yellow-600">${
-                    index + 1
-                  }</span>
-                </div>
-              `
-                )
-                .join("")}
-            </div>
-          </div>
-
-          <!-- All Modules Content -->
-          ${allModulesHTML}
-        </body>
-        </html>
-      `;
-
-      setDownloadProgress((prev) => [...prev, "Menyiapkan PDF..."]);
-
-      printWindow.document.write(htmlContent);
-      printWindow.document.close();
-
-      // Wait for content to load, then print
-      printWindow.onload = () => {
-        setTimeout(() => {
-          setDownloadProgress((prev) => [
-            ...prev,
-            "Membuka dialog download...",
-          ]);
-          printWindow.print();
-          printWindow.close();
-          setIsDownloading(false);
-          setDownloadProgress([]);
-        }, 1000);
-      };
+      setDownloadProgress(100);
+      setTimeout(() => {
+        setIsDownloading(false);
+        setDownloadProgress(0);
+      }, 1000);
     } catch (error) {
-      console.error("Error generating PDF:", error);
-      alert("Terjadi kesalahan saat membuat PDF. Silakan coba lagi.");
+      console.error("Error downloading PDF:", error);
+      alert("Gagal mendownload PDF. Silakan coba lagi.");
       setIsDownloading(false);
-      setDownloadProgress([]);
+      setDownloadProgress(0);
     }
   };
 
-  const downloadSingleModule = (moduleId: string) => {
-    const moduleData = modulesData.find((m) => m.id === moduleId);
-    if (!moduleData) return;
+  // Download sebagai ZIP berisi gambar-gambar
+  const downloadAsImages = async () => {
+    if (!modulRef.current) return;
 
-    const printWindow = window.open("", "_blank");
+    setIsDownloading(true);
+    setDownloadProgress(10);
 
-    if (!printWindow) {
-      alert("Pop-up diblokir! Silakan izinkan pop-up untuk mengunduh PDF.");
-      return;
-    }
+    try {
+      const { default: JSZip } = await import("jszip");
+      const { default: html2canvas } = await import("html2canvas");
 
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>${moduleData.title} - ${moduleData.coverTitle}</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-          @media print {
-            body { margin: 0; }
-          }
-          body { font-family: system-ui, -apple-system, sans-serif; }
-        </style>
-      </head>
-      <body class="bg-white">
-        ${generateModuleHTML(moduleData)}
-      </body>
-      </html>
-    `;
+      const zip = new JSZip();
+      const pages = modulRef.current!.children;
 
-    printWindow.document.write(htmlContent);
-    printWindow.document.close();
+      const pageNames = [
+        "Cover-Modul",
+        "Cover-Bab-1",
+        "Isi-Bab-1",
+        "Cover-Bab-2",
+        "Isi-Bab-2",
+        "Cover-Bab-3",
+        "Isi-Bab-3",
+        "Cover-Bab-4",
+        "Isi-Bab-4",
+        "Lampiran-1",
+        "Lampiran-2",
+        "Lampiran-3",
+      ];
 
-    printWindow.onload = () => {
+      for (let i = 0; i < pages.length; i++) {
+        setDownloadProgress(10 + (i / pages.length) * 80);
+
+        // Fixed: Menggunakan interface yang proper
+        const canvas = await html2canvas(
+          pages[i] as HTMLElement,
+          {
+            background: "#ffffff",
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+          } as Html2CanvasOptions
+        );
+
+        const imgData = canvas.toDataURL("image/png").split(",")[1];
+        const fileName = `${String(i + 1).padStart(2, "0")}-${
+          pageNames[i] || `Page-${i + 1}`
+        }.png`;
+
+        zip.file(fileName, imgData, { base64: true });
+      }
+
+      setDownloadProgress(95);
+
+      const content = await zip.generateAsync({ type: "blob" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(content);
+      link.download = "Modul-Pendidikan-Seksual-Images.zip";
+      link.click();
+
+      setDownloadProgress(100);
       setTimeout(() => {
-        printWindow.print();
-        printWindow.close();
-      }, 500);
-    };
+        setIsDownloading(false);
+        setDownloadProgress(0);
+      }, 1000);
+    } catch (error) {
+      console.error("Error downloading images:", error);
+      alert("Gagal mendownload gambar. Silakan coba lagi.");
+      setIsDownloading(false);
+      setDownloadProgress(0);
+    }
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">
-          Download Modul PDF
-        </h2>
-        <p className="text-gray-600">
-          Unduh modul pembelajaran dalam format PDF untuk akses offline
-        </p>
-      </div>
-
-      {/* Download All Modules */}
-      <div className="mb-8 p-6 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg border border-yellow-200">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-semibold text-yellow-800 mb-1">
-              Download Semua Modul
-            </h3>
-            <p className="text-yellow-700 text-sm">
-              Unduh {modulesData.length} BAB sekaligus dalam satu file PDF
-              lengkap
-            </p>
-          </div>
-          <button
-            onClick={downloadAllModulesPDF}
-            disabled={isDownloading}
-            className="flex items-center space-x-2 bg-yellow-600 hover:bg-yellow-700 disabled:bg-yellow-400 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
-          >
-            {isDownloading ? (
-              <Loader2 size={20} className="animate-spin" />
-            ) : (
-              <Download size={20} />
-            )}
-            <span>{isDownloading ? "Memproses..." : "Download Semua"}</span>
-          </button>
-        </div>
-
-        {/* Progress Indicator */}
-        {downloadProgress.length > 0 && (
-          <div className="mt-4 p-3 bg-white rounded border">
-            <div className="text-sm text-gray-600 mb-2">Progress:</div>
-            {downloadProgress.map((progress, index) => (
-              <div key={index} className="flex items-center space-x-2 text-sm">
-                <CheckCircle size={16} className="text-green-500" />
-                <span>{progress}</span>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Individual Module Downloads */}
-      <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Download Modul Individual
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {modulesData.map((moduleData) => (
-            <div
-              key={moduleData.id}
-              className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200"
-            >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-1">
-                    {moduleData.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {moduleData.coverTitle}
-                  </p>
-                  <div className="flex items-center space-x-4 text-xs text-gray-500">
-                    <span>{moduleData.sections.length} Section</span>
-                    {moduleData.exercises && (
-                      <span>{moduleData.exercises.length} Latihan</span>
-                    )}
-                  </div>
+    <div className="relative">
+      {/* Download Controls - Fixed Header */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <h1 className="text-lg font-bold text-gray-800">
+              Modul Lengkap - Download Center
+            </h1>
+            {isDownloading && (
+              <div className="flex items-center gap-2">
+                <div className="w-32 bg-gray-200 rounded-full h-2">
+                  <div
+                    className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${downloadProgress}%` }}
+                  ></div>
                 </div>
-                <button
-                  onClick={() => downloadSingleModule(moduleData.id)}
-                  className="flex items-center space-x-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded text-sm transition-colors duration-200"
-                >
-                  <FileText size={16} />
-                  <span>PDF</span>
-                </button>
+                <span className="text-sm text-gray-600">
+                  {downloadProgress}%
+                </span>
               </div>
-            </div>
-          ))}
+            )}
+          </div>
+
+          <div className="flex gap-3">
+            <button
+              onClick={downloadAsPDF}
+              disabled={isDownloading}
+              className="bg-red-500 hover:bg-red-600 disabled:bg-gray-400 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 flex items-center gap-2"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              Download PDF
+            </button>
+
+            <button
+              onClick={downloadAsImages}
+              disabled={isDownloading}
+              className="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 flex items-center gap-2"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              Download Images (ZIP)
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Usage Instructions */}
-      <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
-        <h4 className="font-semibold text-blue-800 mb-2">
-          Petunjuk Penggunaan:
-        </h4>
-        <ul className="text-sm text-blue-700 space-y-1">
-          <li>
-            • Klik &ldquo;Download Semua&rdquo; untuk mendapat semua modul dalam
-            satu file PDF
-          </li>
-          <li>
-            • Klik tombol &ldquo;PDF&rdquo; pada modul individual untuk download
-            per BAB
-          </li>
-          <li>• Pastikan pop-up tidak diblokir oleh browser</li>
-          <li>
-            • File PDF akan terbuka di tab baru, pilih &ldquo;Save as PDF&rdquo;
-            untuk menyimpan
-          </li>
-        </ul>
+      {/* Preview Notice */}
+      <div className="mt-20 mb-8 max-w-4xl mx-auto px-4">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div className="flex items-start gap-3">
+            <svg
+              className="w-6 h-6 text-blue-500 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div>
+              <h3 className="font-semibold text-blue-800 mb-1">
+                Preview Modul Lengkap
+              </h3>
+              <p className="text-blue-700 text-sm">
+                Berikut adalah preview semua halaman modul. Gunakan tombol
+                download di atas untuk mendapatkan file lengkap.
+                <br />
+                <strong>PDF:</strong> Satu file lengkap dengan semua halaman
+                <br />
+                <strong>ZIP Images:</strong> Koleksi gambar PNG untuk setiap
+                halaman
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Complete Modul Content */}
+      <div ref={modulRef} className="space-y-0">
+        {/* Cover Modul */}
+        <div className="page-break">
+          <ModulGuruCover />
+        </div>
+
+        {/* Bab 1 */}
+        <div className="page-break">
+          <CoverBab1 />
+        </div>
+        <div className="page-break">
+          <IsiBab1 />
+        </div>
+
+        {/* Bab 2 */}
+        <div className="page-break">
+          <CoverBab2 />
+        </div>
+        <div className="page-break">
+          <IsiBab2 />
+        </div>
+
+        {/* Bab 3 */}
+        <div className="page-break">
+          <CoverBab3 />
+        </div>
+        <div className="page-break">
+          <IsiBab3 />
+        </div>
+
+        {/* Bab 4 */}
+        <div className="page-break">
+          <CoverBab4 />
+        </div>
+        <div className="page-break">
+          <IsiBab4 />
+        </div>
+
+        {/* Lampiran */}
+        <div className="page-break">
+          <Lampiran1 />
+        </div>
+        <div className="page-break">
+          <Lampiran2 />
+        </div>
+        <div className="page-break">
+          <Lampiran3 />
+        </div>
+      </div>
+
+      {/* Loading Overlay */}
+      {isDownloading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+              <h3 className="text-lg font-semibold mb-2">
+                Memproses Download...
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Mohon tunggu, file sedang disiapkan
+              </p>
+              <div className="mt-4 w-full bg-gray-200 rounded-full h-2">
+                <div
+                  className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${downloadProgress}%` }}
+                ></div>
+              </div>
+              <p className="text-sm text-gray-500 mt-2">
+                {downloadProgress}% selesai
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        .page-break {
+          break-after: page;
+          min-height: 100vh;
+        }
+
+        @media print {
+          .page-break {
+            page-break-after: always;
+          }
+        }
+      `}</style>
     </div>
   );
-};
-
-export default BulkPDFDownloader;
+}
