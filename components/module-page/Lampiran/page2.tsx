@@ -1,4 +1,5 @@
 "use client";
+import BulkPDFDownloader from "@/components/download-module";
 import React from "react";
 
 const ContohSoalEvaluasi = () => {
@@ -383,6 +384,7 @@ const ContohSoalEvaluasi = () => {
           <span className="text-2xl">⚥</span>
         </div>
       </div>
+      <BulkPDFDownloader/>
     </div>
   );
 };
