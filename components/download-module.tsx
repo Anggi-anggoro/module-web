@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Download, FileText, CheckCircle, Loader2 } from "lucide-react";
+import { Download, CheckCircle, Loader2 } from "lucide-react";
 
 interface ModuleData {
   id: string;
@@ -392,47 +392,6 @@ const BulkPDFDownloader: React.FC = () => {
     }
   };
 
-  const downloadSingleModule = (moduleId: string) => {
-    const moduleData = modulesData.find((m) => m.id === moduleId);
-    if (!moduleData) return;
-
-    const printWindow = window.open("", "_blank");
-
-    if (!printWindow) {
-      alert("Pop-up diblokir! Silakan izinkan pop-up untuk mengunduh PDF.");
-      return;
-    }
-
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>${moduleData.title} - ${moduleData.coverTitle}</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-          @media print {
-            body { margin: 0; }
-          }
-          body { font-family: system-ui, -apple-system, sans-serif; }
-        </style>
-      </head>
-      <body class="bg-white">
-        ${generateModuleHTML(moduleData)}
-      </body>
-      </html>
-    `;
-
-    printWindow.document.write(htmlContent);
-    printWindow.document.close();
-
-    printWindow.onload = () => {
-      setTimeout(() => {
-        printWindow.print();
-        printWindow.close();
-      }, 500);
-    };
-  };
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
