@@ -1,13 +1,11 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import ModulGuruCover from "./cover"; // rename component if needed
 import CoverBab1 from "../../components/module-page/1/cover-bab1";
 import Bab1 from "../../components/module-page/1/page";
 import Bab2 from "../../components/module-page/2/page";
 import Bab3 from "../../components/module-page/3/page";
 import Bab4 from "../../components/module-page/4/page";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import Lampiran from "../../components/module-page/Lampiran/page";
 import Bab4Cover from "../../components/module-page/4/cover-bab4";
 import Bab2Cover from "../../components/module-page/2/cover-bab2";
@@ -16,29 +14,7 @@ import ContohSoalEvaluasi from "../../components/module-page/Lampiran/page2";
 import Bab3Cover from "../../components/module-page/3/cover";
 
 export default function ModulGabungan() {
-  const router = useRouter();
-  const [isPostTest, setIsPostTest] = useState<boolean | null>(false);
 
-  useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getUser().then(({ data, error }) => {
-      if (error || !data.user || !data.user.email) {
-      } else {
-        supabase
-          .from("userdata")
-          .select("posttest_score")
-          .eq("email", data.user.email)
-          .single()
-          .then(({ data: userData, error: userError }) => {
-            if (userError || !userData.posttest_score) {
-              setIsPostTest(false);
-            } else {
-              setIsPostTest(true);
-            }
-          });
-      }
-    });
-  }, [router]);
   return (
     <div className="bg-white text-black scroll-smooth">
       {/* Cover Section */}
