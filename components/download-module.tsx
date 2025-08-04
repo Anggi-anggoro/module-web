@@ -450,7 +450,7 @@ const BulkPDFDownloader: React.FC = () => {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold text-yellow-800 mb-1">
-              Download Semua Modul
+              Download Modul
             </h3>
             <p className="text-yellow-700 text-sm">
               Unduh {modulesData.length} BAB sekaligus dalam satu file PDF
@@ -467,7 +467,7 @@ const BulkPDFDownloader: React.FC = () => {
             ) : (
               <Download size={20} />
             )}
-            <span>{isDownloading ? "Memproses..." : "Download Semua"}</span>
+            <span>{isDownloading ? "Memproses..." : "Download"}</span>
           </button>
         </div>
 
@@ -485,45 +485,6 @@ const BulkPDFDownloader: React.FC = () => {
         )}
       </div>
 
-      {/* Individual Module Downloads */}
-      <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Download Modul Individual
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {modulesData.map((moduleData) => (
-            <div
-              key={moduleData.id}
-              className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200"
-            >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-1">
-                    {moduleData.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {moduleData.coverTitle}
-                  </p>
-                  <div className="flex items-center space-x-4 text-xs text-gray-500">
-                    <span>{moduleData.sections.length} Section</span>
-                    {moduleData.exercises && (
-                      <span>{moduleData.exercises.length} Latihan</span>
-                    )}
-                  </div>
-                </div>
-                <button
-                  onClick={() => downloadSingleModule(moduleData.id)}
-                  className="flex items-center space-x-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded text-sm transition-colors duration-200"
-                >
-                  <FileText size={16} />
-                  <span>PDF</span>
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Usage Instructions */}
       <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <h4 className="font-semibold text-blue-800 mb-2">
@@ -531,12 +492,8 @@ const BulkPDFDownloader: React.FC = () => {
         </h4>
         <ul className="text-sm text-blue-700 space-y-1">
           <li>
-            • Klik &ldquo;Download Semua&rdquo; untuk mendapat semua modul dalam
+            • Klik &ldquo;Download&rdquo; untuk mendapat semua modul dalam
             satu file PDF
-          </li>
-          <li>
-            • Klik tombol &ldquo;PDF&rdquo; pada modul individual untuk download
-            per BAB
           </li>
           <li>• Pastikan pop-up tidak diblokir oleh browser</li>
           <li>
