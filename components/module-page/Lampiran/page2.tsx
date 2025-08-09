@@ -383,8 +383,7 @@ const ContohSoalEvaluasi = () => {
           <span className="text-lg font-semibold">Lampiran Evaluasi</span>
           <span className="text-2xl">⚥</span>
         </div>
-      </div>
-      <BulkPDFDownloader/>
+      </div>      
     </div>
   );
 };
