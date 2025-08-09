@@ -1,5 +1,4 @@
 "use client";
-import BulkPDFDownloader from "@/components/download-module";
 import React from "react";
 
 const ContohSoalEvaluasi = () => {
